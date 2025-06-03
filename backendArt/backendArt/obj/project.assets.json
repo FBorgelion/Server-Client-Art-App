@@ -1683,6 +1683,19 @@
           }
         }
       },
+      "BL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "DAL": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BL.dll": {}
+        }
+      },
       "DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -5142,6 +5155,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "BL/1.0.0": {
+      "type": "project",
+      "path": "../BL/BL.csproj",
+      "msbuildProject": "../BL/BL.csproj"
+    },
     "DAL/1.0.0": {
       "type": "project",
       "path": "../DAL/DAL.csproj",
@@ -5155,7 +5173,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "DAL >= 1.0.0",
+      "BL >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.5",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
@@ -5167,11 +5185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\backendArt.csproj",
+      "projectUniqueName": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\backendArt.csproj",
       "projectName": "backendArt",
-      "projectPath": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\backendArt.csproj",
+      "projectPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\backendArt.csproj",
       "packagesPath": "C:\\Users\\Florent\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\obj\\",
+      "outputPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5193,8 +5211,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Florent\\DevWeb\\backendArt\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\Florent\\DevWeb\\backendArt\\DAL\\DAL.csproj"
+            "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\BL\\BL.csproj": {
+              "projectPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\BL\\BL.csproj"
             }
           }
         }

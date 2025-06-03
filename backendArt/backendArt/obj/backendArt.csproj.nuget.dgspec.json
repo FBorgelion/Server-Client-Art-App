@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\backendArt.csproj": {}
+    "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\backendArt.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\backendArt.csproj": {
+    "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\backendArt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\backendArt.csproj",
+        "projectUniqueName": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\backendArt.csproj",
         "projectName": "backendArt",
-        "projectPath": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\backendArt.csproj",
+        "projectPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\backendArt.csproj",
         "packagesPath": "C:\\Users\\Florent\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\obj\\",
+        "outputPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Florent\\DevWeb\\backendArt\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\Florent\\DevWeb\\backendArt\\DAL\\DAL.csproj"
+              "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\BL\\BL.csproj": {
+                "projectPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\BL\\BL.csproj"
               }
             }
           }
@@ -89,14 +89,14 @@
         }
       }
     },
-    "C:\\Users\\Florent\\DevWeb\\backendArt\\DAL\\DAL.csproj": {
+    "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\BL\\BL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Florent\\DevWeb\\backendArt\\DAL\\DAL.csproj",
-        "projectName": "DAL",
-        "projectPath": "C:\\Users\\Florent\\DevWeb\\backendArt\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\BL\\BL.csproj",
+        "projectName": "BL",
+        "projectPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\BL\\BL.csproj",
         "packagesPath": "C:\\Users\\Florent\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Florent\\DevWeb\\backendArt\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\BL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -118,8 +118,78 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Florent\\DevWeb\\backendArt\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Florent\\DevWeb\\backendArt\\Domain\\Domain.csproj"
+              "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\DAL\\DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\DAL\\DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\DAL\\DAL.csproj",
+        "projectName": "DAL",
+        "projectPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\Florent\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Florent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\Domain\\Domain.csproj"
               }
             }
           }
@@ -181,14 +251,14 @@
         }
       }
     },
-    "C:\\Users\\Florent\\DevWeb\\backendArt\\Domain\\Domain.csproj": {
+    "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Florent\\DevWeb\\backendArt\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Florent\\DevWeb\\backendArt\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Florent\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Florent\\DevWeb\\backendArt\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "backendArt/1.0.0": {
         "dependencies": {
-          "DAL": "1.0.0",
+          "BL": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "9.0.5",
           "Swashbuckle.AspNetCore": "6.6.2"
         },
@@ -1080,6 +1080,17 @@
           }
         }
       },
+      "BL/1.0.0": {
+        "dependencies": {
+          "DAL": "1.0.0"
+        },
+        "runtime": {
+          "BL.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "DAL/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
@@ -1696,6 +1707,11 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "BL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "DAL/1.0.0": {
       "type": "project",

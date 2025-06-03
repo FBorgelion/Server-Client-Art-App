@@ -1,4 +1,8 @@
+using BL.Services;
+using BL.Services.Interfaces;
 using DAL;
+using DAL.Repositories;
+using DAL.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +17,10 @@ builder.Services.AddSwaggerGen();
 var config = builder.Configuration;
 builder.Services.AddDbContext<AppDbContext>(
                         options => options.UseSqlServer(config.GetConnectionString("app")));
+
+builder.Services.AddScoped<IProductRepo, ProductRepo>();
+builder.Services.AddScoped<IProductService, ProductService>();
+
 
 var app = builder.Build();
 
