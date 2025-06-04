@@ -19,5 +19,7 @@ namespace DAL.Repositories.Interfaces
         public bool UpdateProduct(Product product);
 
         public bool DeleteProduct(int id);
+
+        public IEnumerable<Product> GetProductsByArtisan(int artisanId);
     }
 }

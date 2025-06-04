@@ -16,6 +16,9 @@ namespace BL.Services.Interfaces
         public bool UpdateProduct(ProductDTO product);
 
         public bool DeleteProduct(int id);
+
+        public IEnumerable<ProductDTO> GetProductsByArtisan(int artisanId);
+
     }
 
 

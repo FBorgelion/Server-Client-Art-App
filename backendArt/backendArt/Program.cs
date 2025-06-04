@@ -31,6 +31,18 @@ builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IDeliveryPartnerRepo, DeliveryPartnerRepo>();
 builder.Services.AddScoped<IDeliveryPartnerService, DeliveryPartnerService>();
 
+builder.Services.AddScoped<IOrderRepo, OrderRepo>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+
+builder.Services.AddScoped<IOrderItemRepo, OrderItemRepo>();
+builder.Services.AddScoped<IOrderItemService, OrderItemService>();
+
+builder.Services.AddScoped<IReviewRepo, ReviewRepo>();
+builder.Services.AddScoped<IReviewService, ReviewService>();
+
+builder.Services.AddScoped<IInquiryRepo, InquiryRepo>();
+builder.Services.AddScoped<IInquiryService, InquiryService>();
+
 builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
 
 var app = builder.Build();

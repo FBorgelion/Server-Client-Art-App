@@ -22,6 +22,18 @@ namespace BL.Mapper
             CreateMap<DeliveryPartner, DeliveryPartnerDTO>();
             CreateMap<DeliveryPartnerDTO, DeliveryPartner>();
 
+            CreateMap<Order, OrderDTO>();
+            CreateMap<OrderDTO, Order>();
+
+            CreateMap<OrderItem, OrderItemDTO>();
+            CreateMap<OrderItemDTO, OrderItem>();
+
+            CreateMap<Review, ReviewDTO>();
+            CreateMap<ReviewDTO, Review>();
+
+            CreateMap<Inquiry, InquiryDTO>();
+            CreateMap<InquiryDTO, Inquiry>();
+
         }
 
     }

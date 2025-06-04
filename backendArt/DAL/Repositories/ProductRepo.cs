@@ -1,5 +1,6 @@
 ﻿using DAL.Repositories.Interfaces;
 using Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repositories
 {
@@ -58,5 +59,11 @@ namespace DAL.Repositories
             _dbContext.SaveChanges();
             return true;
         }
+
+        public IEnumerable<Product> GetProductsByArtisan(int artisanId)
+        {
+            return  _dbContext.Products.Where(p => p.ArtisanId == artisanId) .ToList();
+        }
+
     }
 }

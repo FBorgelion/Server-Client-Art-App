@@ -1,0 +1,56 @@
+﻿using AutoMapper;
+using BL.Models;
+using BL.Services.Interfaces;
+using DAL.Repositories;
+using DAL.Repositories.Interfaces;
+using Domain;
+using Microsoft.IdentityModel.Tokens;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BL.Services
+{
+    public class ReviewService : IReviewService
+    {
+
+        private readonly IMapper _mapper;
+        private readonly IReviewRepo _reviewRepo;
+
+        public ReviewService(IMapper mapper, IReviewRepo reviewRepo)
+        {
+            _mapper = mapper;
+            _reviewRepo = reviewRepo;
+        }
+
+        public IEnumerable<ReviewDTO> GetAll()
+        {
+            var reviews = _reviewRepo.GetAll();
+            return _mapper.Map<IEnumerable<ReviewDTO>>(reviews);
+        }
+
+        public IEnumerable<ReviewDTO> GetReviewsByProduct(int productId)
+        {
+            var reviews = _reviewRepo.GetReviewByProduct(productId);
+            if (reviews.IsNullOrEmpty())
+            {
+                return null;
+            }
+            return _mapper.Map<IEnumerable<ReviewDTO>>(reviews); ;
+        }
+
+        public void Add(ReviewDTO review)
+        {
+            var reviewEntity = _mapper.Map<Review>(review);
+            _reviewRepo.Add(reviewEntity);
+        }
+
+        public bool Delete(int id)
+        {
+            return _reviewRepo.Delete(id);
+        }
+
+    }
+}

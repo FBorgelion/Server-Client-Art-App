@@ -39,7 +39,7 @@ namespace backendArt.Controllers
         }
 
         [HttpGet("{id}")]
-        [ProducesResponseType(typeof(IEnumerable<ProductDTO>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProductDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public IActionResult GetProduct(int id)
@@ -52,6 +52,28 @@ namespace backendArt.Controllers
                     return NoContent();
                 }
                 return Ok(product);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("artisans/{artisanId}/products")]
+        [ProducesResponseType(typeof(IEnumerable<ProductDTO>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult GetProductByArtisan(int artisanId)
+        {
+            try
+            {
+                IEnumerable<ProductDTO> products = _productService.GetProductsByArtisan(artisanId);
+                if (products == null)
+                {
+                    return NotFound($"No products found for artisan {artisanId}");
+                }
+                return Ok(products);
             }
             catch (Exception ex)
             {

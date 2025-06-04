@@ -3,6 +3,7 @@ using BL.Models;
 using BL.Services.Interfaces;
 using DAL.Repositories.Interfaces;
 using Domain;
+using Microsoft.IdentityModel.Tokens;
 
 namespace BL.Services
 {
@@ -49,6 +50,16 @@ namespace BL.Services
         {
             var productEntity = _mapper.Map<Product>(product);
             return _productRepo.UpdateProduct(productEntity);
+        }
+
+        public IEnumerable<ProductDTO> GetProductsByArtisan(int artisanId)
+        {
+            var products = _productRepo.GetProductsByArtisan(artisanId);
+            if (products.IsNullOrEmpty())
+            {
+                return null;
+            }
+            return _mapper.Map<IEnumerable<ProductDTO>>(products); ;
         }
 
     }
