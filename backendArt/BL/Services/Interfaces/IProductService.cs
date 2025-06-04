@@ -1,22 +1,19 @@
-﻿using Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BL.Models;
+using Domain;
+
 
 namespace BL.Services.Interfaces
 {
     public interface IProductService
     {
 
-        public IEnumerable<Product> GetAllProducts();
+        public IEnumerable<ProductDTO> GetAllProducts();
 
-        public Product GetProduct(int id);
+        public ProductDTO GetProduct(int id);
 
-        public void AddProduct(Product product);
+        public void AddProduct(ProductDTO product);
 
-        public bool UpdateProduct(Product product);
+        public bool UpdateProduct(ProductDTO product);
 
         public bool DeleteProduct(int id);
     }

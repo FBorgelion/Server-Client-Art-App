@@ -15,7 +15,7 @@ namespace DAL.Repositories
 
         public IEnumerable<Product> GetAllProducts()
         {
-            return _dbContext.Products;
+            return _dbContext.Products.ToList();
         }
 
         public Product GetProduct(int id)
@@ -27,6 +27,7 @@ namespace DAL.Repositories
         public void AddProduct(Product product)
         {
             _dbContext.Products.Add(product);
+            _dbContext.SaveChanges();
         }
 
         public bool DeleteProduct(int id)
@@ -37,6 +38,7 @@ namespace DAL.Repositories
                 return false;
             }
             _dbContext.Products.Remove(product);
+            _dbContext.SaveChanges();
             return true;
         }
 

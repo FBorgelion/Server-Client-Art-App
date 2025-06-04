@@ -1,4 +1,6 @@
-﻿using BL.Services.Interfaces;
+﻿using AutoMapper;
+using BL.Models;
+using BL.Services.Interfaces;
 using DAL.Repositories.Interfaces;
 using Domain;
 
@@ -7,16 +9,19 @@ namespace BL.Services
     public class ProductService : IProductService
     {
 
+        private readonly IMapper _mapper;
         private readonly IProductRepo _productRepo;
 
-        public ProductService(IProductRepo productRepo) 
+        public ProductService(IMapper mapper, IProductRepo productRepo) 
         {
+            _mapper = mapper;
             _productRepo = productRepo;
         }
 
-        public void AddProduct(Product product)
+        public void AddProduct(ProductDTO product)
         {
-            _productRepo.AddProduct(product);
+            var productEntity = _mapper.Map<Product>(product);
+            _productRepo.AddProduct(productEntity);
         }
 
         public bool DeleteProduct(int id)
@@ -24,19 +29,26 @@ namespace BL.Services
             return _productRepo.DeleteProduct(id);
         }
 
-        public IEnumerable<Product> GetAllProducts()
+        public IEnumerable<ProductDTO> GetAllProducts()
         {
-           return _productRepo.GetAllProducts();
+            var products = _productRepo.GetAllProducts();
+            return _mapper.Map<IEnumerable<ProductDTO>>(products);
         }
 
-        public Product GetProduct(int id)
+        public ProductDTO GetProduct(int id)
         {
-            return _productRepo.GetProduct(id);
+            var product = _productRepo.GetProduct(id);
+            if (product == null)
+            {
+                return null;
+            }
+            return _mapper.Map<ProductDTO>(product);
         }
 
-        public bool UpdateProduct(Product product)
+        public bool UpdateProduct(ProductDTO product)
         {
-            return _productRepo.UpdateProduct(product);
+            var productEntity = _mapper.Map<Product>(product);
+            return _productRepo.UpdateProduct(productEntity);
         }
 
     }

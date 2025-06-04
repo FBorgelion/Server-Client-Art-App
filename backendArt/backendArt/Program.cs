@@ -1,3 +1,4 @@
+using BL.Mapper;
 using BL.Services;
 using BL.Services.Interfaces;
 using DAL;
@@ -21,6 +22,16 @@ builder.Services.AddDbContext<AppDbContext>(
 builder.Services.AddScoped<IProductRepo, ProductRepo>();
 builder.Services.AddScoped<IProductService, ProductService>();
 
+builder.Services.AddScoped<IArtisanRepo, ArtisanRepo>();
+builder.Services.AddScoped<IArtisanService, ArtisanService>();
+
+builder.Services.AddScoped<ICustomerRepo, CustomerRepo>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+
+builder.Services.AddScoped<IDeliveryPartnerRepo, DeliveryPartnerRepo>();
+builder.Services.AddScoped<IDeliveryPartnerService, DeliveryPartnerService>();
+
+builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
 
 var app = builder.Build();
 

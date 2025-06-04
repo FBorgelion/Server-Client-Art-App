@@ -1,4 +1,5 @@
-﻿using BL.Services.Interfaces;
+﻿using BL.Models;
+using BL.Services.Interfaces;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,14 +18,14 @@ namespace backendArt.Controllers
         }
 
         [HttpGet]
-        [ProducesResponseType(typeof(IEnumerable<Product>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(IEnumerable<ProductDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public IActionResult GetAllProducts()
         {
             try
             {
-                IEnumerable<Product> products = _productService.GetAllProducts();
+                IEnumerable<ProductDTO> products = _productService.GetAllProducts();
                 if (products.Count() == 0)
                 {
                     return NoContent();
@@ -38,7 +39,7 @@ namespace backendArt.Controllers
         }
 
         [HttpGet("{id}")]
-        [ProducesResponseType(typeof(IEnumerable<Product>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(IEnumerable<ProductDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public IActionResult GetProduct(int id)
@@ -50,7 +51,7 @@ namespace backendArt.Controllers
                 {
                     return NoContent();
                 }
-                return Ok(id);
+                return Ok(product);
             }
             catch (Exception ex)
             {
@@ -62,7 +63,7 @@ namespace backendArt.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [Produces("application/json")]
-        public IActionResult Post([FromBody] Product product)
+        public IActionResult Post([FromBody] ProductDTO product)
         {
             try
             {
@@ -100,7 +101,7 @@ namespace backendArt.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public ActionResult Update([FromBody] Product product)
+        public ActionResult Update([FromBody] ProductDTO product)
         {
             try
             {
