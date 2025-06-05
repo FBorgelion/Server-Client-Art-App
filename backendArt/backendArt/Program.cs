@@ -15,6 +15,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(option => 
+                option.AddDefaultPolicy(policy => policy.WithOrigins("http://localhost:4200"))
+);
+
 var config = builder.Configuration;
 builder.Services.AddDbContext<AppDbContext>(
                         options => options.UseSqlServer(config.GetConnectionString("app")));
@@ -59,5 +63,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors();
 
 app.Run();
