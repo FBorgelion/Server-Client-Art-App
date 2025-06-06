@@ -67,6 +67,15 @@ builder.Services.AddCors(option =>
                 option.AddDefaultPolicy(policy => policy.WithOrigins("http://localhost:4200"))
 );
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4200").AllowAnyHeader();
+        });
+});
+
 var config = builder.Configuration;
 builder.Services.AddDbContext<AppDbContext>(
                         options => options.UseSqlServer(config.GetConnectionString("app")));

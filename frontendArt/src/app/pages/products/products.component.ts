@@ -17,7 +17,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.svc.getProducts().subscribe(response => {
-
+      console.log(response)
       this.products = response;
 
     });

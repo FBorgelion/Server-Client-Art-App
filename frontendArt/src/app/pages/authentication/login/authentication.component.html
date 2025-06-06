@@ -1,7 +1,7 @@
 <div class="container py-5">
   <div class="d-flex align-items-center justify-content-center" style="min-height: 75vh;">
     <div class="bg-gray-600 border border-secondary rounded p-4" style="width: 100%; max-width: 400px;">
-      <form [formGroup] ="loginForm">
+      <form [formGroup] ="loginForm" (ngSubmit)="login()">
         <div>
           <label class="fw-bold display-4 text-white"
                  for="login"
@@ -11,14 +11,14 @@
         </div>
 
         <div data-mdb-input-init class="form-outline mb-4">
-          <input type="email"
+          <input formControlName="username" type="email"
                  id="formEmail"
                  class="form-control border border-white text-white bg-transparent" />
           <label class="form-label text-white" for="form2Example1">Email address</label>
         </div>
 
         <div data-mdb-input-init class="form-outline mb-4">
-          <input type="password"
+          <input formControlName="password" type="password"
                  id="fromPassword"
                  class="form-control border border-white text-white bg-transparent" />
           <label class="form-label text-white" for="form2Example2">Password</label>
@@ -32,7 +32,18 @@
           </div>
         </div>
 
-        <button type="button"
+        @if(loginForm.get('username')?.invalid && loginForm.get("username")?.errors && (loginForm.get("username")?.dirty || loginForm.get("usernmae")?.touched))
+        {
+          @if(loginForm.get("username")?.hasError("required"))
+          {
+            <small class="text-danger">
+              This field is required.
+            </small>
+          }
+        }
+
+        <button type="submit"
+                [disabled]="loginForm.invalid"
                 data-mdb-button-init
                 data-mdb-ripple-init
                 class="btn btn-primary mx-auto d-block mb-4">

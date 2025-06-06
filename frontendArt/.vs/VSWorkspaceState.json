@@ -6,8 +6,9 @@
     "\\src\\app\\pages",
     "\\src\\app\\pages\\authentication",
     "\\src\\app\\pages\\authentication\\login",
+    "\\src\\app\\pages\\dashboard",
     "\\src\\app\\service"
   ],
-  "SelectedNode": "\\src\\app\\pages\\authentication\\login\\authentication.component.ts",
+  "SelectedNode": "\\src\\app\\pages\\authentication\\login\\authentication.interceptor.ts",
   "PreviewInSolutionExplorer": false
 }

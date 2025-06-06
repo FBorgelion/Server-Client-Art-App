@@ -198,7 +198,7 @@
     "ContainingType": "backendArt.Controllers.AuthenticationController",
     "Method": "Login",
     "RelativePath": "api/Authentication/LogIn",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -213,17 +213,7 @@
         "IsRequired": false
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "backendArt.Controllers.AuthenticationController",

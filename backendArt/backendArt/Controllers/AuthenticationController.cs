@@ -23,6 +23,7 @@ namespace backendArt.Controllers
         [ProducesResponseType(typeof(IEnumerable<UserDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [AllowAnonymous]
         public IActionResult GetAll()
         {
             try
@@ -56,11 +57,12 @@ namespace backendArt.Controllers
 
         }
 
-        [HttpGet("LogIn")]
+        [HttpPost("LogIn")]
         [AllowAnonymous]
-        public string Login(string username, string password)
+        public IActionResult Login(string username, string password)
         {
-            return _authService.Login(username, password);
+            var token = _authService.Login(username, password);
+            return Ok(new { Token = token });
         }
     }
 }
