@@ -34,6 +34,9 @@ namespace BL.Mapper
             CreateMap<Inquiry, InquiryDTO>();
             CreateMap<InquiryDTO, Inquiry>();
 
+            CreateMap<User, UserDTO>();
+            CreateMap<UserDTO, User>();
+
         }
 
     }

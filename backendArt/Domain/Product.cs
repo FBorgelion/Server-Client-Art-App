@@ -15,7 +15,7 @@ namespace Domain
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int Stock {  get; set; }
-        public string Images { get; set; }
+        public string? Images { get; set; }
 
 
         public Artisan Artisan { get; set; }

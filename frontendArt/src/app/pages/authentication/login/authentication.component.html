@@ -1,7 +1,7 @@
 <div class="container py-5">
   <div class="d-flex align-items-center justify-content-center" style="min-height: 75vh;">
     <div class="bg-gray-600 border border-secondary rounded p-4" style="width: 100%; max-width: 400px;">
-      <form>
+      <form [formGroup] ="loginForm">
         <div>
           <label class="fw-bold display-4 text-white"
                  for="login"
@@ -12,14 +12,14 @@
 
         <div data-mdb-input-init class="form-outline mb-4">
           <input type="email"
-                 id="form2Example1"
+                 id="formEmail"
                  class="form-control border border-white text-white bg-transparent" />
           <label class="form-label text-white" for="form2Example1">Email address</label>
         </div>
 
         <div data-mdb-input-init class="form-outline mb-4">
           <input type="password"
-                 id="form2Example2"
+                 id="fromPassword"
                  class="form-control border border-white text-white bg-transparent" />
           <label class="form-label text-white" for="form2Example2">Password</label>
         </div>

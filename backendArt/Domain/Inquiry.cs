@@ -13,7 +13,7 @@ namespace Domain
         public int ProductId { get; set; }
         public int CustomerId { get; set; }
         public string Message { get; set; }
-        public string Response { get; set; }
+        public string? Response { get; set; }
         public DateTime CreatedAt { get; set; }
 
 

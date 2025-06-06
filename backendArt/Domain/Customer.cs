@@ -10,8 +10,8 @@ namespace Domain
     {
 
         public int CustomerId { get; set; }
-        public string ShippingAddress { get; set; }
-        public string PaymentInfo { get; set; }
+        public string? ShippingAddress { get; set; }
+        public string? PaymentInfo { get; set; }
 
 
         public User User { get; set; }
