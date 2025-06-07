@@ -41,7 +41,7 @@ namespace backendArt.Controllers
             }
         }
 
-        [HttpGet("Register")]
+        [HttpPost("Register")]
         [AllowAnonymous]
         public IActionResult Register(string password, string username, string email, string role)
         {

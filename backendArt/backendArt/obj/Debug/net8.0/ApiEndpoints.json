@@ -219,7 +219,7 @@
     "ContainingType": "backendArt.Controllers.AuthenticationController",
     "Method": "Register",
     "RelativePath": "api/Authentication/Register",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [

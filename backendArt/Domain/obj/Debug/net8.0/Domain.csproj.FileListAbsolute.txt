@@ -21,3 +21,4 @@ C:\Users\Florent\DevWeb\ServerClientProjet\backendArt\Domain\obj\Debug\net8.0\Do
 C:\Users\Florent\DevWeb\ServerClientProjet\backendArt\Domain\obj\Debug\net8.0\refint\Domain.dll
 C:\Users\Florent\DevWeb\ServerClientProjet\backendArt\Domain\obj\Debug\net8.0\Domain.pdb
 C:\Users\Florent\DevWeb\ServerClientProjet\backendArt\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\Users\Florent\DevWeb\backendArt\Domain\obj\Debug\net8.0\Domain.sourcelink.json

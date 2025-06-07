@@ -17,12 +17,13 @@ namespace BL.Services
 
         private readonly AuthenticationRepo _authRepo;
         private readonly IArtisanRepo _artisanRepo;
+        private readonly IAdminRepo _adminRepo;
         private readonly IDeliveryPartnerRepo _deliveryPartnerRepo;
         private readonly ICustomerRepo _customerRepo;
         private readonly IMapper _mapper;
         private readonly IConfiguration _config;
 
-        public AuthenticationService(AuthenticationRepo authRepo, IMapper mapper, IArtisanRepo artisanRepo, IDeliveryPartnerRepo deliveryPartnerRepo, ICustomerRepo customerRepo, IConfiguration config)
+        public AuthenticationService(AuthenticationRepo authRepo, IMapper mapper, IArtisanRepo artisanRepo, IDeliveryPartnerRepo deliveryPartnerRepo, ICustomerRepo customerRepo, IConfiguration config, IAdminRepo adminRepo)
         {
             _authRepo = authRepo;
             _artisanRepo = artisanRepo;
@@ -30,6 +31,7 @@ namespace BL.Services
             _deliveryPartnerRepo = deliveryPartnerRepo;
             _mapper = mapper;
             _config = config;
+            _adminRepo = adminRepo;
         }
 
         public IEnumerable<UserDTO> GetAll()
@@ -74,10 +76,10 @@ namespace BL.Services
         {
             switch (role.ToLower())
             {
-                /*case "admin":
-                    var admin = new Admin { UserId = user.UserId }; // Supposons que UserId est la clé primaire dans la table User
+                case "admin":
+                    var admin = new Admin { AdminId = user.UserId };
                     _adminRepo.Add(admin);
-                    break;*/
+                    break;
 
                 case "artisan":
                     var artisan = new Artisan { ArtisanId = user.UserId };
@@ -121,11 +123,13 @@ namespace BL.Services
             var secretKey = _config["Jwt:Key"];
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            var user = _authRepo.GetByUsername(username);
 
             var claims = new[] {
                 new Claim(JwtRegisteredClaimNames.Sub, username),
                 new Claim("custom_info", "info"),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(ClaimTypes.Role, user.Role) 
             };
 
             var jwtIssuer = _config["Jwt:Issuer"];

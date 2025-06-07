@@ -277,7 +277,7 @@
       }
     },
     "/api/Authentication/Register": {
-      "get": {
+      "post": {
         "tags": [
           "Authentication"
         ],

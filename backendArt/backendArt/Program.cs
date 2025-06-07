@@ -104,6 +104,9 @@ builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddScoped<IInquiryRepo, InquiryRepo>();
 builder.Services.AddScoped<IInquiryService, InquiryService>();
 
+builder.Services.AddScoped<IAdminRepo, AdminRepo>();
+builder.Services.AddScoped<IAdminService, AdminService>();
+
 builder.Services.AddScoped<AuthenticationService, AuthenticationService>();
 builder.Services.AddScoped<AuthenticationRepo, AuthenticationRepo>();
 
@@ -111,7 +114,6 @@ builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

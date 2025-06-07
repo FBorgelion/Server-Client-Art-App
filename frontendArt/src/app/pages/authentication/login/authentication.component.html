@@ -1,7 +1,7 @@
 <div class="container py-5">
   <div class="d-flex align-items-center justify-content-center" style="min-height: 75vh;">
     <div class="bg-gray-600 border border-secondary rounded p-4" style="width: 100%; max-width: 400px;">
-      <form [formGroup] ="loginForm" (ngSubmit)="login()">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
         <div>
           <label class="fw-bold display-4 text-white"
                  for="login"
@@ -27,20 +27,16 @@
         <div class="row mb-4">
           <div class="col d-flex justify-content-center">
             <div class="form-check">
-              <!-- si vous avez un checkbox, vous pouvez aussi ajouter text-white sur le label -->
             </div>
           </div>
         </div>
 
-        @if(loginForm.get('username')?.invalid && loginForm.get("username")?.errors && (loginForm.get("username")?.dirty || loginForm.get("usernmae")?.touched))
-        {
-          @if(loginForm.get("username")?.hasError("required"))
-          {
-            <small class="text-danger">
-              This field is required.
-            </small>
-          }
-        }
+        <!-- Form validation for username -->
+        <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)">
+          <small *ngIf="loginForm.get('username')?.hasError('required')" class="text-danger">
+            This field is required.
+          </small>
+        </div>
 
         <button type="submit"
                 [disabled]="loginForm.invalid"
@@ -51,8 +47,10 @@
         </button>
 
         <div class="text-center">
-          <p class="form-label text-white">Not a member?
-            <a class="form-label text-primary"href="/auth/register">Register</a>
+          <p class="form-label text-white">
+            Not a member?
+            <!-- Text clickable that redirects to the registration page -->
+            <a class="form-label text-primary" href="/auth/register">Register</a>
           </p>
         </div>
       </form>

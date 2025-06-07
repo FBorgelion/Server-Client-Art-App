@@ -1,18 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\",
+  "WorkspaceRootPath": "C:\\Users\\Florent\\DevWeb\\backendArt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|c:\\users\\florent\\devweb\\serverclientprojet\\backendart\\backendart\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|c:\\users\\florent\\devweb\\backendart\\backendart\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|solutionrelative:backendart\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|c:\\users\\florent\\devweb\\serverclientprojet\\backendart\\backendart\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|c:\\users\\florent\\devweb\\backendart\\backendart\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|solutionrelative:backendart\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|c:\\users\\florent\\devweb\\backendart\\bl\\services\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|solutionrelative:bl\\services\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|c:\\users\\florent\\devweb\\backendart\\backendart\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|solutionrelative:backendart\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|c:\\users\\florent\\devweb\\serverclientprojet\\backendart\\backendart\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|solutionrelative:backendart\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|c:\\users\\florent\\devweb\\backendart\\bl\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|solutionrelative:bl\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,8 +29,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "DockedWidth": 198,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,41 +46,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "backendArt\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "backendArt\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAOAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AuthenticationController.cs",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\Controllers\\AuthenticationController.cs",
+              "RelativeDocumentMoniker": "backendArt\\Controllers\\AuthenticationController.cs",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\Controllers\\AuthenticationController.cs",
+              "RelativeToolTip": "backendArt\\Controllers\\AuthenticationController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwCsAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T14:33:48.81Z",
+              "WhenOpened": "2025-06-07T14:01:15.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\Program.cs",
+              "RelativeDocumentMoniker": "backendArt\\Program.cs",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\Program.cs",
+              "RelativeToolTip": "backendArt\\Program.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAmwHQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T09:19:44.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdminService.cs",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\BL\\Services\\AdminService.cs",
+              "RelativeDocumentMoniker": "BL\\Services\\AdminService.cs",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\BL\\Services\\AdminService.cs",
+              "RelativeToolTip": "BL\\Services\\AdminService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T09:14:35.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "backendArt\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "backendArt\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T08:40:59.924Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\Program.cs",
-              "RelativeDocumentMoniker": "backendArt\\Program.cs",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\Program.cs",
-              "RelativeToolTip": "backendArt\\Program.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAAwEwAAAADAAAAAAAAAA==",
+              "Title": "AuthenticationService.cs",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\BL\\Services\\AuthenticationService.cs",
+              "RelativeDocumentMoniker": "BL\\Services\\AuthenticationService.cs",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\BL\\Services\\AuthenticationService.cs",
+              "RelativeToolTip": "BL\\Services\\AuthenticationService.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAswHgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T10:37:05.721Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthenticationController.cs",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\Controllers\\AuthenticationController.cs",
-              "RelativeDocumentMoniker": "backendArt\\Controllers\\AuthenticationController.cs",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\Controllers\\AuthenticationController.cs",
-              "RelativeToolTip": "backendArt\\Controllers\\AuthenticationController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAowD0AAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T10:10:33.763Z",
+              "WhenOpened": "2025-06-07T08:35:22.25Z",
               "EditorCaption": ""
             }
           ]

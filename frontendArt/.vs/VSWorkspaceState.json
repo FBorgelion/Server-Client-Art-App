@@ -6,9 +6,10 @@
     "\\src\\app\\pages",
     "\\src\\app\\pages\\authentication",
     "\\src\\app\\pages\\authentication\\login",
-    "\\src\\app\\pages\\dashboard",
-    "\\src\\app\\service"
+    "\\src\\app\\pages\\authentication\\register",
+    "\\src\\app\\service",
+    "\\src\\app\\service\\authentication"
   ],
-  "SelectedNode": "\\src\\app\\pages\\authentication\\login\\authentication.interceptor.ts",
+  "SelectedNode": "\\src\\app\\pages\\authentication\\login\\authentication.component.html",
   "PreviewInSolutionExplorer": false
 }

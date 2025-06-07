@@ -1,21 +1,17 @@
 .dashboard-label {
-  /* Couleur du texte en blanc pour contraster avec le fond rouge */
   color: #FFFFFF !important;
-  /* Fond rouge (red-600) pour le conteneur */
   background-color: #DC2626;
-  /* Un peu d’espace autour du texte (padding) */
   padding: 0.25rem 0.75rem;
-  /* Bord arrondi si vous voulez un effet “badge” */
   border-radius: 0.25rem;
-  /* Pour que la balise <span> ne chevauche pas le padding par défaut du <a> */
   display: inline-block;
-  /* Pour l’animation de survol */
   transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 }
 
   .dashboard-label:hover {
-    /* Fond plus foncé au survol */
     background-color: #B91C1C;
-    /* (On peut garder le texte en blanc ou changer, selon le besoin) */
     color: #FFFFFF !important;
   }
+
+.no-text-cursor {
+  cursor: pointer; 
+}

@@ -23,6 +23,7 @@ namespace backendArt.Controllers
         [ProducesResponseType(typeof(IEnumerable<ProductDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [Authorize(Roles = "Customer,Admin")]
         public IActionResult GetAllProducts()
         {
             try
