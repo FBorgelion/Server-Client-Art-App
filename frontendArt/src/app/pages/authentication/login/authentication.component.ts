@@ -4,6 +4,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationService } from '../../../service/authentication/authentication.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { jwtDecode } from 'jwt-decode';
+
+interface JwtPayload {
+  'http://schemas.microsoft.com/ws/2008/06/identity/claims/role': string;
+}
+
 
 @Component({
   selector: 'app-authentication',
@@ -29,8 +35,19 @@ export class AuthenticationComponent {
         console.log("response", response);
         if (response.token) {
           sessionStorage.setItem("jwt", response.token);
-          this.router.navigate(["/"]);
+          const decoded = jwtDecode<JwtPayload>(response.token);
+          const role = decoded['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
+
+          // Redirection selon le rôle
+          if (role === 'Artisan') {
+            this.router.navigate(['/artisan/dashboard']);
+          } else if (role === 'Customer') {
+            this.router.navigate(['/client/dashboard']);
+          } else {
+            this.router.navigate(['/']);
+          }
         }
+        error: () => alert('Connection failed.')
       })
   }
 

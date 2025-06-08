@@ -1,0 +1,29 @@
+<ng-container *ngIf="!loading; else loadingTpl">
+  <div *ngIf="product" class="card mb-4">
+    <img [src]="product.imageUrl" class="card-img-top" alt="{{ product.title }}">
+    <div class="card-body">
+      <h3 class="card-title">{{ product.title }}</h3>
+      <p class="card-text">{{ product.description }}</p>
+      <p><strong>Prix :</strong> {{ product.price | currency }}</p>
+      <p><strong>Stock :</strong> {{ product.stock }}</p>
+    </div>
+  </div>
+
+  <h4>Avis</h4>
+  <ul class="list-group mb-4">
+    <li *ngFor="let r of reviews" class="list-group-item">
+      <div class="d-flex justify-content-between">
+        <strong>{{ r.customerName }}</strong>
+        <small>{{ r.createdDate | date:'short' }}</small>
+      </div>
+      <p>{{ r.comment }}</p>
+      <small>Note : {{ r.rating }} / 5</small>
+    </li>
+  </ul>
+</ng-container>
+
+<ng-template #loadingTpl>
+  <div class="text-center p-3">
+    <div class="spinner-border"></div>
+  </div>
+</ng-template>

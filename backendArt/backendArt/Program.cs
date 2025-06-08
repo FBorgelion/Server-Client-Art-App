@@ -8,10 +8,34 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Security.Claims;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+        policy
+            .WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+    );
+});
+
+builder.Services.AddCors(option =>
+                option.AddDefaultPolicy(policy => policy.WithOrigins("http://localhost:4200"))
+);
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4200").AllowAnyHeader()
+                    .AllowAnyMethod();
+        });
+});
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -33,7 +57,9 @@ builder.Services.AddAuthentication(opt => {
                     ValidateIssuerSigningKey = true,
                     ValidIssuer = builder.Configuration["Jwt:Issuer"],
                     ValidAudience = builder.Configuration["Jwt:Audience"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
+                    RoleClaimType = ClaimTypes.Role,          
+                    NameClaimType = ClaimTypes.NameIdentifier  
                 };
             });
 
@@ -63,18 +89,6 @@ builder.Services.AddSwaggerGen(option => {
                         });
 });
 
-builder.Services.AddCors(option => 
-                option.AddDefaultPolicy(policy => policy.WithOrigins("http://localhost:4200"))
-);
-
-builder.Services.AddCors(options =>
-{
-    options.AddDefaultPolicy(
-        policy =>
-        {
-            policy.WithOrigins("http://localhost:4200").AllowAnyHeader();
-        });
-});
 
 var config = builder.Configuration;
 builder.Services.AddDbContext<AppDbContext>(

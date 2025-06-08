@@ -5,11 +5,12 @@
     "\\src\\app",
     "\\src\\app\\pages",
     "\\src\\app\\pages\\authentication",
-    "\\src\\app\\pages\\authentication\\login",
-    "\\src\\app\\pages\\authentication\\register",
+    "\\src\\app\\pages\\dashboard",
+    "\\src\\app\\pages\\dashboard\\artisan-dashboard",
+    "\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-product-detail",
     "\\src\\app\\service",
-    "\\src\\app\\service\\authentication"
+    "\\src\\app\\service\\reviews"
   ],
-  "SelectedNode": "\\src\\app\\pages\\authentication\\login\\authentication.component.html",
+  "SelectedNode": "\\src\\app\\service\\product.service.ts",
   "PreviewInSolutionExplorer": false
 }

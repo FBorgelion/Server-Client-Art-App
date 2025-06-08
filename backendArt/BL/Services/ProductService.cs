@@ -55,10 +55,6 @@ namespace BL.Services
         public IEnumerable<ProductDTO> GetProductsByArtisan(int artisanId)
         {
             var products = _productRepo.GetProductsByArtisan(artisanId);
-            if (products.IsNullOrEmpty())
-            {
-                return null;
-            }
             return _mapper.Map<IEnumerable<ProductDTO>>(products); ;
         }
 

@@ -129,7 +129,8 @@ namespace BL.Services
                 new Claim(JwtRegisteredClaimNames.Sub, username),
                 new Claim("custom_info", "info"),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(ClaimTypes.Role, user.Role) 
+                new Claim(ClaimTypes.Role, user.Role),
+                new Claim("userId", user.UserId.ToString())
             };
 
             var jwtIssuer = _config["Jwt:Issuer"];

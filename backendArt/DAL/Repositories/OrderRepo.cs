@@ -73,5 +73,14 @@ namespace DAL.Repositories
             return _dbContext.Orders.Where(o => o.DeliveryPartnerId == partnerId).ToList();
         }
 
+        public IEnumerable<Order> GetOrdersForArtisanAsync(int artisanId)
+        {
+            return _dbContext.Orders
+                .Include(o => o.OrderItems)
+                    .ThenInclude(oi => oi.Product)
+                .Where(o => o.OrderItems.Any(oi => oi.Product.ArtisanId == artisanId)).ToList();
+        }
+
+
     }
 }

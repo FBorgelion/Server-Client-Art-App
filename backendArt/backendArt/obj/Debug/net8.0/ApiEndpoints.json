@@ -165,6 +165,40 @@
     ]
   },
   {
+    "ContainingType": "backendArt.Controllers.ArtisanController",
+    "Method": "Get",
+    "RelativePath": "api/Artisan/orders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BL.Models.ArtisanDTO, BL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      }
+    ]
+  },
+  {
     "ContainingType": "backendArt.Controllers.AuthenticationController",
     "Method": "GetAll",
     "RelativePath": "api/Authentication",
@@ -1210,42 +1244,6 @@
   },
   {
     "ContainingType": "backendArt.Controllers.ProductController",
-    "Method": "Update",
-    "RelativePath": "api/Product",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "product",
-        "Type": "BL.Models.ProductDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 500
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "backendArt.Controllers.ProductController",
     "Method": "GetProduct",
     "RelativePath": "api/Product/{id}",
     "HttpMethod": "GET",
@@ -1274,9 +1272,13 @@
         "StatusCode": 500
       },
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 204
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
       }
     ]
   },
@@ -1318,18 +1320,53 @@
   },
   {
     "ContainingType": "backendArt.Controllers.ProductController",
-    "Method": "GetProductByArtisan",
-    "RelativePath": "api/Product/artisans/{artisanId}/products",
-    "HttpMethod": "GET",
+    "Method": "Update",
+    "RelativePath": "api/Product/{id}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "artisanId",
+        "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "product",
+        "Type": "BL.Models.ProductDTO",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "backendArt.Controllers.ProductController",
+    "Method": "GetProductByArtisan",
+    "RelativePath": "api/Product/artisan",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[BL.Models.ProductDTO, BL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
@@ -1452,7 +1489,7 @@
   {
     "ContainingType": "backendArt.Controllers.ReviewController",
     "Method": "GetReviewsByProduct",
-    "RelativePath": "api/Review/product/{productId}/reviews",
+    "RelativePath": "api/Review/product/{productId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

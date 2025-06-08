@@ -73,5 +73,11 @@ namespace BL.Services
             return _mapper.Map<IEnumerable<OrderDTO>>(orders); ;
         }
 
+        public IEnumerable<ArtisanOrderDTO> GetOrdersForArtisanAsync(int artisanId)
+        {
+            IEnumerable<Order> orders = _orderRepo.GetOrdersForArtisanAsync(artisanId);
+            return _mapper.Map<IEnumerable<ArtisanOrderDTO>>(orders);
+        }
+
     }
 }

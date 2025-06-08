@@ -34,7 +34,7 @@ namespace BL.Services
         public IEnumerable<ReviewDTO> GetReviewsByProduct(int productId)
         {
             var reviews = _reviewRepo.GetReviewByProduct(productId);
-            if (reviews.IsNullOrEmpty())
+            if (reviews == null)
             {
                 return null;
             }
