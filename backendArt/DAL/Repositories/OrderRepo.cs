@@ -48,19 +48,24 @@ namespace DAL.Repositories
             return _dbContext.Orders.ToList();
         }
 
-        public bool Update(Order order)
-        {
-            var orderToUpd = _dbContext.Orders.FirstOrDefault();
-            if (orderToUpd == null)
-            {
-                return false;
-            }
-            orderToUpd.Status = order.Status;
-            orderToUpd.TotalAmount = order.TotalAmount;
-            orderToUpd.ShippingAddress = order.ShippingAddress;
+        //public void Update(Order order)
+        //{
+        //    var orderToUpd = _dbContext.Orders.FirstOrDefault();
+        //    if (orderToUpd == null)
+        //    {
+        //        return;
+        //    }
+        //    orderToUpd.Status = order.Status;
+        //    orderToUpd.TotalAmount = order.TotalAmount;
+        //    orderToUpd.ShippingAddress = order.ShippingAddress;
 
-            _dbContext.SaveChanges();
-            return true;
+        //    _dbContext.SaveChanges();
+        //}
+
+        public async Task Update(Order order)
+        {
+            _dbContext.Orders.Update(order);
+            await _dbContext.SaveChangesAsync();
         }
 
         public IEnumerable<Order> GetOrdersByCustomer(int customerId)
@@ -70,10 +75,14 @@ namespace DAL.Repositories
 
         public IEnumerable<Order> GetOrdersByPartner(int partnerId)
         {
-            return _dbContext.Orders.Where(o => o.DeliveryPartnerId == partnerId).ToList();
+            return _dbContext.Orders
+                .Where(o => o.DeliveryPartnerId == partnerId)
+                .Include(o => o.OrderItems)                     
+                .ThenInclude(oi => oi.Product)              
+                .ToList();
         }
 
-        public IEnumerable<Order> GetOrdersForArtisanAsync(int artisanId)
+        public IEnumerable<Order> GetOrdersForArtisan(int artisanId)
         {
             return _dbContext.Orders
                 .Include(o => o.OrderItems)
@@ -92,6 +101,11 @@ namespace DAL.Repositories
             return true;
         }
 
+        public async Task AddStatusUpdate(DeliveryStatusUpdate u)
+        {
+            _dbContext.DeliveryStatusUpdates.Add(u);
+            await _dbContext.SaveChangesAsync();
+        }
 
     }
 }

@@ -14,6 +14,8 @@ namespace BL.Services
         private readonly IMapper _mapper;
         private readonly IOrderRepo _orderRepo;
 
+        private static readonly string[] AllowedStatuses = { "InProduction", "Shipped" ,"PickedUp", "InTransit", "Delivered" };
+
         public OrderService(IMapper mapper, IOrderRepo orderRepo) 
         {
             _mapper = mapper;
@@ -47,11 +49,11 @@ namespace BL.Services
             return _mapper.Map<OrderDTO>(order);
         }
 
-        public bool Update(OrderDTO order)
-        {
-            var orderEntity = _mapper.Map<Order>(order);
-            return _orderRepo.Update(orderEntity);
-        }
+        //public bool Update(OrderDTO order)
+        //{
+        //    var orderEntity = _mapper.Map<Order>(order);
+        //    return _orderRepo.Update(orderEntity);
+        //}
 
         public IEnumerable<OrderDTO> GetOrdersByCustomer(int customerId)
         {
@@ -73,9 +75,9 @@ namespace BL.Services
             return _mapper.Map<IEnumerable<OrderDTO>>(orders); ;
         }
 
-        public IEnumerable<ArtisanOrderDTO> GetOrdersForArtisanAsync(int artisanId)
+        public IEnumerable<ArtisanOrderDTO> GetOrdersForArtisan(int artisanId)
         {
-            IEnumerable<Order> orders = _orderRepo.GetOrdersForArtisanAsync(artisanId);
+            IEnumerable<Order> orders = _orderRepo.GetOrdersForArtisan(artisanId);
             return _mapper.Map<IEnumerable<ArtisanOrderDTO>>(orders);
         }
 
@@ -87,7 +89,36 @@ namespace BL.Services
             }
             return false;
         }
-            
+
+        public IEnumerable<OrderDTO> GetAssignedOrders(int dpId)
+        {
+            var orders = _orderRepo.GetOrdersByPartner(dpId);
+            return _mapper.Map<IEnumerable<OrderDTO>>(orders);
+        }
+
+        public async Task <bool> UpdateOrderStatus(int orderId, int dpId, string status)
+        {
+            if (!AllowedStatuses.Contains(status, StringComparer.OrdinalIgnoreCase))
+                return false;
+
+            var order = _orderRepo.Get(orderId);
+            if (order == null || order.DeliveryPartnerId != dpId)
+                return false;
+
+            var update = new DeliveryStatusUpdate
+            {
+                OrderId = orderId,
+                DeliveryPartnerId = dpId,
+                Status = status,
+                TimeStamp = DateTime.UtcNow
+            };
+             await _orderRepo.AddStatusUpdate(update);
+
+            order.Status = status;
+            await _orderRepo.Update(order);
+
+            return true;
+        }
 
     }
 }

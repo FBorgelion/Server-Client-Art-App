@@ -11,7 +11,7 @@ namespace BL.Services.Interfaces
 
         public void Add(OrderDTO order);
 
-        public bool Update(OrderDTO order);
+        //public bool Update(OrderDTO order);
 
         public bool Delete(int id);
 
@@ -19,9 +19,14 @@ namespace BL.Services.Interfaces
 
         public IEnumerable<OrderDTO> GetOrdersByPartner(int partnerId);
 
-        public IEnumerable<ArtisanOrderDTO> GetOrdersForArtisanAsync(int artisanId);
+        public IEnumerable<ArtisanOrderDTO> GetOrdersForArtisan(int artisanId);
 
         public bool UpdateOrderStatus(int orderId, string status);
+
+        public IEnumerable<OrderDTO> GetAssignedOrders(int dpId);
+
+        public Task<bool> UpdateOrderStatus(int orderId, int dpId, string status);
+
 
     }
 

@@ -143,7 +143,7 @@ namespace backendArt.Controllers
                 if (!int.TryParse(artisanIdClaim, out var artisanId))
                     return Unauthorized();
 
-                var orders = _orderService.GetOrdersForArtisanAsync(artisanId);
+                var orders = _orderService.GetOrdersForArtisan(artisanId);
                 return Ok(orders);
             }
             catch (Exception ex)
