@@ -19,6 +19,10 @@ namespace BL.Services.Interfaces
 
         public IEnumerable<OrderDTO> GetOrdersByPartner(int partnerId);
 
+        public IEnumerable<ArtisanOrderDTO> GetOrdersForArtisanAsync(int artisanId);
+
+        public bool UpdateOrderStatus(int orderId, string status);
+
     }
 
 

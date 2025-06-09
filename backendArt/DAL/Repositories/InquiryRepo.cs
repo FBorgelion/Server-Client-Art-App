@@ -1,5 +1,6 @@
 ﻿using DAL.Repositories.Interfaces;
 using Domain;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,6 +57,24 @@ namespace DAL.Repositories
             }
             inquiryToUpd.Response = inquiry.Response;
 
+            _dbContext.SaveChanges();
+            return true;
+        }
+
+
+        public IEnumerable<Inquiry> GetInquiriesForArtisan(int artisanId)
+            => _dbContext.CustomerInquiries
+                  .Include(i => i.Product)
+                  .Where(i => i.Product.ArtisanId == artisanId)
+                  .OrderByDescending(i => i.CreatedAt)
+                  .ToList();
+
+        public bool RespondToInquiry(int inquiryId, string response)
+        {
+            var inq = _dbContext.CustomerInquiries.FirstOrDefault(i => i.InquiryId == inquiryId);
+            if (inq == null) return false;
+
+            inq.Response = response;
             _dbContext.SaveChanges();
             return true;
         }

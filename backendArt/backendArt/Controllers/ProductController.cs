@@ -1,12 +1,14 @@
 ﻿using BL.Models;
 using BL.Services.Interfaces;
 using Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backendArt.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class ProductController : ControllerBase
     {
 
@@ -21,6 +23,7 @@ namespace backendArt.Controllers
         [ProducesResponseType(typeof(IEnumerable<ProductDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [Authorize(Roles = "Customer,Admin")]
         public IActionResult GetAllProducts()
         {
             try
@@ -41,7 +44,7 @@ namespace backendArt.Controllers
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(ProductDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetProduct(int id)
         {
             try
@@ -49,7 +52,7 @@ namespace backendArt.Controllers
                 var product = _productService.GetProduct(id);
                 if (product == null)
                 {
-                    return NoContent();
+                    return NotFound();
                 }
                 return Ok(product);
             }
@@ -60,15 +63,20 @@ namespace backendArt.Controllers
         }
 
         [HttpGet]
-        [Route("artisans/{artisanId}/products")]
+        [Route("artisan")]
         [ProducesResponseType(typeof(IEnumerable<ProductDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public IActionResult GetProductByArtisan(int artisanId)
+        [Authorize(Roles = "Artisan,Admin")]
+
+        public IActionResult GetProductByArtisan()
         {
             try
             {
-                IEnumerable<ProductDTO> products = _productService.GetProductsByArtisan(artisanId);
+                var artisanIdClaim = User.FindFirst("userId")?.Value;
+                if (!int.TryParse(artisanIdClaim, out var artisanId))
+                    return Unauthorized();
+                var products = _productService.GetProductsByArtisan(artisanId);
                 if (products == null)
                 {
                     return NotFound($"No products found for artisan {artisanId}");
@@ -102,6 +110,7 @@ namespace backendArt.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [Authorize(Roles = "Artisan,Admin")]
         public IActionResult DeleteProduct(int id)
         {
             try
@@ -119,24 +128,26 @@ namespace backendArt.Controllers
             }
         }
 
-        [HttpPut]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [HttpPut("{id}")]
+        [Authorize(Roles = "Artisan,Admin")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public ActionResult Update([FromBody] ProductDTO product)
+        public ActionResult Update(int id, [FromBody] ProductDTO product)
         {
+            if (product.ProductId != id)
+                return BadRequest("ID mismatch");
+
             try
             {
                 bool updated = _productService.UpdateProduct(product);
                 if (!updated)
-                {
-                    return StatusCode(StatusCodes.Status404NotFound);
-                }
+                    return NotFound();
                 return Ok(product);
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+                return StatusCode(500, ex.Message);
             }
         }
 

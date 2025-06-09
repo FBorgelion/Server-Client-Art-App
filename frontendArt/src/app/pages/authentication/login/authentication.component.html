@@ -1,0 +1,59 @@
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-center" style="min-height: 75vh;">
+    <div class="bg-gray-600 border border-secondary rounded p-4" style="width: 100%; max-width: 400px;">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div>
+          <label class="fw-bold display-4 text-white"
+                 for="login"
+                 style="padding-bottom: 3rem;">
+            Log In
+          </label>
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+          <input formControlName="username" type="email"
+                 id="formEmail"
+                 class="form-control border border-white text-white bg-transparent" />
+          <label class="form-label text-white" for="form2Example1">Email address</label>
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+          <input formControlName="password" type="password"
+                 id="fromPassword"
+                 class="form-control border border-white text-white bg-transparent" />
+          <label class="form-label text-white" for="form2Example2">Password</label>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col d-flex justify-content-center">
+            <div class="form-check">
+            </div>
+          </div>
+        </div>
+
+        <!-- Form validation for username -->
+        <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)">
+          <small *ngIf="loginForm.get('username')?.hasError('required')" class="text-danger">
+            This field is required.
+          </small>
+        </div>
+
+        <button type="submit"
+                [disabled]="loginForm.invalid"
+                data-mdb-button-init
+                data-mdb-ripple-init
+                class="btn btn-primary mx-auto d-block mb-4">
+          Sign in
+        </button>
+
+        <div class="text-center">
+          <p class="form-label text-white">
+            Not a member?
+            <!-- Text clickable that redirects to the registration page -->
+            <a class="form-label text-primary" href="/auth/register">Register</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

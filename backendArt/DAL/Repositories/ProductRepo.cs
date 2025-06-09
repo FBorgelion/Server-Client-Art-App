@@ -45,7 +45,7 @@ namespace DAL.Repositories
 
         public bool UpdateProduct(Product product)
         {
-           var productToUpd = _dbContext.Products.FirstOrDefault();
+           var productToUpd = _dbContext.Products.FirstOrDefault(p => p.ProductId == product.ProductId);
             if (productToUpd == null)
             {
                 return false;

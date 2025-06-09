@@ -14,5 +14,8 @@ namespace DAL.Repositories.Interfaces
         public bool Update(Artisan artisan);
 
         public bool Delete(int id);
+
+        public bool UpdateDescription(int artisanId, string description);
+
     }
 }

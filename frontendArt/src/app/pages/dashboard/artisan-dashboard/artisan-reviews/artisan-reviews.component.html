@@ -1,0 +1,10 @@
+<div class="list-group">
+  <div *ngFor="let r of reviews" class="list-group-item">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{ r.productName }}</h5>
+      <small>{{ r.date | date:'short' }}</small>
+    </div>
+    <p class="mb-1">{{ r.comment }}</p>
+    <small>Note : {{ r.rating }} / 5</small>
+  </div>
+</div>

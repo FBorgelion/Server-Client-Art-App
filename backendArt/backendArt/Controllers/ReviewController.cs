@@ -2,6 +2,7 @@
 using BL.Services;
 using BL.Services.Interfaces;
 using Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backendArt.Controllers
@@ -40,10 +41,11 @@ namespace backendArt.Controllers
         }
 
         [HttpGet]
-        [Route("product/{productId}/reviews")]
+        [Route("product/{productId}")]
         [ProducesResponseType(typeof(IEnumerable<ReviewDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [Authorize(Roles = "Artisan,Admin")]
         public IActionResult GetReviewsByProduct(int productId)
         {
             try

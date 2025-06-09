@@ -11,7 +11,7 @@ namespace Domain
 
         // PK = User.UserId
         public int ArtisanId { get; set; }
-        public string ProfileDescription { get; set; }
+        public string? ProfileDescription { get; set; }
 
 
         public User User { get; set; }

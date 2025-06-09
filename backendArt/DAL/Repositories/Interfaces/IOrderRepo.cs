@@ -19,5 +19,8 @@ namespace DAL.Repositories.Interfaces
 
         public IEnumerable<Order> GetOrdersByPartner(int partnerId);
 
+        IEnumerable<Order> GetOrdersForArtisanAsync(int artisanId);
+
+        public bool UpdateOrderStatus(int orderId, string status);
     }
 }

@@ -1,0 +1,107 @@
+<div class="container py-5 " >
+  <div class="row justify-content-center" >
+    <div class="col-md-6 col-lg-5 ">
+      <div class="card shadow bg-gray-600">
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4 text-white">Register</h3>
+
+          <form [formGroup]="registerForm" (ngSubmit)="register()">
+            <!-- Username -->
+            <div class="form-floating mb-3 ">
+              <input type="text"
+                     formControlName="username"
+                     class="form-control"
+                     id="floatingUsername"
+                     placeholder="Username" />
+              <label for="floatingUsername">Username</label>
+              <div *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid" class="mt-1">
+                <small class="text-danger">Username is required</small>
+              </div>
+            </div>
+
+            <!-- Email (nouveau) -->
+            <div class="form-floating mb-3">
+              <input type="email"
+                     formControlName="email"
+                     class="form-control"
+                     id="floatingEmail"
+                     placeholder="" />
+              <label for="floatingEmail">Email address</label>
+              <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid" class="mt-1">
+                <small class="text-danger" *ngIf="registerForm.get('email')?.hasError('required')">
+                  Email is required
+                </small>
+                <small class="text-danger" *ngIf="registerForm.get('email')?.hasError('email')">
+                  Invalid email format
+                </small>
+              </div>
+            </div>
+
+            <!-- Password (reste identique) -->
+            <!-- Password -->
+            <div class="form-floating mb-3">
+              <input type="password"
+                     formControlName="password"
+                     class="form-control"
+                     id="floatingPassword"
+                     placeholder="Password" />
+              <label for="floatingPassword">Password</label>
+              <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid" class="mt-1">
+                <small class="text-danger" *ngIf="registerForm.get('password')?.hasError('required')">
+                  Password is required
+                </small>
+                <small class="text-danger" *ngIf="registerForm.get('password')?.hasError('minlength')">
+                  Minimum length is 6
+                </small>
+              </div>
+            </div>
+
+            <!-- Role (radio buttons) -->
+            <div class="mb-3">
+              <label class="form-label d-block">Select your role:</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input"
+                       type="radio"
+                       formControlName="role"
+                       id="roleCustomer"
+                       value="Customer" />
+                <label class="form-check-label" for="roleCustomer">Customer</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input"
+                       type="radio"
+                       formControlName="role"
+                       id="roleArtisan"
+                       value="Artisan" />
+                <label class="form-check-label" for="roleArtisan">Artisan</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input"
+                       type="radio"
+                       formControlName="role"
+                       id="roleDeliveryPartner"
+                       value="DeliveryPartner" />
+                <label class="form-check-label" for="roleDeliveryPartner">Delivery Partner</label>
+              </div>
+              <div *ngIf="registerForm.get('role')?.touched && registerForm.get('role')?.invalid" class="mt-1">
+                <small class="text-danger">Please select a role.</small>
+              </div>
+            </div>
+
+            <!-- Error message -->
+            <div *ngIf="errorMessage" class="mb-3">
+              <small class="text-danger">{{ errorMessage }}</small>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit"
+                    class="btn btn-primary w-100"
+                    [disabled]="registerForm.invalid || isLoading">
+              {{ isLoading ? 'Registering…' : 'Register' }}
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

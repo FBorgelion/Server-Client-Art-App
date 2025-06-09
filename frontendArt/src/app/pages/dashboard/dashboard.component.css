@@ -1,0 +1,17 @@
+.dashboard-label {
+  color: #FFFFFF !important;
+  background-color: #DC2626;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+  .dashboard-label:hover {
+    background-color: #B91C1C;
+    color: #FFFFFF !important;
+  }
+
+.no-text-cursor {
+  cursor: pointer; 
+}

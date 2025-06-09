@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\pages",
+    "\\src\\app\\pages\\dashboard",
+    "\\src\\app\\pages\\dashboard\\artisan-dashboard",
+    "\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-profile",
+    "\\src\\app\\service",
+    "\\src\\app\\service\\inquiries"
+  ],
+  "SelectedNode": "\\src\\app\\pages\\dashboard\\dashboard.component.html",
+  "PreviewInSolutionExplorer": false
+}

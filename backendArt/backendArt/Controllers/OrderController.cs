@@ -2,6 +2,7 @@
 using BL.Services;
 using BL.Services.Interfaces;
 using Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backendArt.Controllers
@@ -163,5 +164,34 @@ namespace backendArt.Controllers
             }
         }
 
+        [HttpPut("{id}/status")]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [Authorize(Roles = "Artisan,Admin")]
+        public IActionResult UpdateStatus(int id, [FromBody] StatusUpdateDTO dto)
+        {
+            try
+            {
+                if (dto == null || string.IsNullOrWhiteSpace(dto.Status))
+                    return BadRequest("Missing status");
+
+                var ok = _orderService.UpdateOrderStatus(id, dto.Status);
+                if (!ok)
+                {
+                    return NotFound();
+                }
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
     }
+
+
 }

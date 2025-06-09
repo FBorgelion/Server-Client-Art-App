@@ -354,3 +354,9 @@ C:\Users\Florent\DevWeb\ServerClientProjet\backendArt\backendArt\obj\Debug\net8.
 C:\Users\Florent\DevWeb\ServerClientProjet\backendArt\backendArt\obj\Debug\net8.0\backendArt.genruntimeconfig.cache
 C:\Users\Florent\DevWeb\ServerClientProjet\backendArt\backendArt\obj\Debug\net8.0\ref\backendArt.dll
 C:\Users\Florent\DevWeb\ServerClientProjet\backendArt\backendArt\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Florent\DevWeb\ServerClientProjet\backendArt\backendArt\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Florent\DevWeb\backendArt\backendArt\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Florent\DevWeb\backendArt\backendArt\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Florent\DevWeb\backendArt\backendArt\bin\Debug\net8.0\BL.dll
+C:\Users\Florent\DevWeb\backendArt\backendArt\bin\Debug\net8.0\BL.pdb
+C:\Users\Florent\DevWeb\backendArt\backendArt\obj\Debug\net8.0\backendArt.sourcelink.json

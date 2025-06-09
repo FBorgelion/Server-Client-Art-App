@@ -1,20 +1,27 @@
 ﻿using BL.Models;
+using BL.Services;
 using BL.Services.Interfaces;
+using DAL.Repositories.Interfaces;
 using Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace backendArt.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class ArtisanController : ControllerBase
     {
 
         private readonly IArtisanService _artisanService;
+        private readonly IOrderService _orderService;
 
-        public ArtisanController(IArtisanService artisanService)
+        public ArtisanController(IArtisanService artisanService, IOrderService orderService)
         {
             _artisanService = artisanService;
+            _orderService = orderService;
         }
 
         [HttpGet]
@@ -38,15 +45,19 @@ namespace backendArt.Controllers
             }
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("id")]
         [ProducesResponseType(typeof(IEnumerable<ArtisanDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public IActionResult Get(int id)
+        [Authorize(Roles = "Artisan,Admin")]
+        public IActionResult Get()
         {
             try
             {
-                var artisan = _artisanService.Get(id);
+                var artisanIdClaim = User.FindFirst("userId")?.Value;
+                if (!int.TryParse(artisanIdClaim, out var artisanId))
+                    return Unauthorized();
+                var artisan = _artisanService.Get(artisanId);
                 if (artisan == null)
                 {
                     return NoContent();
@@ -118,5 +129,44 @@ namespace backendArt.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("orders")]
+        [ProducesResponseType(typeof(IEnumerable<ArtisanDTO>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [Authorize(Roles = "Artisan,Admin")]
+        public IActionResult GetById()
+        {
+            try
+            {
+                var artisanIdClaim = User.FindFirst("userId")?.Value;
+                if (!int.TryParse(artisanIdClaim, out var artisanId))
+                    return Unauthorized();
+
+                var orders = _orderService.GetOrdersForArtisanAsync(artisanId);
+                return Ok(orders);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpPut("description")]
+        [Authorize(Roles = "Artisan,Admin")]
+        public IActionResult UpdateDescription([FromBody] ArtisanDTO dto)
+        {
+            var artisanIdClaim = User.FindFirst("userId")?.Value;
+            if (!int.TryParse(artisanIdClaim, out var artisanId))
+                return Unauthorized();
+            if (dto == null)
+                return BadRequest();
+
+            var ok = _artisanService.UpdateDescription(artisanId, dto.ProfileDescription);
+            if (!ok) return NotFound();
+            return NoContent();
+        }
+
     }
+
 }

@@ -1,11 +1,5 @@
 ﻿using DAL.Repositories.Interfaces;
 using Domain;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL.Repositories
 {
@@ -60,5 +54,18 @@ namespace DAL.Repositories
             _dbContext.SaveChanges();
             return true;
         }
+
+        public bool UpdateDescription(int artisanId, string description)
+        {
+            var artisan = _dbContext.Artisans
+                .FirstOrDefault(a => a.ArtisanId == artisanId);
+            if (artisan == null)
+                return false;
+
+            artisan.ProfileDescription = description;
+            _dbContext.SaveChanges();
+            return true;
+        }
+
     }
 }
