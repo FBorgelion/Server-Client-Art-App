@@ -23,7 +23,7 @@ namespace backendArt.Controllers
         [ProducesResponseType(typeof(IEnumerable<ProductDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [Authorize(Roles = "Customer,Admin")]
+        [AllowAnonymous]
         public IActionResult GetAllProducts()
         {
             try
@@ -45,6 +45,7 @@ namespace backendArt.Controllers
         [ProducesResponseType(typeof(ProductDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [AllowAnonymous]
         public IActionResult GetProduct(int id)
         {
             try

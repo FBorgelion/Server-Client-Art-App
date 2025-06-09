@@ -1,8 +1,6 @@
 import { Routes } from '@angular/router';
 import { AuthenticationComponent } from './pages/authentication/login/authentication.component';
 import { ProductsComponent } from './pages/products/products.component';
-import { authGuard } from './guards/auth/auth.guard';
-import { roleGuard } from './guards/role/role.guard';
 import { UnauthorizeComponent } from './pages/authentication/unauthorize/unauthorize.component';
 import { RegisterComponent } from './pages/authentication/register/register.component';
 import { ArtisanDashboardComponent } from './pages/dashboard/artisan-dashboard/artisan-dashboard.component';
@@ -11,11 +9,12 @@ import { ArtisanOrdersComponent } from './pages/dashboard/artisan-dashboard/arti
 import { ArtisanProductDetailComponent } from './pages/dashboard/artisan-dashboard/artisan-product-detail/artisan-product-detail.component';
 import { ArtisanProfileComponent } from './pages/dashboard/artisan-dashboard/artisan-profile/artisan-profile.component';
 import { ArtisanInquiriesComponent } from './pages/dashboard/artisan-dashboard/artisan-inquiries/artisan-inquiries.component';
+import { ProductDetailComponent } from './pages/products/product-detail/product-detail.component';
 
 export const routes: Routes = [
   { path: "auth/login", component: AuthenticationComponent },
   { path: "auth/register", component: RegisterComponent },
-  { path: 'product', component: ProductsComponent, canActivate: [authGuard, roleGuard], data: { roles: ['Admin', 'Customer'] } },
+  { path: 'product', component: ProductsComponent },
   { path: 'unauthorized', component: UnauthorizeComponent },
   {
     path: 'artisan/dashboard', component: ArtisanDashboardComponent,
@@ -32,5 +31,8 @@ export const routes: Routes = [
   { path: 'artisan/dashboard/products', component: ArtisanProductsComponent },
   { path: 'artisan/dashboard/orders', component: ArtisanOrdersComponent },
   { path: 'artisan/dashboard/products/:id/reviews', component: ArtisanProductDetailComponent },
-  { path: '', redirectTo: 'auth/login', pathMatch: 'full' }
+  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
+  { path: 'product/:id', component: ProductDetailComponent },
 ];
+
+//canActivate: [authGuard, roleGuard], data: { roles: ['Admin', 'Customer'] }

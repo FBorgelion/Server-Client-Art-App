@@ -1,0 +1,28 @@
+<div *ngIf="product" class="container py-4">
+  <div class="row">
+    <div class="col-md-6">
+      <img [src]="product.imageUrl" class="img-fluid" alt="{{ product.title }}">
+    </div>
+    <div class="col-md-6">
+      <h2>{{ product.title }}</h2>
+      <h4 class="text-success">{{ product.price | currency:'EUR' }}</h4>
+      <p>{{ product.description }}</p>
+      <p><strong>Stock :</strong> {{ product.stock }}</p>
+      <!-- autres infos complémentaires -->
+    </div>
+  </div>
+
+  <hr>
+
+  <h3>Avis clients</h3>
+  <div *ngIf="reviews.length === 0" class="text-muted">
+    Aucun avis pour l’instant.
+  </div>
+  <div *ngFor="let rev of reviews" class="card mb-2">
+    <div class="card-body">
+      <h5 class="card-title">{{ rev.authorName }}</h5>
+      <p class="card-text">{{ rev.comment }}</p>
+      <small class="text-muted">Note : {{ rev.rating }}/5</small>
+    </div>
+  </div>
+</div>

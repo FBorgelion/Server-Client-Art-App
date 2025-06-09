@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Florent\\DevWeb\\backendArt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|c:\\users\\florent\\devweb\\backendart\\backendart\\controllers\\inquirycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|solutionrelative:backendart\\controllers\\inquirycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|c:\\users\\florent\\devweb\\backendart\\backendart\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|solutionrelative:backendart\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{090D6208-47F9-41CA-B70A-3FB7214F82BB}|DAL\\DAL.csproj|c:\\users\\florent\\devweb\\backendart\\dal\\repositories\\inquiryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{090D6208-47F9-41CA-B70A-3FB7214F82BB}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\inquiryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|c:\\users\\florent\\devweb\\backendart\\bl\\mapper\\mappingprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|solutionrelative:bl\\mapper\\mappingprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|c:\\users\\florent\\devweb\\backendart\\bl\\models\\inquirydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|solutionrelative:bl\\models\\inquirydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|c:\\users\\florent\\devweb\\backendart\\bl\\services\\inquiryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|solutionrelative:bl\\services\\inquiryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|c:\\users\\florent\\devweb\\backendart\\backendart\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|solutionrelative:backendart\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 198,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,67 +34,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MappingProfiles.cs",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\BL\\Mapper\\MappingProfiles.cs",
-              "RelativeDocumentMoniker": "BL\\Mapper\\MappingProfiles.cs",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\BL\\Mapper\\MappingProfiles.cs",
-              "RelativeToolTip": "BL\\Mapper\\MappingProfiles.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACQAAABTAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ReviewController.cs",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\Controllers\\ReviewController.cs",
+              "RelativeDocumentMoniker": "backendArt\\Controllers\\ReviewController.cs",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\Controllers\\ReviewController.cs",
+              "RelativeToolTip": "backendArt\\Controllers\\ReviewController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwC8AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T11:44:19.3Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "InquiryDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\BL\\Models\\InquiryDTO.cs",
-              "RelativeDocumentMoniker": "BL\\Models\\InquiryDTO.cs",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\BL\\Models\\InquiryDTO.cs",
-              "RelativeToolTip": "BL\\Models\\InquiryDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T11:42:51.704Z",
+              "WhenOpened": "2025-06-09T14:45:19.408Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "InquiryRepo.cs",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\DAL\\Repositories\\InquiryRepo.cs",
-              "RelativeDocumentMoniker": "DAL\\Repositories\\InquiryRepo.cs",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\DAL\\Repositories\\InquiryRepo.cs",
-              "RelativeToolTip": "DAL\\Repositories\\InquiryRepo.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAAEIAAAASAAAAAAAAAA==",
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "backendArt\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "backendArt\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwDEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T11:25:16.17Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "InquiryController.cs",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\Controllers\\InquiryController.cs",
-              "RelativeDocumentMoniker": "backendArt\\Controllers\\InquiryController.cs",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\Controllers\\InquiryController.cs",
-              "RelativeToolTip": "backendArt\\Controllers\\InquiryController.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAkwFMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T10:43:28.443Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "InquiryService.cs",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\BL\\Services\\InquiryService.cs",
-              "RelativeDocumentMoniker": "BL\\Services\\InquiryService.cs",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\BL\\Services\\InquiryService.cs",
-              "RelativeToolTip": "BL\\Services\\InquiryService.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAowD0AAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T10:41:41.965Z",
+              "WhenOpened": "2025-06-09T14:34:20.194Z",
               "EditorCaption": ""
             }
           ]
