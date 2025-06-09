@@ -21,6 +21,8 @@ namespace BL.Services.Interfaces
 
         public IEnumerable<ArtisanOrderDTO> GetOrdersForArtisanAsync(int artisanId);
 
+        public bool UpdateOrderStatus(int orderId, string status);
+
     }
 
 

@@ -13,6 +13,10 @@ export class OrderService {
     return this.httpClient.get(`https://localhost:7041/api/Artisan/orders`);
   }
 
+  updateStatus(orderId: number, status: string): Observable<void> {
+    return this.httpClient.put<void>(`https://localhost:7041/api/Order/${orderId}/status`, { status });
+  }
+
 }
 
 

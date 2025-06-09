@@ -12,8 +12,10 @@ namespace BL.Models
         public int InquiryId { get; set; }
         public int ProductId { get; set; }
         public int CustomerId { get; set; }
+        public string ProductTitle { get; set; }    
+
         public string Message { get; set; }
-        public string Response { get; set; }
+        public string? Response { get; set; }
         public DateTime CreatedAt { get; set; }
 
     }

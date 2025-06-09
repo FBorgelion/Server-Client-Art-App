@@ -20,5 +20,9 @@ namespace DAL.Repositories.Interfaces
 
         public bool Update(Inquiry inquiry);
 
+        public IEnumerable<Inquiry> GetInquiriesForArtisan(int artisanId);
+
+        public bool RespondToInquiry(int inquiryId, string response);
+
     }
 }

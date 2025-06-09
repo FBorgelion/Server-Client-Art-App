@@ -1,42 +1,48 @@
+<!-- artisan-orders.component.html -->
 <div *ngIf="loading" class="text-center p-3">
   <div class="spinner-border"></div>
 </div>
 
 <div *ngFor="let o of orders" class="mb-4">
   <div class="card">
-    <div class="card-body bg-dark text-white">
-      <h6 class="card-subtitle mb-2 text-white">Products :</h6>
-      <!-- on appelle la méthode au lieu de map(...) -->
-      <p class="card-text">
-        {{ getProductTitles(o) }}
-      </p>
-    </div>
-    <div class="card-header d-flex justify-content-between">
-
+    <div class="card-header d-flex justify-content-between align-items-center bg-dark text-white">
       <div>
         Order #{{ o.orderId }} — {{ o.orderDate | date:'short' }}
       </div>
-
       <div>
-        <span class="badge bg-info">{{ o.status }}</span>
-        <span class="ms-3">Total (vous) : {{ o.totalForArtisan | currency }}</span>
-
+        <span class="badge"
+              [ngClass]="{
+            'bg-warning': o.status==='InProduction',
+            'bg-info': o.status==='Shipped'
+          }">
+          {{ o.status }}
+        </span>
+        <button class="btn btn-sm btn-outline-secondary ms-3 text-white"
+                (click)="toggleStatus(o)">
+          {{ o.status==='InProduction' ? 'Marked as shipped' : 'Back to production' }}
+        </button>
       </div>
     </div>
-    <ul class="list-group list-group-flush">
-      <li *ngFor="let product of o.products" class="list-group-item d-flex justify-content-between">
-        <div>
-          {{ product.productTitle }} × {{ product.quantity }}
-        </div>
 
-        <div>
-          {{ product.priceAtPurchase | currency }}
-        </div>
+    <div class="card-body">
+      <h6 class="card-subtitle mb-2 text-muted">Produits :</h6>
+      <p class="card-text">
+        <ng-container *ngFor="let i of o.items; let last=last">
+          {{ i.productTitle }}<span *ngIf="!last">, </span>
+        </ng-container>
+      </p>
+    </div>
+
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let item of o.items"
+          class="list-group-item d-flex justify-content-between">
+        <div>{{ item.productTitle }} × {{ item.quantity }}</div>
+        <div>{{ item.priceAtPurchase | currency }}</div>
       </li>
     </ul>
   </div>
 </div>
 
-<ng-container *ngIf="!loading && orders.length === 0">
+<ng-container *ngIf="!loading && orders == null">
   <p class="text-center text-muted">You do not have any order.</p>
 </ng-container>

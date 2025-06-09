@@ -14,6 +14,9 @@ namespace BL.Services.Interfaces
         public bool Update(ArtisanDTO artisan);
 
         public bool Delete(int id);
+
+        public bool UpdateDescription(int artisanId, string description);
+
     }
 
 

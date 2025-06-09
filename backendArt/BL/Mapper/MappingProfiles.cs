@@ -31,7 +31,14 @@ namespace BL.Mapper
             CreateMap<Review, ReviewDTO>();
             CreateMap<ReviewDTO, Review>();
 
-            CreateMap<Inquiry, InquiryDTO>();
+            CreateMap<Inquiry, InquiryDTO>()
+            .ForMember(d => d.InquiryId, o => o.MapFrom(s => s.InquiryId))
+            .ForMember(d => d.ProductId, o => o.MapFrom(s => s.ProductId))
+            .ForMember(d => d.ProductTitle, o => o.MapFrom(s => s.Product.Title))  
+            .ForMember(d => d.CustomerId, o => o.MapFrom(s => s.CustomerId))
+            .ForMember(d => d.Message, o => o.MapFrom(s => s.Message))
+            .ForMember(d => d.Response, o => o.MapFrom(s => s.Response ?? string.Empty))
+            .ForMember(d => d.CreatedAt, o => o.MapFrom(s => s.CreatedAt));
             CreateMap<InquiryDTO, Inquiry>();
 
             CreateMap<User, UserDTO>();

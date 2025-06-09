@@ -51,5 +51,17 @@ namespace BL.Services
             return _inquiryRepo.Update(inquiryEntity);
         }
 
+        public IEnumerable<InquiryDTO> GetInquiriesForArtisan(int artisanId)
+        {
+            var entities = _inquiryRepo.GetInquiriesForArtisan(artisanId);
+            return _mapper.Map<IEnumerable<InquiryDTO>>(entities);
+        }
+
+        public bool RespondToInquiry(int inquiryId, string response)
+        {
+            return _inquiryRepo.RespondToInquiry(inquiryId, response);
+        }
+
     }
+
 }

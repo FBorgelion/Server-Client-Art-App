@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../../../service/product.service';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
-import { ArtisanProductDetailComponent } from '../artisan-product-detail/artisan-product-detail.component';
 import { FormsModule } from '@angular/forms';
 
 @Component({

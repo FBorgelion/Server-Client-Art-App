@@ -51,5 +51,10 @@ namespace BL.Services
             return _artisanRepo.Update(artisanEntity);
         }
 
+        public bool UpdateDescription(int artisanId, string description)
+        {
+            return _artisanRepo.UpdateDescription(artisanId, description);
+        }
+
     }
 }

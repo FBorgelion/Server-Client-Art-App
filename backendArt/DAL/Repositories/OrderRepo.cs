@@ -81,6 +81,17 @@ namespace DAL.Repositories
                 .Where(o => o.OrderItems.Any(oi => oi.Product.ArtisanId == artisanId)).ToList();
         }
 
+        public bool UpdateOrderStatus(int orderId, string status)
+        {
+            var order = _dbContext.Orders.FirstOrDefault(o => o.OrderId == orderId);
+            if (order == null)
+                return false;
+
+            order.Status = status;
+            _dbContext.SaveChanges();
+            return true;
+        }
+
 
     }
 }

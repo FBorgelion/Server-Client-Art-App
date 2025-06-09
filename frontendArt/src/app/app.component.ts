@@ -9,11 +9,24 @@ import { ArtisanOrdersComponent } from './pages/dashboard/artisan-dashboard/arti
 import { ArtisanProductsComponent } from './pages/dashboard/artisan-dashboard/artisan-products/artisan-products.component';
 import { ArtisanReviewsComponent } from './pages/dashboard/artisan-dashboard/artisan-reviews/artisan-reviews.component';
 import { ArtisanProductDetailComponent } from './pages/dashboard/artisan-dashboard/artisan-product-detail/artisan-product-detail.component';
+import { ArtisanProfileComponent } from './pages/dashboard/artisan-dashboard/artisan-profile/artisan-profile.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProductsComponent, DashboardComponent, AuthenticationComponent, RegisterComponent, ArtisanDashboardComponent, ArtisanOrdersComponent, ArtisanProductsComponent, ArtisanReviewsComponent, ArtisanProductDetailComponent],
+  imports: [
+    RouterOutlet,
+    ProductsComponent,
+    DashboardComponent,
+    AuthenticationComponent,
+    RegisterComponent,
+    ArtisanDashboardComponent,
+    ArtisanOrdersComponent,
+    ArtisanProductsComponent,
+    ArtisanReviewsComponent,
+    ArtisanProductDetailComponent,
+    ArtisanProfileComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

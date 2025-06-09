@@ -79,5 +79,15 @@ namespace BL.Services
             return _mapper.Map<IEnumerable<ArtisanOrderDTO>>(orders);
         }
 
+        public bool UpdateOrderStatus(int orderId, string status)
+        {
+            if (string.Equals(status.ToLower(), "InProduction".ToLower()) || string.Equals(status.ToLower(), "Shipped".ToLower()))
+            {
+                return _orderRepo.UpdateOrderStatus(orderId, status);
+            }
+            return false;
+        }
+            
+
     }
 }

@@ -14,6 +14,11 @@ namespace BL.Services.Interfaces
         public bool Update(InquiryDTO inquiry);
 
         public bool Delete(int id);
+
+        public IEnumerable<InquiryDTO> GetInquiriesForArtisan(int artisanId);
+
+        public bool RespondToInquiry(int inquiryId, string response);
+
     }
 
 

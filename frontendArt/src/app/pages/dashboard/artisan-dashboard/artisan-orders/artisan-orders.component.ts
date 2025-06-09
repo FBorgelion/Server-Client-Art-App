@@ -27,4 +27,16 @@ export class ArtisanOrdersComponent implements OnInit {
       .join(', ');
   }
 
+  toggleStatus(o: any) {
+    const next = o.status === 'InProduction' ? 'Shipped' : 'InProduction';
+    this.orderService.updateStatus(o.orderId, next)
+      .subscribe({
+        next: () => o.status = next,
+        error: err => {
+          console.error('Status change failed', err);
+          alert('Impossible de changer le statut.');
+        }
+      });
+  }
+
 }

@@ -54,5 +54,18 @@ namespace DAL.Repositories
             _dbContext.SaveChanges();
             return true;
         }
+
+        public bool UpdateDescription(int artisanId, string description)
+        {
+            var artisan = _dbContext.Artisans
+                .FirstOrDefault(a => a.ArtisanId == artisanId);
+            if (artisan == null)
+                return false;
+
+            artisan.ProfileDescription = description;
+            _dbContext.SaveChanges();
+            return true;
+        }
+
     }
 }
