@@ -43,6 +43,8 @@ export class AuthenticationComponent {
             this.router.navigate(['/artisan/dashboard']);
           } else if (role === 'Customer') {
             this.router.navigate(['/client/dashboard']);
+          } else if (role === 'DeliveryPartner') {
+            this.router.navigate(['/partner']);
           } else {
             this.router.navigate(['/']);
           }

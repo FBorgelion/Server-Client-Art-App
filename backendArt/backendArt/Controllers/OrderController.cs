@@ -4,6 +4,7 @@ using BL.Services.Interfaces;
 using Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace backendArt.Controllers
 {
@@ -17,6 +18,50 @@ namespace backendArt.Controllers
         public OrderController(IOrderService orderService)
         {
             _orderService = orderService;
+        }
+
+        [HttpGet("assigned")]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [Authorize(Roles = "DeliveryPartner,Admin")]
+        public IActionResult GetAssigned()
+        {
+            try
+            {
+                var partnerIdClaim = User.FindFirst("userId")?.Value;
+                if (!int.TryParse(partnerIdClaim, out var partnerId))
+                    return Unauthorized();
+                var dtos = _orderService.GetAssignedOrders(partnerId);
+                return Ok(dtos);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpPut("{orderId}/dp/status")]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [Authorize(Roles = "DeliveryPartner,Admin")]
+
+        public async Task<IActionResult> UpdateStatusDp(int orderId, [FromBody] StatusUpdateDTO dto)
+        {
+            try
+            {
+                var partnerIdClaim = User.FindFirst("userId")?.Value;
+                if (!int.TryParse(partnerIdClaim, out var partnerId))
+                    return Unauthorized();
+                var res = await _orderService.UpdateOrderStatus(orderId, partnerId, dto.Status);
+                return res ? NoContent() : BadRequest();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
         }
 
         [HttpGet]
@@ -143,26 +188,26 @@ namespace backendArt.Controllers
             }
         }
 
-        [HttpPut]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        public ActionResult Update([FromBody] OrderDTO order)
-        {
-            try
-            {
-                bool updated = _orderService.Update(order);
-                if (!updated)
-                {
-                    return StatusCode(StatusCodes.Status404NotFound);
-                }
-                return Ok(order);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
-            }
-        }
+        //[HttpPut]
+        //[ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        //[ProducesResponseType(StatusCodes.Status404NotFound)]
+        //[ProducesResponseType(StatusCodes.Status200OK)]
+        //public ActionResult Update([FromBody] OrderDTO order)
+        //{
+        //    try
+        //    {
+        //        bool updated = _orderService.Update(order);
+        //        if (!updated)
+        //        {
+        //            return StatusCode(StatusCodes.Status404NotFound);
+        //        }
+        //        return Ok(order);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+        //    }
+        //}
 
         [HttpPut("{id}/status")]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]

@@ -10,6 +10,8 @@ import { ArtisanProductsComponent } from './pages/dashboard/artisan-dashboard/ar
 import { ArtisanReviewsComponent } from './pages/dashboard/artisan-dashboard/artisan-reviews/artisan-reviews.component';
 import { ArtisanProductDetailComponent } from './pages/dashboard/artisan-dashboard/artisan-product-detail/artisan-product-detail.component';
 import { ArtisanProfileComponent } from './pages/dashboard/artisan-dashboard/artisan-profile/artisan-profile.component';
+import { DeliveryOrdersComponent } from './pages/dashboard/delivery-partner-dashboard/delivery-orders/delivery-orders.component';
+import { DeliveryPartnerDashboardComponent } from './pages/dashboard/delivery-partner-dashboard/delivery-partner-dashboard.component';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +27,9 @@ import { ArtisanProfileComponent } from './pages/dashboard/artisan-dashboard/art
     ArtisanProductsComponent,
     ArtisanReviewsComponent,
     ArtisanProductDetailComponent,
-    ArtisanProfileComponent
+    ArtisanProfileComponent,
+    DeliveryPartnerDashboardComponent,
+    DeliveryOrdersComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

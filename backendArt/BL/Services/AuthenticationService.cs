@@ -92,7 +92,7 @@ namespace BL.Services
                     _customerRepo.Add(customer);
                     break;
 
-                case "deliveryPartner":
+                case "deliverypartner":
                     var partner = new DeliveryPartner { DeliveryPartnerId = user.UserId };
                     _deliveryPartnerRepo.Add(partner);
                     break;

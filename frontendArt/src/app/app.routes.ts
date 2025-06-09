@@ -10,6 +10,8 @@ import { ArtisanProductDetailComponent } from './pages/dashboard/artisan-dashboa
 import { ArtisanProfileComponent } from './pages/dashboard/artisan-dashboard/artisan-profile/artisan-profile.component';
 import { ArtisanInquiriesComponent } from './pages/dashboard/artisan-dashboard/artisan-inquiries/artisan-inquiries.component';
 import { ProductDetailComponent } from './pages/products/product-detail/product-detail.component';
+import { DeliveryOrdersComponent } from './pages/dashboard/delivery-partner-dashboard/delivery-orders/delivery-orders.component';
+import { DeliveryPartnerDashboardComponent } from './pages/dashboard/delivery-partner-dashboard/delivery-partner-dashboard.component';
 
 export const routes: Routes = [
   { path: "auth/login", component: AuthenticationComponent },
@@ -33,6 +35,12 @@ export const routes: Routes = [
   { path: 'artisan/dashboard/products/:id/reviews', component: ArtisanProductDetailComponent },
   { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
   { path: 'product/:id', component: ProductDetailComponent },
+  {
+    path: 'partner', component: DeliveryPartnerDashboardComponent,
+    children: [
+      { path: 'orders', component: DeliveryOrdersComponent, }
+    ]
+  },
 ];
 
 //canActivate: [authGuard, roleGuard], data: { roles: ['Admin', 'Customer'] }

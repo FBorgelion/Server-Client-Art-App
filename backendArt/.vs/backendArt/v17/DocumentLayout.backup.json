@@ -3,12 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Florent\\DevWeb\\backendArt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|c:\\users\\florent\\devweb\\backendart\\backendart\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|solutionrelative:backendart\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|c:\\users\\florent\\devweb\\backendart\\bl\\models\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|solutionrelative:bl\\models\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|c:\\users\\florent\\devweb\\backendart\\backendart\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|solutionrelative:backendart\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|c:\\users\\florent\\devweb\\backendart\\bl\\models\\orderitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|solutionrelative:bl\\models\\orderitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{090D6208-47F9-41CA-B70A-3FB7214F82BB}|DAL\\DAL.csproj|c:\\users\\florent\\devweb\\backendart\\dal\\repositories\\orderrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{090D6208-47F9-41CA-B70A-3FB7214F82BB}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\orderrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1483EF4-3AE8-4A4E-98B7-23A5EB813419}|Domain\\Domain.csproj|c:\\users\\florent\\devweb\\backendart\\domain\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1483EF4-3AE8-4A4E-98B7-23A5EB813419}|Domain\\Domain.csproj|solutionrelative:domain\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|c:\\users\\florent\\devweb\\backendart\\backendart\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|solutionrelative:backendart\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|c:\\users\\florent\\devweb\\backendart\\bl\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|solutionrelative:bl\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1483EF4-3AE8-4A4E-98B7-23A5EB813419}|Domain\\Domain.csproj|c:\\users\\florent\\devweb\\backendart\\domain\\deliverystatusupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1483EF4-3AE8-4A4E-98B7-23A5EB813419}|Domain\\Domain.csproj|solutionrelative:domain\\deliverystatusupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|c:\\users\\florent\\devweb\\backendart\\backendart\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|solutionrelative:backendart\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 198,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,29 +58,106 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderItemDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\BL\\Models\\OrderItemDTO.cs",
+              "RelativeDocumentMoniker": "BL\\Models\\OrderItemDTO.cs",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\BL\\Models\\OrderItemDTO.cs",
+              "RelativeToolTip": "BL\\Models\\OrderItemDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T18:10:18.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "OrderDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\BL\\Models\\OrderDTO.cs",
+              "RelativeDocumentMoniker": "BL\\Models\\OrderDTO.cs",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\BL\\Models\\OrderDTO.cs",
+              "RelativeToolTip": "BL\\Models\\OrderDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T17:20:29.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "backendArt\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "backendArt\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADkAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T15:28:10.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\DAL\\Repositories\\OrderRepo.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\OrderRepo.cs",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\DAL\\Repositories\\OrderRepo.cs",
+              "RelativeToolTip": "DAL\\Repositories\\OrderRepo.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowFEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T15:22:50.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\BL\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "BL\\Services\\OrderService.cs",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\BL\\Services\\OrderService.cs",
+              "RelativeToolTip": "BL\\Services\\OrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T15:26:07.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\Domain\\Order.cs",
+              "RelativeDocumentMoniker": "Domain\\Order.cs",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\Domain\\Order.cs",
+              "RelativeToolTip": "Domain\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T15:18:26.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DeliveryStatusUpdate.cs",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\Domain\\DeliveryStatusUpdate.cs",
+              "RelativeDocumentMoniker": "Domain\\DeliveryStatusUpdate.cs",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\Domain\\DeliveryStatusUpdate.cs",
+              "RelativeToolTip": "Domain\\DeliveryStatusUpdate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T15:03:21.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ReviewController.cs",
               "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\Controllers\\ReviewController.cs",
               "RelativeDocumentMoniker": "backendArt\\Controllers\\ReviewController.cs",
               "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\Controllers\\ReviewController.cs",
               "RelativeToolTip": "backendArt\\Controllers\\ReviewController.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwC8AAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAzwC8AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T14:45:19.408Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "backendArt\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "backendArt\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAYwDEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T14:34:20.194Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-09T14:45:19.408Z"
             }
           ]
         }
