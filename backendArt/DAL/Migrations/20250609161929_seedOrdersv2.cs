@@ -15,8 +15,8 @@ namespace DAL.Migrations
                 columns: new[] { "OrderId", "CustomerId", "OrderDate", "Status", "TotalAmount", "DeliveryPartnerId", "ShippingAddress" },
                 values: new object[,]
                 {
-                    { 10001, 7, new DateTime(2025, 6, 1, 10, 0, 0, DateTimeKind.Utc), "PickedUp", 49.99m, 13, "123 Main St" },
-                    { 10002, 7, new DateTime(2025, 6, 2, 14, 30, 0, DateTimeKind.Utc), "InTransit", 75.50m, 13, "456 Secondary St" }
+                    { 10001, 18, new DateTime(2025, 6, 1, 10, 0, 0, DateTimeKind.Utc), "PickedUp", 49.99m, 20, "123 Main St" },
+                    { 10002, 18, new DateTime(2025, 6, 2, 14, 30, 0, DateTimeKind.Utc), "InTransit", 75.50m, 20, "456 Secondary St" }
                 });
 
             migrationBuilder.InsertData(
@@ -24,8 +24,8 @@ namespace DAL.Migrations
                 columns: new[] { "UpdateId", "OrderId", "DeliveryPartnerId", "Status", "TimeStamp" },
                 values: new object[,]
                 {
-                    { 2001, 10001, 13, "PickedUp", new DateTime(2025, 6, 1, 10, 5, 0, DateTimeKind.Utc) },
-                    { 2002, 10002, 13, "InTransit", new DateTime(2025, 6, 2, 14, 45, 0, DateTimeKind.Utc) }
+                    { 2001, 10001, 20, "PickedUp", new DateTime(2025, 6, 1, 10, 5, 0, DateTimeKind.Utc) },
+                    { 2002, 10002, 20, "InTransit", new DateTime(2025, 6, 2, 14, 45, 0, DateTimeKind.Utc) }
                 });
         }
 

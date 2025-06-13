@@ -12,11 +12,15 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<any> {
-    return this.http.get("https://localhost:7041/api/Product");
+    return this.http.get(`https://localhost:7041/api/Product`);
   }
 
   getArtisanProducts(): Observable<any> {
     return this.http.get(`https://localhost:7041/api/Product/artisan`);
+  }
+
+  getProductByArtisan(artisanId: number): Observable<any> {
+    return this.http.get(`https://localhost:7041/api/Product/${artisanId}/products`);
   }
 
   getProductById(id: number): Observable<any> {

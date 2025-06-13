@@ -13,4 +13,12 @@ export class ReviewsService {
     return this.http.get(`https://localhost:7041/api/Review/product/${id}`);
   }
 
+  getReviewsByCustomer(id: number): Observable<any> {
+    return this.http.get(`https://localhost:7041/api/Review/customer/${id}`);
+  }
+
+  deleteReview(id: number): Observable<any> {
+    return this.http.delete(`https://localhost:7041/api/Review/${id}`);
+  }
+
 }

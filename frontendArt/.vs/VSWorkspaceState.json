@@ -4,14 +4,11 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\pages",
-    "\\src\\app\\pages\\authentication",
     "\\src\\app\\pages\\authentication\\login",
     "\\src\\app\\pages\\dashboard",
     "\\src\\app\\pages\\dashboard\\artisan-dashboard",
-    "\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-orders",
-    "\\src\\app\\service",
-    "\\src\\app\\service\\order"
+    "\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products"
   ],
-  "SelectedNode": "\\src\\app\\service\\product.service.ts",
+  "SelectedNode": "\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.html",
   "PreviewInSolutionExplorer": false
 }

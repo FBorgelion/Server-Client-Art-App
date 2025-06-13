@@ -13,13 +13,26 @@ namespace BL.Mapper
             CreateMap<Product, ProductDTO>();
             CreateMap<ProductDTO, Product>();
 
-            CreateMap<Customer, CustomerDTO>();
+            CreateMap<Customer, CustomerDTO>()
+                .ForMember(d => d.Username,
+                            o => o.MapFrom(s => s.User.Username))
+                .ForMember(d => d.email,
+                            o => o.MapFrom(s => s.User.Email));
             CreateMap<CustomerDTO, Customer>();
 
-            CreateMap<Artisan, ArtisanDTO>();
+            CreateMap<Artisan, ArtisanDTO>()
+                .ForMember(d => d.Username,
+               o => o.MapFrom(src => src.User.Username))
+                .ForMember(d => d.email,
+                            o => o.MapFrom(s => s.User.Email));
             CreateMap<ArtisanDTO, Artisan>();
 
-            CreateMap<DeliveryPartner, DeliveryPartnerDTO>();
+            CreateMap<DeliveryPartner, DeliveryPartnerDTO>()
+                .ForMember(p => p.Username,
+                o => o.MapFrom(s => s.User.Username))
+                .ForMember(d => d.email,
+                            o => o.MapFrom(s => s.User.Email));
+                
             CreateMap<DeliveryPartnerDTO, DeliveryPartner>();
 
             CreateMap<Order, OrderDTO>();

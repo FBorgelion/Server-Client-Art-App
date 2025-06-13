@@ -14,6 +14,8 @@ namespace BL.Services.Interfaces
 
         public IEnumerable<ReviewDTO> GetReviewsByProduct(int productId);
 
+        public IEnumerable<ReviewDTO> GetReviewsByCustomer(int custId);
+
         public void Add(ReviewDTO review);
 
         public bool Delete(int id);

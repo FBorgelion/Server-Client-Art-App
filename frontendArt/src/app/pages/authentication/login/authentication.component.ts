@@ -45,6 +45,8 @@ export class AuthenticationComponent {
             this.router.navigate(['/client/dashboard']);
           } else if (role === 'DeliveryPartner') {
             this.router.navigate(['/partner']);
+          } else if (role === 'Admin') {
+            this.router.navigate(['/admin/users']);
           } else {
             this.router.navigate(['/']);
           }

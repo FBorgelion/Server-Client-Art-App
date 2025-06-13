@@ -60,7 +60,7 @@ export class ArtisanProductsComponent implements OnInit {
         },
         error: (err: any) => {
           console.error(err);
-          alert('Erreur lors de la mise à jour');
+          alert('Error while updating');
         }
       });
   }

@@ -14,6 +14,8 @@ namespace DAL.Repositories.Interfaces
 
         public IEnumerable<Review> GetReviewByProduct(int productId);
 
+        public IEnumerable<Review> GetReviewsByCustomer(int customerId);
+
         public void Add(Review review);
 
         public bool Delete(int id);

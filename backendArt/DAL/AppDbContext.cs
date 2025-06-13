@@ -35,7 +35,8 @@ namespace DAL
             modelBuilder.Entity<Artisan>()
                 .HasOne(a => a.User)
                 .WithOne(u => u.Artisan)
-                .HasForeignKey<Artisan>(a => a.ArtisanId);
+                .HasForeignKey<Artisan>(a => a.ArtisanId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             // 1-1 User → Customer
             modelBuilder.Entity<Customer>()
@@ -43,7 +44,8 @@ namespace DAL
             modelBuilder.Entity<Customer>()
                 .HasOne(cu => cu.User)
                 .WithOne(u => u.Customer)
-                .HasForeignKey<Customer>(cu => cu.CustomerId);
+                .HasForeignKey<Customer>(cu => cu.CustomerId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             // 1-1 User → DeliveryPartner
             modelBuilder.Entity<DeliveryPartner>()
@@ -51,7 +53,8 @@ namespace DAL
             modelBuilder.Entity<DeliveryPartner>()
                 .HasOne(dp => dp.User)
                 .WithOne(u => u.DeliveryPartner)
-                .HasForeignKey<DeliveryPartner>(dp => dp.DeliveryPartnerId);
+                .HasForeignKey<DeliveryPartner>(dp => dp.DeliveryPartnerId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             // 1-1 User → Admin
             modelBuilder.Entity<Admin>()
@@ -84,7 +87,7 @@ namespace DAL
             .HasOne(c => c.Product)
             .WithMany(p => p.CartItems)
             .HasForeignKey(c => c.ProductId)
-            .OnDelete(DeleteBehavior.Restrict);  // ✅ Fix: plus de multiple cascade path
+            .OnDelete(DeleteBehavior.Cascade);  
 
 
             // ----------------------------
@@ -102,7 +105,7 @@ namespace DAL
                 .HasOne(o => o.DeliveryPartner)
                 .WithMany(dp => dp.Orders)
                 .HasForeignKey(o => o.DeliveryPartnerId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             // ----------------------------
             // Order (1) → (N) OrderItems
@@ -110,7 +113,7 @@ namespace DAL
                 .HasOne(oi => oi.Order)
                 .WithMany(o => o.OrderItems)
                 .HasForeignKey(oi => oi.OrderId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             // Product (1) → (N) OrderItems
             modelBuilder.Entity<OrderItem>()
@@ -125,7 +128,7 @@ namespace DAL
                 .HasOne(r => r.Product)
                 .WithMany(p => p.Reviews)
                 .HasForeignKey(r => r.ProductId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             // Customer (1) → (N) Reviews
             modelBuilder.Entity<Review>()
@@ -149,7 +152,7 @@ namespace DAL
                 .HasOne(dsu => dsu.DeliveryPartner)
                 .WithMany(dp => dp.DeliveryStatusUpdates)
                 .HasForeignKey(dsu => dsu.DeliveryPartnerId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             // ----------------------------
             // Product (1) → (N) CustomerInquiries
@@ -158,7 +161,7 @@ namespace DAL
                 .HasOne(ci => ci.Product)
                 .WithMany(p => p.Inquiries)
                 .HasForeignKey(ci => ci.ProductId)
-                .OnDelete(DeleteBehavior.Restrict);  
+                .OnDelete(DeleteBehavior.Cascade);  
 
             // Customer (1) → (N) CustomerInquiries
             modelBuilder.Entity<Inquiry>()

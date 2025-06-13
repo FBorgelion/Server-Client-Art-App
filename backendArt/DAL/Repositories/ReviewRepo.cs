@@ -23,6 +23,11 @@ namespace DAL.Repositories
             return _dbContext.Reviews.Where(o => o.ProductId == productId).ToList();
         }
 
+        public IEnumerable<Review> GetReviewsByCustomer(int customerId)
+        {
+            return _dbContext.Reviews.Where(o => o.CustomerId == customerId).ToList();
+        }
+
         public void Add(Review review)
         {
             _dbContext.Reviews.Add(review);

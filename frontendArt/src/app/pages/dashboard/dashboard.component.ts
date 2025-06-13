@@ -27,4 +27,31 @@ export class DashboardComponent {
     this.router.navigate(['/auth/login']);  
   }
 
+  goToDashboard(): void {
+    if (!this.isLoggedIn()) {
+      this.login();
+      return;
+    }
+
+    const role = this.authService.getUserRoles();
+    switch (role) {
+      case 'Artisan':
+        this.router.navigate(['/artisan/dashboard']);
+        break;
+      case 'Customer':
+        this.router.navigate(['/customer/dashboard']);
+        break;
+      case 'DeliveryPartner':
+        this.router.navigate(['/partner']);
+        break;
+      case 'Admin':
+        this.router.navigate(['/admin/users']);
+        break;
+      default:
+        // fallback générique
+        this.router.navigate(['/']);
+        break;
+    }
+  }
+
 }

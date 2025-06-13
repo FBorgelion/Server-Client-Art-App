@@ -1,5 +1,6 @@
 ﻿using DAL.Repositories.Interfaces;
 using Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repositories
 {
@@ -21,11 +22,16 @@ namespace DAL.Repositories
 
         public bool Delete(int id)
         {
-            var artisan = _dbContext.Artisans.FirstOrDefault(p => p.ArtisanId == id);
+            var artisan = _dbContext.Artisans
+                .Include(a => a.Products)
+                .FirstOrDefault(p => p.ArtisanId == id);
             if (artisan == null)
             {
                 return false;
             }
+
+            _dbContext.Products.RemoveRange(artisan.Products);
+
             _dbContext.Artisans.Remove(artisan);
             _dbContext.SaveChanges();
             return true;
@@ -39,7 +45,9 @@ namespace DAL.Repositories
 
         public IEnumerable<Artisan> GetAll()
         {
-            return _dbContext.Artisans.ToList();
+            return _dbContext.Artisans
+                .Include(a => a.User)
+                .ToList();
         }
 
         public bool Update(Artisan artisan)

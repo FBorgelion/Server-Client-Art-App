@@ -1,5 +1,6 @@
 ﻿using DAL.Repositories.Interfaces;
 using Domain;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +39,9 @@ namespace DAL.Repositories
 
         public IEnumerable<DeliveryPartner> GetAll()
         {
-            return _dbContext.DeliveryPartners.ToList();
+            return _dbContext.DeliveryPartners
+                .Include(p => p.User)
+                .ToList();
         }
 
         public DeliveryPartner Get(int id)
