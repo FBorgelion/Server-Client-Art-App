@@ -10,6 +10,8 @@ namespace BL.Models
     {
 
         public int DeliveryPartnerId { get; set; }
+        public string email { get; set; }
+        public string Username { get; set; }
 
     }
 }

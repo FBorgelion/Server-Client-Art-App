@@ -63,6 +63,29 @@ namespace backendArt.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("customer/{customerId}")]
+        [ProducesResponseType(typeof(IEnumerable<ReviewDTO>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [AllowAnonymous]
+        public IActionResult GetReviewsByCustomer(int customerId)
+        {
+            try
+            {
+                IEnumerable<ReviewDTO> reviews = _reviewService.GetReviewsByCustomer(customerId);
+                if (reviews == null)
+                {
+                    return NotFound($"No orders found for customer {customerId}");
+                }
+                return Ok(reviews);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]

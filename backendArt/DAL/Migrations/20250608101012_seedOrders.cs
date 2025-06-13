@@ -18,15 +18,15 @@ namespace DAL.Migrations
                 columns: new[] { "ProductId", "ArtisanId", "Title", "Description", "Price", "Stock", "Images" },
                 values: new object[,]
                 {
-            { 20, 8, "Montre artisanale", "Montre en bois fait main", 75.0m, 15, null },
-            { 21, 8, "Bracelet cuir",     "Bracelet en cuir véritable", 25.0m, 50, null }
+            { 20, 17, "Montre artisanale", "Montre en bois fait main", 75.0m, 15, null },
+            { 21,17, "Bracelet cuir",     "Bracelet en cuir véritable", 25.0m, 50, null }
                 });
 
             // Orders...
             migrationBuilder.InsertData(
                 table: "Orders",
                 columns: new[] { "OrderId", "CustomerId", "OrderDate", "Status", "TotalAmount", "DeliveryPartnerId", "ShippingAddress" },
-                values: new object[] { 1001, 7, new DateTime(2025, 6, 8, 10, 0, 0), "Pending", 125.0m, null, "123 Artisan St." });
+                values: new object[] { 1001, 18, new DateTime(2025, 6, 8, 10, 0, 0), "Pending", 125.0m, null, "123 Artisan St." });
 
             // OrderItems...
             migrationBuilder.InsertData(

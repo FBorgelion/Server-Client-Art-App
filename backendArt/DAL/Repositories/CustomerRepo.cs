@@ -1,5 +1,6 @@
 ﻿using DAL.Repositories.Interfaces;
 using Domain;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,11 +27,21 @@ namespace DAL.Repositories
 
         public bool Delete(int id)
         {
-            var customer = _dbContext.Customers.FirstOrDefault(p => p.CustomerId == id);
+            var customer = _dbContext.Customers
+                .Include(c => c.Orders)
+                    .ThenInclude(o => o.OrderItems)
+                .FirstOrDefault(p => p.CustomerId == id);
             if (customer == null)
             {
                 return false;
             }
+
+            foreach (var order in customer.Orders)
+            {
+                _dbContext.OrderItems.RemoveRange(order.OrderItems);
+                _dbContext.Orders.Remove(order);
+            }
+
             _dbContext.Customers.Remove(customer);
             _dbContext.SaveChanges();
             return true;
@@ -44,7 +55,9 @@ namespace DAL.Repositories
 
         public IEnumerable<Customer> GetAll()
         {
-            return _dbContext.Customers.ToList();
+            return _dbContext.Customers
+                .Include(c => c.User)
+                .ToList();
         }
 
         public bool Update(Customer customer)

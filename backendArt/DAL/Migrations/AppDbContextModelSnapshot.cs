@@ -360,7 +360,7 @@ namespace DAL.Migrations
                     b.HasOne("Domain.Product", "Product")
                         .WithMany("CartItems")
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Customer");
@@ -395,7 +395,7 @@ namespace DAL.Migrations
                     b.HasOne("Domain.DeliveryPartner", "DeliveryPartner")
                         .WithMany("DeliveryStatusUpdates")
                         .HasForeignKey("DeliveryPartnerId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Domain.Order", "Order")
@@ -420,7 +420,7 @@ namespace DAL.Migrations
                     b.HasOne("Domain.Product", "Product")
                         .WithMany("Inquiries")
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Customer");
@@ -439,7 +439,7 @@ namespace DAL.Migrations
                     b.HasOne("Domain.DeliveryPartner", "DeliveryPartner")
                         .WithMany("Orders")
                         .HasForeignKey("DeliveryPartnerId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Customer");
 
@@ -451,7 +451,7 @@ namespace DAL.Migrations
                     b.HasOne("Domain.Order", "Order")
                         .WithMany("OrderItems")
                         .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Domain.Product", "Product")
@@ -487,7 +487,7 @@ namespace DAL.Migrations
                     b.HasOne("Domain.Product", "Product")
                         .WithMany("Reviews")
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Customer");

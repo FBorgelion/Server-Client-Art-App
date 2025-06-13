@@ -11,6 +11,8 @@ namespace BL.Models
 
         public int ArtisanId { get; set; }
         public string ProfileDescription { get; set; }
+        public string email { get; set; }
+        public string Username { get; set; }
 
     }
 }

@@ -12,12 +12,14 @@ import { ArtisanInquiriesComponent } from './pages/dashboard/artisan-dashboard/a
 import { ProductDetailComponent } from './pages/products/product-detail/product-detail.component';
 import { DeliveryOrdersComponent } from './pages/dashboard/delivery-partner-dashboard/delivery-orders/delivery-orders.component';
 import { DeliveryPartnerDashboardComponent } from './pages/dashboard/delivery-partner-dashboard/delivery-partner-dashboard.component';
+import { AdminDashboardComponent } from './pages/dashboard/admin-dashboard/admin-dashboard.component';
 
 export const routes: Routes = [
   { path: "auth/login", component: AuthenticationComponent },
   { path: "auth/register", component: RegisterComponent },
   { path: 'product', component: ProductsComponent },
   { path: 'unauthorized', component: UnauthorizeComponent },
+  { path: 'admin/users', component: AdminDashboardComponent },
   {
     path: 'artisan/dashboard', component: ArtisanDashboardComponent,
     children: [

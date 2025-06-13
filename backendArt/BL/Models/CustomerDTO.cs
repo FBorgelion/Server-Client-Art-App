@@ -13,5 +13,8 @@ namespace BL.Models
         public string ShippingAddress { get; set; }
         public string PaymentInfo { get; set; }
 
+        public string Username { get; set; }
+
+        public string email {  get; set; }
     }
 }

@@ -1,0 +1,195 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- SIDEBAR -->
+    <nav class="col-12 col-md-2 d-md-block bg-dark sidebar py-3" style="min-height:100vh">
+      <ul class="nav flex-column nav-pills">
+        <li class="nav-item mb-2">
+          <a href="javascript:void(0)"
+             class="nav-link"
+             [ngClass]="{ active: activeSection==='customers' }"
+             (click)="select('customers')">
+            <i class="bi bi-people-fill me-1"></i>
+            Customers
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="javascript:void(0)"
+             class="nav-link"
+             [ngClass]="{ active: activeSection==='partners' }"
+             (click)="select('partners')">
+            <i class="bi bi-truck me-1"></i>
+            Partners
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="javascript:void(0)"
+             class="nav-link"
+             [ngClass]="{ active: activeSection==='artisans' }"
+             (click)="select('artisans')">
+            <i class="bi bi-hammer me-1"></i>
+            Artisans
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="col-12 col-md-10 px-4 py-3">
+
+      <section *ngIf="activeSection==='customers'">
+
+        <!-- Titre -->
+        <h4 class="bg-dark text-white p-2 rounded mb-4">Customers</h4>
+
+        <!-- Liste des customers -->
+        <div *ngIf="!loadingCustomers" class="list-group mb-4">
+          <a *ngFor="let c of customers"
+             href="javascript:void(0)"
+             class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+             [class.active]="c.customerId === selectedCustomerId"
+             (click)="selectCustomer(c)">
+
+            <span>{{ c.username }} — {{ c.email }}</span>
+
+            <button class="btn btn-sm btn-outline-danger"
+                    (click)="deleteCustomer(c.customerId); $event.stopPropagation()">
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </a>
+
+          <div *ngIf="customers.length===0" class="list-group-item text-muted">
+            No customers found.
+          </div>
+        </div>
+
+        <!-- Reviews du customer sélectionné -->
+        <div *ngIf="selectedCustomerId !== null">
+          <h5 class="bg-dark text-white p-2 rounded mb-3">
+            Reviews of {{ selectedCustomerName }}
+          </h5>
+
+          <!-- Spinner pendant chargement -->
+          <div *ngIf="loadingReviews" class="text-center p-3">
+            <div class="spinner-border"></div>
+          </div>
+
+          <!-- Liste des reviews -->
+          <ul *ngIf="!loadingReviews" class="list-group">
+            <li *ngFor="let r of customerReviews"
+                class="list-group-item d-flex justify-content-between align-items-start">
+              <div>
+                <strong>« {{ r.comment }} »</strong><br>
+                <small class="text-muted">Rating: {{ r.rating }} / 5</small>
+              </div>
+              <button class="btn btn-sm btn-outline-danger align-self-center"
+                      (click)="deleteReview(r.reviewId); $event.stopPropagation()">
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </li>
+            <li *ngIf="customerReviews.length===0" class="list-group-item text-muted">
+              No reviews for this customer.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Spinner initial -->
+        <div *ngIf="loadingCustomers" class="text-center p-3">
+          <div class="spinner-border"></div>
+        </div>
+
+      </section>
+
+
+      <!-- PARTNERS -->
+      <section *ngIf="activeSection==='partners'">
+        <h4 class="bg-dark text-white p-2 rounded mb-4">Delivery Partners</h4>
+        <div *ngIf="loadingPartners" class="text-center p-3">
+          <div class="spinner-border"></div>
+        </div>
+        <ul *ngIf="!loadingPartners" class="list-group">
+          <li *ngFor="let p of partners"
+              class="list-group-item d-flex justify-content-between align-items-center">
+            <span>{{ p.username }} — {{ p.email }}</span>
+            <button class="btn btn-sm btn-outline-danger"
+                    (click)="deletePartner(p.deliveryPartnerId); $event.stopPropagation()">
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </li>
+          <li *ngIf="partners.length===0" class="list-group-item text-muted">
+            No partners found.
+          </li>
+        </ul>
+      </section>
+
+      <!-- ARTISANS -->
+    
+
+        <div class="container-fluid">
+          <div class="row">
+
+
+
+            <main class="col-12 col-md-10 px-4 py-3">
+
+              <section *ngIf="activeSection==='artisans'">
+                <h4 class="bg-dark text-white p-2 rounded mb-4">Artisans</h4>
+                <div *ngIf="loadingArtisans" class="text-center p-3">
+                  <div class="spinner-border"></div>
+                </div>
+                <div *ngIf="!loadingArtisans" class="list-group mb-4">
+
+                  <!-- Un <a> par artisan, pas de <ul>/<li> -->
+                  <a *ngFor="let a of artisans"
+                     href="javascript:void(0)"
+                     class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                     [class.active]="a.artisanId === selectedArtisanId"
+                     (click)="selectArtisan(a)">
+
+                    <span>
+                      {{ a.username }} — {{ a.profileDescription || a.name }}
+                    </span>
+
+                    <button class="btn btn-sm btn-outline-danger"
+                            (click)="deleteArtisan(a.artisanId); $event.stopPropagation()">
+                      <i class="bi bi-x-lg"></i>
+                    </button>
+                  </a>
+
+                  <div *ngIf="artisans.length===0"
+                       class="list-group-item text-muted">
+                    No artisans found.
+                  </div>
+                </div>
+
+                <div *ngIf="selectedArtisanName !== null">
+                  <h5 class="bg-dark text-white p-2 rounded">Products of {{ selectedArtisanName }}</h5>
+
+                  <div *ngIf="loadingProducts" class="text-center p-3">
+                    <div class="spinner-border"></div>
+                  </div>
+
+                  <ul *ngIf="!loadingProducts" class="list-group">
+                    <li *ngFor="let p of artisanProducts"
+                        class="list-group-item d-flex justify-content-between align-items-center">
+                      <span>{{ p.title }} — {{ p.description }} - {{ p.price | currency:'EUR' }} - {{p.image}} </span>
+                      <button class="btn btn-sm btn-outline-danger"
+                              (click)="deleteArtisanProduct(p.productId); $event.stopPropagation()">
+                        <i class="bi bi-x-lg"></i>
+                      </button>
+                    </li>
+                    <li *ngIf="artisanProducts.length===0"
+                        class="list-group-item text-muted">
+                      No products.
+                    </li>
+                  </ul>
+                </div>
+              </section>
+
+            </main>
+          </div>
+        </div>
+
+
+    </main>
+  </div>
+</div>

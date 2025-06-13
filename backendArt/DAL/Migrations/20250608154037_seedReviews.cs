@@ -15,12 +15,12 @@ namespace DAL.Migrations
                columns: new[] { "ReviewId", "ProductId", "CustomerId", "Rating", "Comment", "CreatedDate" },
                values: new object[]
                {
-                    3001,   // à ajuster si nécessaire
-                    4,
-                    7,      // CustomerId existant
+                    3001,  
+                    1,
+                    18,      
                     5,
                     "Excellent qualité, je recommande !",
-                    new DateTime(2025, 6, 8, 14, 30, 0)
+                    new DateTime(2025, 6, 18, 14, 30, 0)
                });
 
             // INSERT Reviews for product 5
@@ -30,11 +30,11 @@ namespace DAL.Migrations
                 values: new object[]
                 {
                     3002,
-                    5,
-                    7,
+                    2,
+                    18,
                     4,
                     "Bon produit, conforme à la description.",
-                    new DateTime(2025, 6, 7, 11, 15, 0)
+                    new DateTime(2025, 6, 18, 11, 15, 0)
                 });
 
             // INSERT Reviews for product 20
@@ -44,11 +44,11 @@ namespace DAL.Migrations
                 values: new object[]
                 {
                     3003,
-                    20,
-                    6,
+                    3,
+                    18,
                     3,
                     "Montre sympa, mais achetée trop grande pour mon poignet.",
-                    new DateTime(2025, 6, 6, 9, 0, 0)
+                    new DateTime(2025, 6, 18, 9, 0, 0)
                 });
 
             // INSERT Reviews for product 21
@@ -58,8 +58,8 @@ namespace DAL.Migrations
                 values: new object[]
                 {
                     3004,
-                    21,
-                    10,
+                    1,
+                    18,
                     4,
                     "Bracelet de très bonne facture, très confortable.",
                     new DateTime(2025, 6, 5, 16, 45, 0)

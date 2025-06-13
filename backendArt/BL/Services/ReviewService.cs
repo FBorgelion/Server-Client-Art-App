@@ -41,6 +41,16 @@ namespace BL.Services
             return _mapper.Map<IEnumerable<ReviewDTO>>(reviews); ;
         }
 
+        public IEnumerable<ReviewDTO> GetReviewsByCustomer(int custId)
+        {
+            var reviews = _reviewRepo.GetReviewsByCustomer(custId);
+            if (reviews == null)
+            {
+                return null;
+            }
+            return _mapper.Map<IEnumerable<ReviewDTO>>(reviews); ;
+        }
+
         public void Add(ReviewDTO review)
         {
             var reviewEntity = _mapper.Map<Review>(review);

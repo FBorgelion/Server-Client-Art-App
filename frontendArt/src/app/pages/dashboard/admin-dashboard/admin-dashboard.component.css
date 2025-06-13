@@ -1,0 +1,15 @@
+.btn-group .btn {
+  min-width: 120px;
+}
+
+.bg-gray-900 {
+  background-color: #212529 !important;
+}
+
+.bg-gray-800 {
+  background-color: #343a40 !important;
+}
+
+.bg-gray-600 {
+  background-color: #495057 !important;
+}
