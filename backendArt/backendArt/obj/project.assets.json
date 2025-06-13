@@ -4945,11 +4945,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\backendArt.csproj",
+      "projectUniqueName": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\backendArt.csproj",
       "projectName": "backendArt",
-      "projectPath": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\backendArt.csproj",
+      "projectPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\backendArt.csproj",
       "packagesPath": "C:\\Users\\Florent\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Florent\\DevWeb\\backendArt\\backendArt\\obj\\",
+      "outputPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4971,8 +4971,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Florent\\DevWeb\\backendArt\\BL\\BL.csproj": {
-              "projectPath": "C:\\Users\\Florent\\DevWeb\\backendArt\\BL\\BL.csproj"
+            "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\BL\\BL.csproj": {
+              "projectPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\BL\\BL.csproj"
             }
           }
         }
