@@ -35,10 +35,19 @@ namespace BL.Mapper
                 
             CreateMap<DeliveryPartnerDTO, DeliveryPartner>();
 
-            CreateMap<Order, OrderDTO>();
+            CreateMap<Order, OrderDTO>()
+                .ForMember(d => d.OrderId, o => o.MapFrom(s => s.OrderId))
+                .ForMember(d => d.OrderDate, o => o.MapFrom(s => s.OrderDate))
+                .ForMember(d => d.Status, o => o.MapFrom(s => s.Status))
+                .ForMember(d => d.TotalAmount, o => o.MapFrom(s => s.TotalAmount))
+                .ForMember(d => d.Items, o => o.MapFrom(s => s.OrderItems)); ;
             CreateMap<OrderDTO, Order>();
 
-            CreateMap<OrderItem, OrderItemDTO>();
+            CreateMap<OrderItem, OrderItemDTO>()
+                .ForMember(d => d.ProductTitle, o => o.MapFrom(s => s.Product.Title))
+                .ForMember(d => d.PriceAtPurchase, o => o.MapFrom(s => s.PriceAtPurchase))
+                .ForMember(d => d.Quantity, o => o.MapFrom(s => s.Quantity))
+                .ForMember(d => d.OrderItemId, o => o.MapFrom(s => s.OrderItemId));
             CreateMap<OrderItemDTO, OrderItem>();
 
             CreateMap<Review, ReviewDTO>();
@@ -82,6 +91,13 @@ namespace BL.Mapper
                 // Imbriquer la liste des OrderItem déjà mappés
                 .ForMember(dest => dest.Items,
                            opt => opt.MapFrom(src => src.OrderItems));
+
+            CreateMap<Cart, CartDTO>()
+                .ForMember(d => d.ProductTitle, o => o.MapFrom(s => s.Product.Title))
+                .ForMember(d => d.Price, o => o.MapFrom(s => s.Product.Price))
+                .ForMember(d => d.Quantity, o => o.MapFrom(s => s.Quantity))
+                .ForMember(d => d.CartItemId, o => o.MapFrom(s => s.CartItemId))
+                .ForMember(d => d.ProductId, o => o.MapFrom(s => s.ProductId));
 
         }
 

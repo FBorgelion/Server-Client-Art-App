@@ -12,11 +12,11 @@ namespace DAL.Repositories.Interfaces
 
         public IEnumerable<Product> GetAllProducts();
 
-        public Product GetProduct(int id);
+        public Task<Product> GetProduct(int id);
 
         public void AddProduct(Product product);
 
-        public bool UpdateProduct(Product product);
+        public Task<bool> UpdateProduct(Product product);
 
         public bool DeleteProduct(int id);
 

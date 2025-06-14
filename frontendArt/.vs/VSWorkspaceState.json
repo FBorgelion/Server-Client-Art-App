@@ -6,11 +6,12 @@
     "\\src\\app\\pages",
     "\\src\\app\\pages\\dashboard",
     "\\src\\app\\pages\\dashboard\\artisan-dashboard",
-    "\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products",
-    "\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-reviews",
+    "\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-orders",
+    "\\src\\app\\pages\\dashboard\\delivery-partner-dashboard",
+    "\\src\\app\\pages\\dashboard\\delivery-partner-dashboard\\delivery-orders",
     "\\src\\app\\service",
-    "\\src\\app\\service\\authentication"
+    "\\src\\app\\service\\order"
   ],
-  "SelectedNode": "\\src\\app\\service\\authentication\\authentication.service.ts",
+  "SelectedNode": "\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-orders\\artisan-orders.component.html",
   "PreviewInSolutionExplorer": false
 }

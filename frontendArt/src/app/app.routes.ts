@@ -13,6 +13,7 @@ import { ProductDetailComponent } from './pages/products/product-detail/product-
 import { DeliveryOrdersComponent } from './pages/dashboard/delivery-partner-dashboard/delivery-orders/delivery-orders.component';
 import { DeliveryPartnerDashboardComponent } from './pages/dashboard/delivery-partner-dashboard/delivery-partner-dashboard.component';
 import { AdminDashboardComponent } from './pages/dashboard/admin-dashboard/admin-dashboard.component';
+import { CustomerDashboardComponent } from './pages/dashboard/customer-dashboard/customer-dashboard.component';
 
 export const routes: Routes = [
   { path: "auth/login", component: AuthenticationComponent },
@@ -20,6 +21,7 @@ export const routes: Routes = [
   { path: 'product', component: ProductsComponent },
   { path: 'unauthorized', component: UnauthorizeComponent },
   { path: 'admin/users', component: AdminDashboardComponent },
+  { path: 'customer/dashboard', component: CustomerDashboardComponent },
   {
     path: 'artisan/dashboard', component: ArtisanDashboardComponent,
     children: [

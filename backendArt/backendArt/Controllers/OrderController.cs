@@ -129,6 +129,32 @@ namespace backendArt.Controllers
         }
 
         [HttpGet]
+        [Route("customers/orders")]
+        [ProducesResponseType(typeof(IEnumerable<OrderDTO>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public IActionResult GetCustomerOrders()
+        {
+            try
+            {
+                var custIdClaim = User.FindFirst("userId")?.Value;
+                if (!int.TryParse(custIdClaim, out var custId))
+                    return Unauthorized();
+                var orders = _orderService.GetOrdersByCustomer(custId);
+                if (orders == null)
+                {
+                    return NotFound($"No orders found for customer {custId}");
+                }
+                return Ok(orders);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet]
         [Route("delivery-partners/{partnerId}/orders")]
         [ProducesResponseType(typeof(IEnumerable<OrderDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

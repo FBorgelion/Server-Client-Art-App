@@ -1,5 +1,4 @@
-<!-- delivery-orders.component.html -->
-
+<!-- src/app/pages/dashboard/delivery-partner-dashboard/delivery-orders.component.html -->
 <!-- 1. Spinner pendant le chargement -->
 <div *ngIf="loading" class="text-center p-3">
   <div class="spinner-border"></div>
@@ -10,7 +9,7 @@
   <ng-container *ngIf="orders.length > 0; else noOrders">
     <div *ngFor="let o of orders" class="mb-4">
       <div class="card">
-        
+
         <!-- En-tête : numéro, date, badge et actions -->
         <div class="card-header d-flex justify-content-between align-items-center bg-dark text-white">
           <div>
@@ -19,50 +18,52 @@
           <div>
             <span class="badge"
                   [ngClass]="{
-                    'bg-primary':   o.status==='PickedUp',
-                    'bg-info':      o.status==='InTransit',
-                    'bg-success':   o.status==='Delivered'
+                    'bg-warning text-dark': o.status==='InProduction' || o.status==='Shipped',
+                    'bg-primary':            o.status==='PickedUp',
+                    'bg-info':               o.status==='InTransit',
+                    'bg-success':            o.status==='Delivered'
                   }">
-              {{ 
-                o.status==='PickedUp'   ? 'Taken'      :
-                o.status==='InTransit'  ? 'In Transit' :
-                                          'Delivered'
+              {{
+                o.status==='InProduction' ? 'In production' :
+                o.status==='Shipped'      ? 'Shipped'       :
+                o.status==='PickedUp'     ? 'Taken'         :
+                o.status==='InTransit'    ? 'In Transit'    :
+                                            'Delivered'
               }}
             </span>
 
-            <!-- Boutons selon le statut -->
-            <button *ngIf="o.status==='PickedUp'"
+            <!-- Seules transitions autorisées pour le partner -->
+            <button *ngIf="o.status === 'PickedUp'"
                     class="btn btn-sm btn-outline-info ms-3 text-white"
                     (click)="updateStatus(o.orderId, 'InTransit')">
-              Mark in Transit
+              Mark In Transit
             </button>
-            <button *ngIf="o.status==='InTransit'"
+            <button *ngIf="o.status === 'InTransit'"
                     class="btn btn-sm btn-outline-success ms-3 text-white"
                     (click)="updateStatus(o.orderId, 'Delivered')">
-              Mark delivered
+              Mark Delivered
             </button>
           </div>
         </div>
 
-        <!-- Corps : liste des titres de produits -->
+        <!-- Corps : adresse et liste des titres de produits -->
         <div class="card-body">
           <p class="mb-2">
             <strong>Adresse de livraison :</strong>
             {{ o.shippingAddress }}
           </p>
-          <h6 class="card-subtitle mb-2 text-muted"> </h6>
-          <p class="card-text">
-
+          <p class="card-text mb-0">
+            <strong>Produits :</strong>
             <ng-container *ngFor="let item of o.items; let last = last">
               {{ item.productTitle }}<span *ngIf="!last">, </span>
             </ng-container>
-
           </p>
         </div>
 
-        <!-- Détail : items et montants -->
+        <!-- Détail : items et montants unitaires -->
         <ul class="list-group list-group-flush">
-          <li *ngFor="let item of o.items" class="list-group-item d-flex justify-content-between">
+          <li *ngFor="let item of o.items"
+              class="list-group-item d-flex justify-content-between">
             <div>{{ item.productTitle }} × {{ item.quantity }}</div>
             <div>{{ item.priceAtPurchase | currency:'EUR':'symbol' }}</div>
           </li>

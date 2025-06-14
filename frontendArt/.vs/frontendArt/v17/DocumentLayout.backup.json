@@ -3,40 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\service\\product.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\service\\product.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\authentication\\login\\authentication.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\pages\\authentication\\login\\authentication.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\app.routes.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\app.routes.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\dashboard\\dashboard.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\pages\\dashboard\\dashboard.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\guards\\role\\role.guard.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\guards\\role\\role.guard.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\service\\authentication\\authentication.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\service\\authentication\\authentication.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\dashboard\\dashboard.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\pages\\dashboard\\dashboard.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,112 +38,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "artisan-products.component.html",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.html",
-              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.html",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.html",
-              "RelativeToolTip": "src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.html",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAEsAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-06-13T13:25:35.303Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "artisan-products.component.ts",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.ts",
-              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.ts",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.ts",
-              "RelativeToolTip": "src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.ts",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAgwD4AAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-06-13T13:24:37.527Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "product.service.ts",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\service\\product.service.ts",
-              "RelativeDocumentMoniker": "src\\app\\service\\product.service.ts",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\service\\product.service.ts",
-              "RelativeToolTip": "src\\app\\service\\product.service.ts",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-06-13T13:15:31.784Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "authentication.component.ts",
               "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\authentication\\login\\authentication.component.ts",
               "RelativeDocumentMoniker": "src\\app\\pages\\authentication\\login\\authentication.component.ts",
               "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\authentication\\login\\authentication.component.ts",
               "RelativeToolTip": "src\\app\\pages\\authentication\\login\\authentication.component.ts",
-              "ViewState": "AgIAABgAAAAAAAAAAAA5wC4AAAArAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-06-13T12:27:14.744Z"
+              "WhenOpened": "2025-06-14T09:08:43.641Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "role.guard.ts",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\guards\\role\\role.guard.ts",
-              "RelativeDocumentMoniker": "src\\app\\guards\\role\\role.guard.ts",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\guards\\role\\role.guard.ts",
-              "RelativeToolTip": "src\\app\\guards\\role\\role.guard.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "artisan-products.component.ts",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.ts",
+              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.ts",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.ts",
+              "RelativeToolTip": "src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.ts",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAowFkAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-06-13T12:26:19.279Z"
+              "WhenOpened": "2025-06-14T08:15:02.778Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "app.routes.ts",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\app.routes.ts",
-              "RelativeDocumentMoniker": "src\\app\\app.routes.ts",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\app.routes.ts",
-              "RelativeToolTip": "src\\app\\app.routes.ts",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-06-13T12:24:33.578Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "authentication.service.ts",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\service\\authentication\\authentication.service.ts",
-              "RelativeDocumentMoniker": "src\\app\\service\\authentication\\authentication.service.ts",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\service\\authentication\\authentication.service.ts",
-              "RelativeToolTip": "src\\app\\service\\authentication\\authentication.service.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-06-13T12:21:39.738Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "dashboard.component.ts",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\dashboard\\dashboard.component.ts",
-              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\dashboard.component.ts",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\dashboard\\dashboard.component.ts",
-              "RelativeToolTip": "src\\app\\pages\\dashboard\\dashboard.component.ts",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwCwAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-06-13T12:17:50.679Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "dashboard.component.html",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\dashboard\\dashboard.component.html",
-              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\dashboard.component.html",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\dashboard\\dashboard.component.html",
-              "RelativeToolTip": "src\\app\\pages\\dashboard\\dashboard.component.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "artisan-products.component.html",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.html",
+              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.html",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\frontendArt\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.html",
+              "RelativeToolTip": "src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-products\\artisan-products.component.html",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAYwFwAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-06-13T12:17:42.052Z"
+              "WhenOpened": "2025-06-14T08:12:46.903Z"
             }
           ]
         }

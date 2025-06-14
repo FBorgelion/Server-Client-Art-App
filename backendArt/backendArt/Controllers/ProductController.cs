@@ -46,11 +46,11 @@ namespace backendArt.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [AllowAnonymous]
-        public IActionResult GetProduct(int id)
+        public async Task<IActionResult> GetProduct(int id)
         {
             try
             {
-                var product = _productService.GetProduct(id);
+                var product = await _productService.GetProduct(id);
                 if (product == null)
                 {
                     return NotFound();
@@ -159,14 +159,14 @@ namespace backendArt.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public ActionResult Update(int id, [FromBody] ProductDTO product)
+        public async Task<ActionResult> Update(int id, [FromBody] ProductDTO product)
         {
             if (product.ProductId != id)
                 return BadRequest("ID mismatch");
 
             try
             {
-                bool updated = _productService.UpdateProduct(product);
+                bool updated = await _productService.UpdateProduct(product);
                 if (!updated)
                     return NotFound();
                 return Ok(product);

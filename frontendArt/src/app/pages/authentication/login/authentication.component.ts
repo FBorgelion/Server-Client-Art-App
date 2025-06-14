@@ -42,7 +42,7 @@ export class AuthenticationComponent {
           if (role === 'Artisan') {
             this.router.navigate(['/artisan/dashboard']);
           } else if (role === 'Customer') {
-            this.router.navigate(['/client/dashboard']);
+            this.router.navigate(['/customer/dashboard']);
           } else if (role === 'DeliveryPartner') {
             this.router.navigate(['/partner']);
           } else if (role === 'Admin') {

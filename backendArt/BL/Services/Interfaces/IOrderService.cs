@@ -27,6 +27,7 @@ namespace BL.Services.Interfaces
 
         public Task<bool> UpdateOrderStatus(int orderId, int dpId, string status);
 
+        public Task<bool> CreateOrderFromCart(int customerId);
 
     }
 

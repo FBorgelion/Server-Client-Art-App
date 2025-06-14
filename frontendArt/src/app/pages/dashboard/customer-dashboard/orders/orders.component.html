@@ -1,0 +1,47 @@
+<!-- src/app/pages/dashboard/customer-dashboard/customer-orders.component.html -->
+
+<div *ngIf="loading" class="text-center p-3">
+  <div class="spinner-border"></div>
+</div>
+<h4>Your orders</h4>
+<div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+<div *ngIf="!loading && orders.length > 0; else noOrders">
+  <div *ngFor="let o of orders" class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center bg-dark text-white">
+      <div>
+        Commande #{{ o.orderId }} — {{ o.orderDate | date:'dd/MM/yyyy HH:mm' }}
+      </div>
+      <div>
+        <span class="badge"
+              [ngClass]="{
+                'bg-warning text-dark': o.status==='InProduction',
+                'bg-info':            o.status==='InTransit' || 'Shipped',
+                'bg-success':         o.status==='Delivered'
+              }">
+          {{ o.status }}
+        </span>
+      </div>
+    </div>
+
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let item of o.items"
+          class="list-group-item d-flex justify-content-between">
+        <div>
+          {{ item.productTitle }} × {{ item.quantity }}
+        </div>
+        <div>
+          {{ item.priceAtPurchase | currency:'EUR' }}
+        </div>
+      </li>
+    </ul>
+
+    <div class="card-footer text-end">
+      Total : {{ o.totalAmount | currency:'EUR' }}
+    </div>
+  </div>
+</div>
+
+<ng-template #noOrders>
+  <p class="text-center text-muted">Vous n’avez encore aucune commande.</p>
+</ng-template>

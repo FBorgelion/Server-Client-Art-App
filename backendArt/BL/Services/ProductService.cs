@@ -38,9 +38,9 @@ namespace BL.Services
             return _mapper.Map<IEnumerable<ProductDTO>>(products);
         }
 
-        public ProductDTO GetProduct(int id)
+        public async Task<ProductDTO> GetProduct(int id)
         {
-            var product = _productRepo.GetProduct(id);
+            var product = await _productRepo.GetProduct(id);
             if (product == null)
             {
                 return null;
@@ -48,16 +48,26 @@ namespace BL.Services
             return _mapper.Map<ProductDTO>(product);
         }
 
-        public bool UpdateProduct(ProductDTO product)
+        public async Task<bool> UpdateProduct(ProductDTO product)
         {
             var productEntity = _mapper.Map<Product>(product);
-            return _productRepo.UpdateProduct(productEntity);
+            return await _productRepo.UpdateProduct(productEntity);
         }
 
         public IEnumerable<ProductDTO> GetProductsByArtisan(int artisanId)
         {
             var products = _productRepo.GetProductsByArtisan(artisanId);
             return _mapper.Map<IEnumerable<ProductDTO>>(products); ;
+        }
+
+        public async Task<bool> DecreaseStock(int productId, int quantity)
+        {
+            var prod = await _productRepo.GetProduct(productId);
+            if (prod == null || prod.Stock < quantity)
+                return false;
+            prod.Stock -= quantity;
+            await _productRepo.UpdateProduct(prod);
+            return true;
         }
 
     }

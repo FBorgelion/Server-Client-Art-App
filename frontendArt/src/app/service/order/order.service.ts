@@ -25,6 +25,10 @@ export class OrderService {
     return this.httpClient.put<void>(`https://localhost:7041/api/Order/${orderId}/dp/status`, { status });
   }
 
+  getCustomerOrders(): Observable<any> {
+    return this.httpClient.get(`https://localhost:7041/api/Order/customers/orders`);
+  }
+
 }
 
 

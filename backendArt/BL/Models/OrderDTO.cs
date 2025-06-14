@@ -16,6 +16,6 @@ namespace BL.Models
         public decimal TotalAmount { get; set; }
         public int? DeliveryPartnerId { get; set; }
         public string ShippingAddress { get; set; }
-
+        public List<OrderItemDTO> Items { get; set; }
     }
 }

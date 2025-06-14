@@ -1,0 +1,33 @@
+<div *ngIf="loading" class="text-center p-3">
+  <div class="spinner-border"></div>
+</div>
+
+<div *ngIf="!loading">
+  <h4>Your cart</h4>
+
+  <ul class="list-group mb-3" *ngIf="cart.length; else empty">
+    <li *ngFor="let item of cart"
+        class="list-group-item d-flex justify-content-between align-items-center">
+      <div>
+        {{ item.productTitle }} × {{ item.quantity }}
+      </div>
+      <div>
+        {{ (item.priceAtPurchase * item.quantity) | currency:'EUR' }}
+        <button class="btn btn-sm btn-outline-danger ms-3"
+                (click)="remove(item)">
+          <i class="bi bi-trash"></i>
+        </button>
+      </div>
+    </li>
+  </ul>
+
+  <ng-template #empty>
+    <p class="text-muted">Cart is empty.</p>
+  </ng-template>
+  <button class="btn btn-primary ms-2"
+          (click)="checkout()"
+          [disabled]="!cart.length || checkingOut">
+    <i class="bi bi-cart-check me-1"></i>
+    {{ checkingOut ? 'Submitting...' : 'Submit cart' }}
+  </button>
+</div>

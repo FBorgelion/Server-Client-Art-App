@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("backendArt")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc5b00077b2066589fb7749e6da3522ee8868116")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b2ec07843b3cf7cd49267f2d0ee37410ed5bccb3")]
 [assembly: System.Reflection.AssemblyProductAttribute("backendArt")]
 [assembly: System.Reflection.AssemblyTitleAttribute("backendArt")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

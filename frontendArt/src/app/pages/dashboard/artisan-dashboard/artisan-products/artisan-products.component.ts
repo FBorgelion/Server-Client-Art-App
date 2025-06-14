@@ -87,6 +87,6 @@ export class ArtisanProductsComponent implements OnInit {
 
   cancelEdit() {
     this.editingProduct = null;
-  }
+    this.newProduct = null;  }
 
 }

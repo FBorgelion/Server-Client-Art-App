@@ -49,6 +49,10 @@ export class AuthenticationService {
     }
   }
 
+  hasRole(role: string): boolean {
+    return this.getUserRoles().includes(role);
+  }
+
   private isTokenExpired(decodedToken: any): boolean {
     const expirationDate = new Date(decodedToken.exp * 1000);  
     return expirationDate < new Date();

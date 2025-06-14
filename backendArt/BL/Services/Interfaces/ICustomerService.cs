@@ -16,6 +16,9 @@ namespace BL.Services.Interfaces
         public bool Update(CustomerDTO customer);
 
         public bool Delete(int id);
+
+        public bool UpdateProfile(int customerId, CustomerUpdDTO dto);
+
     }
 
 
