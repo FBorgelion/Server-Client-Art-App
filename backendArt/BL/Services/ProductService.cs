@@ -19,9 +19,11 @@ namespace BL.Services
             _productRepo = productRepo;
         }
 
-        public void AddProduct(ProductDTO product)
+        public void AddProduct(ProductAddDTO product, int artisanId)
         {
-            var productEntity = _mapper.Map<Product>(product);
+            ProductDTO productDTO = new ProductDTO { ProductId = product.ProductId, ArtisanId = artisanId, Title = product.Title, Description = product.Description, Price = product.Price, Stock = product.Stock, Images = product.Images };
+
+            var productEntity = _mapper.Map<Product>(productDTO);
             _productRepo.AddProduct(productEntity);
         }
 

@@ -15,6 +15,7 @@ export class ArtisanProductsComponent implements OnInit {
 
   products: any;
   editingProduct: any;
+  newProduct: any = null;
   constructor(private productService : ProductService, private router: Router) {
   
   }
@@ -30,6 +31,25 @@ export class ArtisanProductsComponent implements OnInit {
   onEditProduct(p: any) {
     // clone pour ne pas modifier la liste directement
     this.editingProduct = { ...p };
+    this.newProduct = null;
+  }
+
+  startAdd() {
+    this.newProduct = {
+      Title: '',
+      Description: '',
+      Price: 0,
+      Stock: 0,
+      Images: ''
+    };
+    this.editingProduct = null;
+  }
+  saveAdd() {
+    this.productService.addProduct(this.newProduct)
+      .subscribe(() => {
+        this.loadProducts();
+        this.newProduct = null;
+      });
   }
 
   onDeleteProduct(id: number) {

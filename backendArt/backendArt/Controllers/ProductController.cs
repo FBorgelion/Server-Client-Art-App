@@ -116,11 +116,14 @@ namespace backendArt.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [Produces("application/json")]
-        public IActionResult Post([FromBody] ProductDTO product)
+        public IActionResult Post([FromBody] ProductAddDTO product)
         {
             try
             {
-                _productService.AddProduct(product);
+                var artisanIdClaim = User.FindFirst("userId")?.Value;
+                if (!int.TryParse(artisanIdClaim, out var artisanId))
+                    return Unauthorized();
+                _productService.AddProduct(product, artisanId);
                 return StatusCode(StatusCodes.Status201Created);
             }
             catch (Exception ex)

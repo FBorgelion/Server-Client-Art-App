@@ -293,17 +293,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ArtisanDTO"
+                "$ref": "#/components/schemas/UpdateDescDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ArtisanDTO"
+                "$ref": "#/components/schemas/UpdateDescDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ArtisanDTO"
+                "$ref": "#/components/schemas/UpdateDescDTO"
               }
             }
           }
@@ -1978,17 +1978,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductDTO"
+                "$ref": "#/components/schemas/ProductAddDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductDTO"
+                "$ref": "#/components/schemas/ProductAddDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductDTO"
+                "$ref": "#/components/schemas/ProductAddDTO"
               }
             }
           }
@@ -2754,6 +2754,36 @@
         },
         "additionalProperties": { }
       },
+      "ProductAddDTO": {
+        "type": "object",
+        "properties": {
+          "productId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "stock": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "images": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ProductDTO": {
         "type": "object",
         "properties": {
@@ -2832,6 +2862,16 @@
         "type": "object",
         "properties": {
           "status": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateDescDTO": {
+        "type": "object",
+        "properties": {
+          "desc": {
             "type": "string",
             "nullable": true
           }

@@ -3,19 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ArtDB/True/SqlTable/dbo.Products.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+      "AbsoluteMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|c:\\users\\florent\\devweb\\serverclientprojet\\backendart\\bl\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|solutionrelative:bl\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|c:\\users\\florent\\devweb\\serverclientprojet\\backendart\\bl\\models\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05407CA7-680E-4732-878D-306F86F1FBEF}|BL\\BL.csproj|solutionrelative:bl\\models\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|c:\\users\\florent\\devweb\\serverclientprojet\\backendart\\backendart\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F0EEDA4C-B888-4415-9895-36B454CE2E4B}|backendArt\\backendArt.csproj|solutionrelative:backendart\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1483EF4-3AE8-4A4E-98B7-23A5EB813419}|Domain\\Domain.csproj|c:\\users\\florent\\devweb\\serverclientprojet\\backendart\\domain\\artisan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1483EF4-3AE8-4A4E-98B7-23A5EB813419}|Domain\\Domain.csproj|solutionrelative:domain\\artisan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1483EF4-3AE8-4A4E-98B7-23A5EB813419}|Domain\\Domain.csproj|c:\\users\\florent\\devweb\\serverclientprojet\\backendart\\domain\\deliverypartner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1483EF4-3AE8-4A4E-98B7-23A5EB813419}|Domain\\Domain.csproj|solutionrelative:domain\\deliverypartner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,6 +35,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\BL\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "BL\\Services\\ProductService.cs",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\BL\\Services\\ProductService.cs",
+              "RelativeToolTip": "BL\\Services\\ProductService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T08:45:44.251Z",
+              "EditorCaption": ""
             }
           ]
         },
@@ -47,51 +57,28 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "dbo.Products [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ArtDB/True/SqlTable/dbo.Products.sql",
-              "ToolTip": "dbo.Products [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-06-13T13:19:47.635Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "backendArt\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "backendArt\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAI8AAAAAAAAAAAAuwJ4AAABJAAAAAAAAAA==",
+              "Title": "ProductDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\BL\\Models\\ProductDTO.cs",
+              "RelativeDocumentMoniker": "BL\\Models\\ProductDTO.cs",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\BL\\Models\\ProductDTO.cs",
+              "RelativeToolTip": "BL\\Models\\ProductDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T13:14:53.612Z",
+              "WhenOpened": "2025-06-14T08:44:40.914Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Artisan.cs",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\Domain\\Artisan.cs",
-              "RelativeDocumentMoniker": "Domain\\Artisan.cs",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\Domain\\Artisan.cs",
-              "RelativeToolTip": "Domain\\Artisan.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "backendArt\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\Controllers\\ProductController.cs*",
+              "RelativeToolTip": "backendArt\\Controllers\\ProductController.cs*",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAcwH0AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T12:45:23.784Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DeliveryPartner.cs",
-              "DocumentMoniker": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\Domain\\DeliveryPartner.cs",
-              "RelativeDocumentMoniker": "Domain\\DeliveryPartner.cs",
-              "ToolTip": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\Domain\\DeliveryPartner.cs",
-              "RelativeToolTip": "Domain\\DeliveryPartner.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T12:45:37.625Z",
+              "WhenOpened": "2025-06-14T08:42:45.073Z",
               "EditorCaption": ""
             }
           ]

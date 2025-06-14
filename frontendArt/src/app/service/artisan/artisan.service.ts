@@ -17,8 +17,8 @@ export class ArtisanService {
     return this.http.get(`https://localhost:7041/api/Artisan/id`);
   }
 
-  updateDescription(description: string): Observable<void> {
-    return this.http.put<void>(`https://localhost:7041/api/Artisan/description`, { profileDescription: description });
+  updateDescription(desc: string): Observable<void> {
+    return this.http.put<void>(`https://localhost:7041/api/Artisan/description`, { desc });
   }
 
   deleteArtisan(id: number): Observable<any> {

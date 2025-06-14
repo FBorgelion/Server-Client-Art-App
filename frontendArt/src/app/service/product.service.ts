@@ -32,6 +32,10 @@ export class ProductService {
     return this.http.delete<void>(url);
   }
 
+  addProduct(product: any): Observable<any> {
+    return this.http.post(`https://localhost:7041/api/Product`,  product );
+  }
+
   updateProduct(id: number, product: any): Observable<void> {
     return this.http.put<void>(
       `https://localhost:7041/api/Product/${id}`,

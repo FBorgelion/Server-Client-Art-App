@@ -11,7 +11,7 @@ namespace BL.Services.Interfaces
 
         public ProductDTO GetProduct(int id);
 
-        public void AddProduct(ProductDTO product);
+        public void AddProduct(ProductAddDTO product, int artisanId);
 
         public bool UpdateProduct(ProductDTO product);
 
