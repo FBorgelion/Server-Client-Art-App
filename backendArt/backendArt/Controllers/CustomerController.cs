@@ -37,15 +37,18 @@ namespace backendArt.Controllers
             }
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("id")]
         [ProducesResponseType(typeof(IEnumerable<CustomerDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public IActionResult Get(int id)
+        public IActionResult Get()
         {
             try
             {
-                var customer = _customerService.Get(id);
+                var custIdClaim = User.FindFirst("userId")?.Value;
+                if (!int.TryParse(custIdClaim, out var custId))
+                    return Unauthorized();
+                var customer = _customerService.Get(custId);
                 if (customer == null)
                 {
                     return NoContent();
@@ -115,6 +118,19 @@ namespace backendArt.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
+        }
+
+        [HttpPut]
+        [Route("profile")]
+        public IActionResult UpdateProfile([FromBody] CustomerUpdDTO dto)
+        {
+            var claim = User.FindFirst("userId")?.Value;
+            if (!int.TryParse(claim, out var customerId))
+                return Unauthorized();
+
+            var ok = _customerService.UpdateProfile(customerId, dto);
+            if (!ok) return NotFound();
+            return NoContent();
         }
 
     }

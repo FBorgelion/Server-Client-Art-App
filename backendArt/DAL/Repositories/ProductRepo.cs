@@ -19,10 +19,9 @@ namespace DAL.Repositories
             return _dbContext.Products.ToList();
         }
 
-        public Product GetProduct(int id)
+        public async Task<Product> GetProduct(int id)
         {
-            var product = _dbContext.Products.FirstOrDefault(p => p.ProductId == id);
-            return product;
+            return await _dbContext.Products.FirstOrDefaultAsync(p => p.ProductId == id);
         }
 
         public void AddProduct(Product product)
@@ -43,9 +42,9 @@ namespace DAL.Repositories
             return true;
         }
 
-        public bool UpdateProduct(Product product)
+        public async Task<bool> UpdateProduct(Product product)
         {
-           var productToUpd = _dbContext.Products.FirstOrDefault(p => p.ProductId == product.ProductId);
+           var productToUpd = await _dbContext.Products.FirstOrDefaultAsync(p => p.ProductId == product.ProductId);
             if (productToUpd == null)
             {
                 return false;

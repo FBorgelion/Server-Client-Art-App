@@ -51,5 +51,16 @@ namespace BL.Services
             return _customerRepo.Update(customerEntity);
         }
 
+        public bool UpdateProfile(int customerId, CustomerUpdDTO dto)
+        {
+            var customer = _customerRepo.Get(customerId);
+            if (customer == null) return false;
+
+            customer.ShippingAddress = dto.ShippingAddress;
+            customer.PaymentInfo = dto.PaymentInfo;
+            _customerRepo.Update(customer);
+            return true;
+        }
+
     }
 }

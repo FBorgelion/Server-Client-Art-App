@@ -34,7 +34,7 @@ export class DeliveryOrdersComponent implements OnInit {
       .join(', ');
   }
 
-  updateStatus(orderId: number, newStatus: 'InTransit' | 'Delivered'): void {
+  updateStatus(orderId: number, newStatus: 'Shipped' | 'InTransit' | 'Delivered' | 'InProduction'): void {
     this.orderService.updateStatusDp(orderId, newStatus)
       .subscribe({
         next: () => {
@@ -43,7 +43,7 @@ export class DeliveryOrdersComponent implements OnInit {
         },
         error: err => {
           console.error('Status change failed', err);
-          alert('Impossible de mettre à jour le statut.');
+          alert('Cannot update status.');
         }
       });
   }

@@ -13,13 +13,17 @@ namespace BL.Services
 
         private readonly IMapper _mapper;
         private readonly IOrderRepo _orderRepo;
+        private readonly IProductRepo _productRepo;
+        private readonly ICartRepo _cartRepo;
 
         private static readonly string[] AllowedStatuses = { "InProduction", "Shipped" ,"PickedUp", "InTransit", "Delivered" };
 
-        public OrderService(IMapper mapper, IOrderRepo orderRepo) 
+        public OrderService(IMapper mapper, IOrderRepo orderRepo, IProductRepo productRepo, ICartRepo cartRepo) 
         {
             _mapper = mapper;
             _orderRepo = orderRepo;
+            _productRepo = productRepo;
+            _cartRepo = cartRepo;
         }
 
         public void Add(OrderDTO order)
@@ -58,7 +62,7 @@ namespace BL.Services
         public IEnumerable<OrderDTO> GetOrdersByCustomer(int customerId)
         {
             var orders = _orderRepo.GetOrdersByCustomer(customerId);
-            if (orders.IsNullOrEmpty())
+            if (orders == null)
             {
                 return null;
             }
@@ -116,6 +120,44 @@ namespace BL.Services
 
             order.Status = status;
             await _orderRepo.Update(order);
+
+            return true;
+        }
+
+        public async Task<bool> CreateOrderFromCart(int customerId)
+        {
+            var cartItems = await _cartRepo.GetByCustomer(customerId);
+            if (!cartItems.Any()) return false;
+
+            var order = new Order
+            {
+                CustomerId = customerId,
+                OrderDate = DateTime.UtcNow,
+                Status = "InProduction",
+                ShippingAddress = cartItems.First().Customer.ShippingAddress,
+                TotalAmount = cartItems.Sum(ci => ci.Product.Price * ci.Quantity),
+                OrderItems = cartItems
+                    .Select(ci => new OrderItem
+                    {
+                        ProductId = ci.ProductId,
+                        Quantity = ci.Quantity,
+                        PriceAtPurchase = ci.Product.Price
+                    })
+                    .ToList()
+            };
+
+            foreach (var line in order.OrderItems)
+            {
+                var prod = await _productRepo.GetProduct(line.ProductId);
+                if (prod == null || prod.Stock < line.Quantity)
+                    return false; // stock manquant
+                prod.Stock -= line.Quantity;
+                await _productRepo.UpdateProduct(prod);
+            }
+
+            await _orderRepo.Add(order);
+
+            await _cartRepo.Clear(customerId);
 
             return true;
         }

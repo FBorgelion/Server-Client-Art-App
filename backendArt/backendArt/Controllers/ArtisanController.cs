@@ -154,15 +154,15 @@ namespace backendArt.Controllers
 
         [HttpPut("description")]
         [Authorize(Roles = "Artisan,Admin")]
-        public IActionResult UpdateDescription([FromBody] ArtisanDTO dto)
+        public IActionResult UpdateDescription([FromBody] UpdateDescDTO dto)
         {
             var artisanIdClaim = User.FindFirst("userId")?.Value;
             if (!int.TryParse(artisanIdClaim, out var artisanId))
                 return Unauthorized();
-            if (dto == null)
+            if (string.IsNullOrEmpty(dto.desc))
                 return BadRequest();
 
-            var ok = _artisanService.UpdateDescription(artisanId, dto.ProfileDescription);
+            var ok = _artisanService.UpdateDescription(artisanId, dto.desc);
             if (!ok) return NotFound();
             return NoContent();
         }

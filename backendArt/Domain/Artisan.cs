@@ -9,7 +9,6 @@ namespace Domain
     public class Artisan
     {
 
-        // PK = User.UserId
         public int ArtisanId { get; set; }
         public string? ProfileDescription { get; set; }
 

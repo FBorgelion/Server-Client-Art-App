@@ -9,7 +9,7 @@ namespace DAL.Repositories.Interfaces
 
         public Order Get(int id);
 
-        public void Add(Order order);
+        public Task Add(Order order);
 
         public Task Update(Order order);
 

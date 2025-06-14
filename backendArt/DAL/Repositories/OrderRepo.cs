@@ -19,9 +19,9 @@ namespace DAL.Repositories
             _dbContext = dbContext;
         }
 
-        public void Add(Order order)
+        public async Task Add(Order order)
         {
-            _dbContext.Orders.Add(order);
+            await _dbContext.Orders.AddAsync(order);
             _dbContext.SaveChanges();
         }
 
@@ -70,7 +70,11 @@ namespace DAL.Repositories
 
         public IEnumerable<Order> GetOrdersByCustomer(int customerId)
         {
-            return _dbContext.Orders.Where(o => o.CustomerId == customerId).ToList();
+            return _dbContext.Orders
+                .Include(o => o.OrderItems)
+                    .ThenInclude(oi => oi.Product)
+                .Where(o => o.CustomerId == customerId)
+                .ToList();
         }
 
         public IEnumerable<Order> GetOrdersByPartner(int partnerId)
@@ -89,6 +93,7 @@ namespace DAL.Repositories
                     .ThenInclude(oi => oi.Product)
                 .Where(o => o.OrderItems.Any(oi => oi.Product.ArtisanId == artisanId)).ToList();
         }
+
 
         public bool UpdateOrderStatus(int orderId, string status)
         {
