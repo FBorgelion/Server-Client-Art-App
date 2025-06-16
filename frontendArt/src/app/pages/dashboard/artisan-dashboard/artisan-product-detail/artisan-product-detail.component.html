@@ -1,6 +1,6 @@
 <ng-container *ngIf="!loading; else loadingTpl">
   <div *ngIf="product" class="card mb-4">
-    <img [src]="product.imageUrl" class="card-img-top" alt="{{ product.title }}">
+    <img [src]="'https://localhost:7041' + product.images" class="card-img-top product-img" alt="{{ product.title }}">
     <div class="card-body">
       <h3 class="card-title">{{ product.title }}</h3>
       <p class="card-text">{{ product.description }}</p>
@@ -21,6 +21,12 @@
     </li>
   </ul>
 </ng-container>
+
+<div class="mb-3 mt-3">
+  <button class="btn btn-secondary" (click)="goBack()">
+    <i class="bi bi-arrow-left"></i> Retour
+  </button>
+</div>
 
 <ng-template #loadingTpl>
   <div class="text-center p-3">

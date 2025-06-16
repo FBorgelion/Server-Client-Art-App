@@ -1,5 +1,32 @@
 [
   {
+    "ContainingType": "backendArt.Controllers.AdminController",
+    "Method": "Post",
+    "RelativePath": "api/Admin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "admin",
+        "Type": "BL.Models.AdminDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 201
+      }
+    ]
+  },
+  {
     "ContainingType": "backendArt.Controllers.ArtisanController",
     "Method": "GetAll",
     "RelativePath": "api/Artisan",
@@ -811,7 +838,7 @@
     "Parameters": [
       {
         "Name": "inquiry",
-        "Type": "BL.Models.InquiryDTO",
+        "Type": "BL.Models.AddInquiryDTO",
         "IsRequired": true
       }
     ],
@@ -825,6 +852,13 @@
         "Type": "System.Void",
         "MediaTypes": [],
         "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
       }
     ]
   },
@@ -961,6 +995,26 @@
     "ContainingType": "backendArt.Controllers.InquiryController",
     "Method": "GetForArtisan",
     "RelativePath": "api/Inquiry/artisan",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BL.Models.InquiryDTO, BL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "backendArt.Controllers.InquiryController",
+    "Method": "GetForCustomer",
+    "RelativePath": "api/Inquiry/customer",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -1361,6 +1415,42 @@
     ]
   },
   {
+    "ContainingType": "backendArt.Controllers.OrderController",
+    "Method": "GetRevenue",
+    "RelativePath": "api/Order/revenue",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "period",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      }
+    ]
+  },
+  {
     "ContainingType": "backendArt.Controllers.OrderItemController",
     "Method": "GetAll",
     "RelativePath": "api/OrderItem",
@@ -1564,23 +1654,12 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "product",
-        "Type": "BL.Models.ProductAddDTO",
+        "Name": "dto",
+        "Type": "BL.Models.ProductCreateDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 500
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 201
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "backendArt.Controllers.ProductController",
@@ -1672,32 +1751,12 @@
         "IsRequired": true
       },
       {
-        "Name": "product",
-        "Type": "BL.Models.ProductDTO",
+        "Name": "dto",
+        "Type": "BL.Models.ProductUpdateDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 500
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "backendArt.Controllers.ProductController",
@@ -1812,8 +1871,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "review",
-        "Type": "BL.Models.ReviewDTO",
+        "Name": "dto",
+        "Type": "BL.Models.AddReviewDTO",
         "IsRequired": true
       }
     ],
@@ -1827,6 +1886,13 @@
         "Type": "System.Void",
         "MediaTypes": [],
         "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
       }
     ]
   },
@@ -1945,5 +2011,21 @@
         "StatusCode": 500
       }
     ]
+  },
+  {
+    "ContainingType": "backendArt.Controllers.UploadController",
+    "Method": "UploadImage",
+    "RelativePath": "api/Upload/image",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

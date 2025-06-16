@@ -1,42 +1,68 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../../../../service/order/order.service';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { catchError, of } from 'rxjs';
 
 @Component({
   selector: 'app-artisan-orders',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],  // ← add FormsModule
   templateUrl: './artisan-orders.component.html',
-  styleUrl: './artisan-orders.component.css'
+  styleUrls: ['./artisan-orders.component.css']
 })
 export class ArtisanOrdersComponent implements OnInit {
-
-  orders: any;
+  orders: any[] = [];
+  filteredOrders: any[] = [];
   loading = true;
+
+  statuses = [
+    { label: 'All', value: '' },
+    { label: 'In Production', value: 'InProduction' },
+    { label: 'Shipped', value: 'Shipped' },
+    { label: 'InTransit', value: 'InTransit' },
+    { label: 'Taken', value: 'Taken' },
+    { label: 'Delivered', value: 'Delivered' }
+  ];
+  selectedStatus = '';
 
   constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
-    this.orderService.getArtisanOrders().subscribe(data => this.orders = data);
-    this.loading = false;
+    this.orderService.getArtisanOrders()
+      .pipe(catchError(_ => of([])))
+      .subscribe(data => {
+        this.orders = data;
+        this.applyFilter();
+        this.loading = false;
+      });
   }
 
-  getProductTitles(order: any): string {
-    return order.items
-      .map((i: { productTitle: any; }) => i.productTitle)
-      .join(', ');
+  onStatusChange(status: string) {
+    this.selectedStatus = status;
+    this.applyFilter();
+  }
+
+  private applyFilter() {
+    if (!this.selectedStatus) {
+      this.filteredOrders = [...this.orders];
+    } else {
+      this.filteredOrders = this.orders.filter(o => o.status === this.selectedStatus);
+    }
   }
 
   toggleStatus(o: any) {
     const next = o.status === 'InProduction' ? 'Shipped' : 'InProduction';
     this.orderService.updateStatus(o.orderId, next)
       .subscribe({
-        next: () => o.status = next,
+        next: () => {
+          o.status = next;
+          this.applyFilter();  
+        },
         error: err => {
           console.error('Status change failed', err);
-          alert('Impossible de changer le statut.');
+          alert('Cannot change status.');
         }
       });
   }
-
 }

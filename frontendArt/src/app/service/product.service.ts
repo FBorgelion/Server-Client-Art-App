@@ -32,15 +32,26 @@ export class ProductService {
     return this.http.delete<void>(url);
   }
 
-  addProduct(product: any): Observable<any> {
-    return this.http.post(`https://localhost:7041/api/Product`,  product );
+  addProduct(product: { title: string; description: string; price: number; stock: number; images: string;}): Observable<any> {
+    return this.http.post(`https://localhost:7041/api/Product`, product);
   }
 
-  updateProduct(id: number, product: any): Observable<void> {
-    return this.http.put<void>(
-      `https://localhost:7041/api/Product/${id}`,
-      product
-    );
+  updateProduct( id: number, product: {title: string;description: string;price: number;stock: number;images: string;}): Observable<void> {
+    return this.http.put<void>(`https://localhost:7041/api/Product/${id}`, product);
+  }
+
+  uploadImage(file: File): Observable<{ url: string }> {
+    const fd = new FormData();
+    fd.append('file', file, file.name);
+    return this.http.post<{ url: string }>(`https://localhost:7041/api/Upload/image`, fd);
+  }
+
+  addProductWithImage(formData: FormData): Observable<any> {
+    return this.http.post(`${this.baseUrl}`, formData);
+  }
+
+  updateProductWithImage(id: number, formData: FormData): Observable<any> {
+    return this.http.put(`${this.baseUrl}/${id}`, formData);
   }
 
 

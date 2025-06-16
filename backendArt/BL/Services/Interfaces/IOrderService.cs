@@ -29,6 +29,9 @@ namespace BL.Services.Interfaces
 
         public Task<bool> CreateOrderFromCart(int customerId);
 
+        public IEnumerable<RevenueDTO> GetRevenue(int artisanId, string period);
+
+
     }
 
 

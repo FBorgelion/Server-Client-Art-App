@@ -360,3 +360,6 @@ C:\Users\Florent\DevWeb\backendArt\backendArt\bin\Debug\net8.0\Microsoft.AspNetC
 C:\Users\Florent\DevWeb\backendArt\backendArt\bin\Debug\net8.0\BL.dll
 C:\Users\Florent\DevWeb\backendArt\backendArt\bin\Debug\net8.0\BL.pdb
 C:\Users\Florent\DevWeb\backendArt\backendArt\obj\Debug\net8.0\backendArt.sourcelink.json
+C:\Users\Florent\DevWeb\ServerClientProjet\backendArt\backendArt\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\Florent\DevWeb\ServerClientProjet\backendArt\backendArt\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\Florent\DevWeb\ServerClientProjet\backendArt\backendArt\bin\Debug\net8.0\backendArt.staticwebassets.runtime.json

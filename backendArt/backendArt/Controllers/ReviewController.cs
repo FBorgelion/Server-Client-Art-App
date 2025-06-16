@@ -89,12 +89,16 @@ namespace backendArt.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [Produces("application/json")]
-        public IActionResult Post([FromBody] ReviewDTO review)
+        public IActionResult Post([FromBody] AddReviewDTO dto)
         {
             try
             {
-                _reviewService.Add(review);
+                var custIdClaim = User.FindFirst("userId")?.Value;
+                if (!int.TryParse(custIdClaim, out var custId))
+                    return Unauthorized();
+                _reviewService.Add(custId, dto.ProductId, dto.Rating, dto.Comment);
                 return StatusCode(StatusCodes.Status201Created);
             }
             catch (Exception ex)

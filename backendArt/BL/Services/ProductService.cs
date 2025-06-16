@@ -3,8 +3,8 @@ using BL.Models;
 using BL.Services.Interfaces;
 using DAL.Repositories.Interfaces;
 using Domain;
-using Microsoft.IdentityModel.Tokens;
-
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 namespace BL.Services
 {
     public class ProductService : IProductService
@@ -12,11 +12,13 @@ namespace BL.Services
 
         private readonly IMapper _mapper;
         private readonly IProductRepo _productRepo;
+        private readonly IWebHostEnvironment _env;
 
-        public ProductService(IMapper mapper, IProductRepo productRepo) 
+        public ProductService(IMapper mapper, IProductRepo productRepo, IWebHostEnvironment env) 
         {
             _mapper = mapper;
             _productRepo = productRepo;
+            _env = env;
         }
 
         public void AddProduct(ProductAddDTO product, int artisanId)
@@ -68,6 +70,41 @@ namespace BL.Services
             prod.Stock -= quantity;
             await _productRepo.UpdateProduct(prod);
             return true;
+        }
+
+        public async Task<ProductDTO> CreateAsync(ProductCreateDTO dto, int artisanId)
+        {
+            // construit l'entité
+            var product = new Product
+            {
+                ArtisanId = artisanId,
+                Title = dto.Title,
+                Description = dto.Description,
+                Price = dto.Price,
+                Stock = dto.Stock,
+                Images = dto.Images
+            };
+
+            _productRepo.AddProduct(product);
+            // SaveChanges a déjà été appelé en interne
+
+            return _mapper.Map<ProductDTO>(product);
+        }
+
+        public async Task UpdateAsync(int id, ProductUpdateDTO dto)
+        {
+            var existing = await _productRepo.GetProduct(id);
+            if (existing == null) throw new KeyNotFoundException($"Product {id} not found");
+
+            // Update champs
+            existing.Title = dto.Title;
+            existing.Description = dto.Description;
+            existing.Price = dto.Price;
+            existing.Stock = dto.Stock;
+            if (!string.IsNullOrWhiteSpace(dto.Images))
+                existing.Images = dto.Images;
+
+            _productRepo.UpdateProduct(existing);
         }
 
     }

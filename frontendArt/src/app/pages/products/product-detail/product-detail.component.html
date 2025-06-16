@@ -1,23 +1,26 @@
 <div *ngIf="product" class="container py-4">
-  <div class="row">
+
+  <div class="row mb-4">
     <div class="col-md-6">
-      <img [src]="product.imageUrl" class="img-fluid" alt="{{ product.title }}">
+      <img [src]="'https://localhost:7041' + product.images"
+           class="img-fluid"
+           alt="{{ product.title }}">
     </div>
     <div class="col-md-6">
       <h2>{{ product.title }}</h2>
       <h4 class="text-success">{{ product.price | currency:'EUR' }}</h4>
       <p>{{ product.description }}</p>
       <p><strong>Stock :</strong> {{ product.stock }}</p>
-      <!-- autres infos complémentaires -->
     </div>
   </div>
 
   <hr>
 
   <h3>Avis clients</h3>
-  <div *ngIf="reviews.length === 0" class="text-muted">
-    Aucun avis pour l’instant.
+  <div *ngIf="reviews.length === 0" class="text-muted mb-3">
+    No inquiry for now.
   </div>
+
   <div *ngFor="let rev of reviews" class="card mb-2">
     <div class="card-body">
       <h5 class="card-title">{{ rev.authorName }}</h5>
@@ -25,4 +28,81 @@
       <small class="text-muted">Note : {{ rev.rating }}/5</small>
     </div>
   </div>
+
+  <hr>
+
+  <!-- 4. Bouton "Poser une question" et formulaire conditionnel -->
+  <div class="mb-4">
+    <button *ngIf="canReview"
+            class="btn btn-outline-primary"
+            (click)="showInquiryForm = !showInquiryForm">
+      <i class="bi bi-question-circle"></i>
+      {{ showInquiryForm ? 'Cancel' : 'Ask question' }}
+    </button>
+
+    <div *ngIf="showInquiryForm" class="card mt-3">
+      <div class="card-body">
+        <h5 class="card-title">Your inquiry for the artisan</h5>
+        <div class="mb-3">
+          <textarea class="form-control" rows="3"
+                    [(ngModel)]="inquiryMessage"
+                    name="inquiryMessage"
+                    placeholder="Your question…"></textarea>
+        </div>
+        <button class="btn btn-primary"
+                [disabled]="!inquiryMessage.trim()"
+                (click)="submitInquiry()">
+          Send
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- FORMULAIRE D’AVIS POUR LES CUSTOMERS CONNECTÉS -->
+  <div *ngIf="canReview" class="card mt-4">
+    <div class="card-header bg-secondary text-white">
+      Leave a review
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="submitReview()">
+        <div class="mb-3">
+          <label class="form-label">Note</label>
+          <select class="form-select w-auto"
+                  [(ngModel)]="newRating"
+                  name="rating">
+            <option *ngFor="let n of [5,4,3,2,1]" [value]="n">
+              {{n}} étoile{{ n>1 ? 's' : '' }}
+            </option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Commentaire</label>
+          <textarea class="form-control"
+                    rows="3"
+                    [(ngModel)]="newComment"
+                    name="comment"
+                    required>
+          </textarea>
+        </div>
+        <button type="submit"
+                class="btn btn-primary">
+          Send
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="mb-3 mt-3">
+    <button class="btn btn-secondary" (click)="goBack()">
+      <i class="bi bi-arrow-left"></i> Retour
+    </button>
+  </div>
+
+  <div *ngIf="!canReview" class="alert alert-info mt-4">
+    You should connect as <strong>customer</strong> to leave review.
+  </div>
 </div>
+
+

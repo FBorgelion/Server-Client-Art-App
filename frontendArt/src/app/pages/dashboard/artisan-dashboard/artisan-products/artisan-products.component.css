@@ -1,0 +1,7 @@
+.product-img {
+  width: 100%; /* prend toute la largeur du conteneur */
+  max-width: 300px; /* ne dépassera jamais 300px */
+  height: 200px; /* hauteur fixe */
+  object-fit: cover; /* recadre l’image en centrant et rognant si besoin */
+  border-radius: 4px;
+}

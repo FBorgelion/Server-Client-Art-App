@@ -23,9 +23,5 @@ namespace Domain
         public ICollection<OrderItem> OrderItems { get; set; }
         public ICollection<Review> Reviews { get; set; }
         public ICollection<Inquiry> Inquiries { get; set; }
-
-
-
-
     }
 }

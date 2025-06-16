@@ -1,12 +1,125 @@
 {
   "Version": 1,
-  "Hash": "QHAZPy9tPvcrE3+J5GfDi+JIM68H1yQLAF8RMIoie3g=",
+  "Hash": "BJ1hv/H/pZFt7ePMog3dgZ9L6JxFLrp2HnIPHXe6Ffw=",
   "Source": "backendArt",
   "BasePath": "_content/backendArt",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "backendArt\\wwwroot",
+      "Source": "backendArt",
+      "ContentRoot": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\",
+      "BasePath": "_content/backendArt",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\collier.png",
+      "SourceId": "backendArt",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\",
+      "BasePath": "_content/backendArt",
+      "RelativePath": "images/collier#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bgnrqoo7zw",
+      "Integrity": "e6kduzbn54xu7eUiAAc+P2iiSznWzwhZ3DwOogMwE58=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\collier.png"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "images/collier.bgnrqoo7zw.png",
+      "AssetFile": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\collier.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2847"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e6kduzbn54xu7eUiAAc+P2iiSznWzwhZ3DwOogMwE58=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 07:59:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bgnrqoo7zw"
+        },
+        {
+          "Name": "label",
+          "Value": "images/collier.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-e6kduzbn54xu7eUiAAc+P2iiSznWzwhZ3DwOogMwE58="
+        }
+      ]
+    },
+    {
+      "Route": "images/collier.png",
+      "AssetFile": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\collier.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2847"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"e6kduzbn54xu7eUiAAc+P2iiSznWzwhZ3DwOogMwE58=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 07:59:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-e6kduzbn54xu7eUiAAc+P2iiSznWzwhZ3DwOogMwE58="
+        }
+      ]
+    }
+  ]
 }

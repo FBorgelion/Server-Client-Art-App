@@ -62,12 +62,16 @@ namespace backendArt.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [Produces("application/json")]
-        public IActionResult Post([FromBody] InquiryDTO inquiry)
+        public IActionResult Post([FromBody] AddInquiryDTO inquiry)
         {
             try
             {
-                _inquiryService.Add(inquiry);
+                var custIdClaim = User.FindFirst("userId")?.Value;
+                if (!int.TryParse(custIdClaim, out var custId))
+                    return Unauthorized();
+                _inquiryService.Add(custId, inquiry.ProductId, inquiry.Message);
                 return StatusCode(StatusCodes.Status201Created);
             }
             catch (Exception ex)
@@ -80,7 +84,7 @@ namespace backendArt.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [Authorize(Roles = "Artisan,Admin")]
+        [Authorize(Roles = "Customer,Artisan,Admin")]
         public IActionResult Delete(int id)
         {
             try
@@ -127,6 +131,17 @@ namespace backendArt.Controllers
             if (!int.TryParse(artisanIdClaim, out var artisanId))
                 return Unauthorized();
             var dtos = _inquiryService.GetInquiriesForArtisan(artisanId);
+            return Ok(dtos);
+        }
+
+        [HttpGet("customer")]
+        [Authorize(Roles = "Customer,Admin")]
+        public ActionResult<IEnumerable<InquiryDTO>> GetForCustomer()
+        {
+            var custIdClaim = User.FindFirst("userId")?.Value;
+            if (!int.TryParse(custIdClaim, out var custId))
+                return Unauthorized();
+            var dtos = _inquiryService.GetInquiriesForCustomer(custId);
             return Ok(dtos);
         }
 

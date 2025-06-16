@@ -18,10 +18,17 @@ namespace BL.Services
             _inquiryRepo = inquiryRepo;
         }
 
-        public void Add(InquiryDTO inquiry)
+        public void Add(int custId, int productId, string message)
         {
-            var inquiryEntity = _mapper.Map<Inquiry>(inquiry);
-            _inquiryRepo.Add(inquiryEntity);
+            Inquiry inquiry = new Inquiry
+            {
+                CustomerId = custId,
+                ProductId = productId,
+                Message = message,
+                CreatedAt = DateTime.UtcNow,
+            };
+
+            _inquiryRepo.Add(inquiry);
         }
 
         public bool Delete(int id)
@@ -54,6 +61,12 @@ namespace BL.Services
         public IEnumerable<InquiryDTO> GetInquiriesForArtisan(int artisanId)
         {
             var entities = _inquiryRepo.GetInquiriesForArtisan(artisanId);
+            return _mapper.Map<IEnumerable<InquiryDTO>>(entities);
+        }
+
+        public IEnumerable<InquiryDTO> GetInquiriesForCustomer(int custId)
+        {
+            var entities = _inquiryRepo.GetInquiriesForCustomer(custId);
             return _mapper.Map<IEnumerable<InquiryDTO>>(entities);
         }
 

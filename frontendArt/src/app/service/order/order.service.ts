@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+export interface ReportRow { period: string; amount: number; }
+
 @Injectable({
   providedIn: 'root'
 })
@@ -27,6 +29,10 @@ export class OrderService {
 
   getCustomerOrders(): Observable<any> {
     return this.httpClient.get(`https://localhost:7041/api/Order/customers/orders`);
+  }
+
+  getRevenue(period: 'week' | 'month' | 'year'): Observable<any[]> {
+    return this.httpClient.get<any[]>(`https://localhost:7041/api/Order/revenue?period=${period}`);
   }
 
 }

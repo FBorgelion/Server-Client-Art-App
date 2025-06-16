@@ -51,10 +51,17 @@ namespace BL.Services
             return _mapper.Map<IEnumerable<ReviewDTO>>(reviews); ;
         }
 
-        public void Add(ReviewDTO review)
+        public void Add(int custId, int productId, int rating , string comment)
         {
-            var reviewEntity = _mapper.Map<Review>(review);
-            _reviewRepo.Add(reviewEntity);
+            Review review = new Review
+            {
+                CustomerId = custId,
+                ProductId = productId,
+                Rating = rating,
+                Comment = comment,
+                CreatedDate = DateTime.Now
+            };
+            _reviewRepo.Add(review);
         }
 
         public bool Delete(int id)

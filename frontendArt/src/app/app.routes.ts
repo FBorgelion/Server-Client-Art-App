@@ -14,35 +14,48 @@ import { DeliveryOrdersComponent } from './pages/dashboard/delivery-partner-dash
 import { DeliveryPartnerDashboardComponent } from './pages/dashboard/delivery-partner-dashboard/delivery-partner-dashboard.component';
 import { AdminDashboardComponent } from './pages/dashboard/admin-dashboard/admin-dashboard.component';
 import { CustomerDashboardComponent } from './pages/dashboard/customer-dashboard/customer-dashboard.component';
+import { authGuard } from './guards/auth/auth.guard';
+import { roleGuard } from './guards/role/role.guard';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { FinancialReportComponent } from './pages/dashboard/artisan-dashboard/financial-report/financial-report.component';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+
+  { path: 'dashboard', component: DashboardComponent, canActivate: [authGuard] },
+
   { path: "auth/login", component: AuthenticationComponent },
+
   { path: "auth/register", component: RegisterComponent },
+
   { path: 'product', component: ProductsComponent },
+
+  { path: 'product/:id', component: ProductDetailComponent },
+
   { path: 'unauthorized', component: UnauthorizeComponent },
-  { path: 'admin/users', component: AdminDashboardComponent },
-  { path: 'customer/dashboard', component: CustomerDashboardComponent },
+
+  { path: 'admin/users', component: AdminDashboardComponent, canActivate: [authGuard, roleGuard], data: { roles: ['Admin'] } },
+
+  { path: 'customer/dashboard', component: CustomerDashboardComponent, canActivate: [authGuard, roleGuard], data: { roles: ['Admin', 'Customer'] } },
+
   {
-    path: 'artisan/dashboard', component: ArtisanDashboardComponent,
+    path: 'artisan/dashboard', component: ArtisanDashboardComponent, canActivate: [authGuard, roleGuard], data: { roles: ['Artisan', 'Admin'] },
     children: [
+      { path: '', redirectTo: 'products', pathMatch: 'full' },
       { path: 'products', component: ArtisanProductsComponent },
       { path: 'products/:id/reviews', component: ArtisanProductDetailComponent },
       { path: 'orders', component: ArtisanOrdersComponent },
       { path: 'inquiries', component: ArtisanInquiriesComponent },
-      { path: '', redirectTo: 'products', pathMatch: 'full' },
-      { path: 'profile', component: ArtisanProfileComponent
-      },
+      { path: 'report', component: FinancialReportComponent },
+      { path: 'profile', component: ArtisanProfileComponent },
     ]
   },
-  { path: 'artisan/dashboard/products', component: ArtisanProductsComponent },
-  { path: 'artisan/dashboard/orders', component: ArtisanOrdersComponent },
-  { path: 'artisan/dashboard/products/:id/reviews', component: ArtisanProductDetailComponent },
-  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
-  { path: 'product/:id', component: ProductDetailComponent },
+
   {
-    path: 'partner', component: DeliveryPartnerDashboardComponent,
+    path: 'partner', component: DeliveryPartnerDashboardComponent, canActivate: [authGuard, roleGuard], data: { roles: ['DeliveryPartner', 'Admin'] },
     children: [
-      { path: 'orders', component: DeliveryOrdersComponent, }
+      { path: '', redirectTo: 'orders', pathMatch: 'full' },
+      { path: 'orders', component: DeliveryOrdersComponent },
     ]
   },
 ];

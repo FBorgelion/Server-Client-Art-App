@@ -16,6 +16,8 @@ export class ArtisanProductsComponent implements OnInit {
   products: any;
   editingProduct: any;
   newProduct: any = null;
+  selectedFile?: File;
+
   constructor(private productService : ProductService, private router: Router) {
   
   }
@@ -29,26 +31,31 @@ export class ArtisanProductsComponent implements OnInit {
   }
 
   onEditProduct(p: any) {
-    // clone pour ne pas modifier la liste directement
     this.editingProduct = { ...p };
     this.newProduct = null;
   }
 
   startAdd() {
     this.newProduct = {
-      Title: '',
-      Description: '',
-      Price: 0,
-      Stock: 0,
-      Images: ''
+      title: '',
+      description: '',
+      price: 0,
+      stock: 0,
+      images: ''   
     };
     this.editingProduct = null;
   }
+
   saveAdd() {
-    this.productService.addProduct(this.newProduct)
+    if (!this.newProduct) return;
+    this.productService
+      .addProduct(this.newProduct)
       .subscribe(() => {
         this.loadProducts();
         this.newProduct = null;
+      }, err => {
+        console.error(err);
+        alert('Cannot create product.');
       });
   }
 
@@ -64,7 +71,7 @@ export class ArtisanProductsComponent implements OnInit {
       },
       error: (err: any) => {
         console.error('[ArtisanProducts] delete failed', err);
-        alert(`Impossible de supprimer le produit. (${err.status} : ${err.statusText})`);
+        alert(`Cannot delete product. (${err.status} : ${err.statusText})`);
       }
     });
   }
@@ -73,20 +80,25 @@ export class ArtisanProductsComponent implements OnInit {
     if (!this.editingProduct) return;
     this.productService
       .updateProduct(this.editingProduct.productId, this.editingProduct)
-      .subscribe({
-        next: () => {
-          this.loadProducts();
-          this.editingProduct = null;
-        },
-        error: (err: any) => {
-          console.error(err);
-          alert('Error while updating');
-        }
+      .subscribe(() => {
+        this.loadProducts();
+        this.editingProduct = null;
+      }, err => {
+        console.error(err);
+        alert('Cannot update product.');
       });
   }
 
   cancelEdit() {
     this.editingProduct = null;
-    this.newProduct = null;  }
+    this.newProduct = null;
+  }
+
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.selectedFile = input.files[0];
+    }
+  }
 
 }

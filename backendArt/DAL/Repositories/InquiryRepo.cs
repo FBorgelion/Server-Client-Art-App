@@ -69,6 +69,13 @@ namespace DAL.Repositories
                   .OrderByDescending(i => i.CreatedAt)
                   .ToList();
 
+        public IEnumerable<Inquiry> GetInquiriesForCustomer(int custId)
+            => _dbContext.CustomerInquiries
+                  .Include(i => i.Product)
+                  .Where(i => i.CustomerId == custId)
+                  .OrderByDescending(i => i.CreatedAt)
+                  .ToList();
+
         public bool RespondToInquiry(int inquiryId, string response)
         {
             var inq = _dbContext.CustomerInquiries.FirstOrDefault(i => i.InquiryId == inquiryId);

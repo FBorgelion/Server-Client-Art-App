@@ -8,7 +8,7 @@
     <div class="card-header d-flex justify-content-between align-items-center bg-dark text-white">
       <small>{{ inq.createdAt | date:'short' }}</small>
 
-      <button class="btn btn-outline-danger bg-danger"
+      <button class="btn bg-danger text-white"
               title="Delete"
               (click)="delete(inq)">
         <i class="bi bi-trash"></i>
@@ -16,10 +16,10 @@
     </div>
     <div class="card-body">
 
-      <p><strong>Produit :</strong> {{ inq.productTitle }}</p>
+      <p><strong>Product :</strong> {{ inq.productTitle }}</p>
 
       <p><strong>Message :</strong> {{ inq.message }}</p>     <p>
-        <strong>Réponse :</strong>
+        <strong>Response :</strong>
         <span *ngIf="inq.response; else noResp">{{ inq.response }}</span>
         <ng-template #noResp><em>No response</em></ng-template>
       </p>

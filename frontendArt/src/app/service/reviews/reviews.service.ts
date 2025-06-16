@@ -20,5 +20,8 @@ export class ReviewsService {
   deleteReview(id: number): Observable<any> {
     return this.http.delete(`https://localhost:7041/api/Review/${id}`);
   }
+  addReview(payload: any): Observable<any> {
+    return this.http.post('https://localhost:7041/api/Review', payload );
+  }
 
 }

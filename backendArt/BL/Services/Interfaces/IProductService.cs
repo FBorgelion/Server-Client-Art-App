@@ -1,5 +1,6 @@
 ﻿using BL.Models;
 using Domain;
+using Microsoft.AspNetCore.Http;
 
 
 namespace BL.Services.Interfaces
@@ -20,6 +21,12 @@ namespace BL.Services.Interfaces
         public IEnumerable<ProductDTO> GetProductsByArtisan(int artisanId);
 
         public Task<bool> DecreaseStock(int productId, int quantity);
+
+        public Task<ProductDTO> CreateAsync(ProductCreateDTO dto, int artisanId);
+
+        public Task UpdateAsync(int id, ProductUpdateDTO dto);
+
+
 
 
     }

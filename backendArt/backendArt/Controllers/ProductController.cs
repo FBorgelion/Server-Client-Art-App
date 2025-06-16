@@ -13,10 +13,12 @@ namespace backendArt.Controllers
     {
 
         private readonly IProductService _productService;
+        private readonly IWebHostEnvironment _env;
 
-        public ProductController(IProductService productService)
+        public ProductController(IProductService productService, IWebHostEnvironment env)
         {
             _productService = productService;
+            _env = env;
         }
 
         [HttpGet]
@@ -113,23 +115,15 @@ namespace backendArt.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [Produces("application/json")]
-        public IActionResult Post([FromBody] ProductAddDTO product)
+        [Authorize(Roles = "Artisan,Admin")]
+        public async Task<IActionResult> Post([FromBody] ProductCreateDTO dto)
         {
-            try
-            {
-                var artisanIdClaim = User.FindFirst("userId")?.Value;
-                if (!int.TryParse(artisanIdClaim, out var artisanId))
-                    return Unauthorized();
-                _productService.AddProduct(product, artisanId);
-                return StatusCode(StatusCodes.Status201Created);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
-            }
+            var artisanIdClaim = User.FindFirst("userId")?.Value;
+            if (!int.TryParse(artisanIdClaim, out var artisanId))
+                return Unauthorized();
+
+            var created = await _productService.CreateAsync(dto, artisanId);
+            return CreatedAtAction(nameof(GetProduct), new { id = created.ProductId }, created);
         }
 
         [HttpDelete("{id}")]
@@ -156,25 +150,10 @@ namespace backendArt.Controllers
 
         [HttpPut("{id}")]
         [Authorize(Roles = "Artisan,Admin")]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult> Update(int id, [FromBody] ProductDTO product)
+        public async Task<IActionResult> Update(int id, [FromBody] ProductUpdateDTO dto)
         {
-            if (product.ProductId != id)
-                return BadRequest("ID mismatch");
-
-            try
-            {
-                bool updated = await _productService.UpdateProduct(product);
-                if (!updated)
-                    return NotFound();
-                return Ok(product);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex.Message);
-            }
+            await _productService.UpdateAsync(id, dto);
+            return NoContent();
         }
 
     }

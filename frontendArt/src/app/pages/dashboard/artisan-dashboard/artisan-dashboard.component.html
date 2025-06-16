@@ -1,31 +1,56 @@
-
+<!-- artisan-dashboard.component.html -->
 <div class="container-fluid">
   <div class="row">
-    <nav class="col-12 col-md-2 d-md-block bg-dark sidebar py-3"  style="min-height:100vh">
+    <!-- SIDEBAR -->
+    <nav class="col-12 col-md-2 d-md-block bg-dark sidebar py-3" style="min-height:100vh">
       <div class="position-sticky">
         <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="products" routerLinkActive="active">
-              <i class="bi bi-box-seam-fill"></i> My Products
+          <li class="nav-item mb-2">
+            <a class="nav-link"
+               routerLink="products"
+               routerLinkActive="active">
+              <i class="bi bi-box-seam-fill me-1"></i>
+              My Products
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="orders" routerLinkActive="active">
-              <i class="bi bi-bag-fill"></i> Orders
+          <li class="nav-item mb-2">
+            <a class="nav-link"
+               routerLink="orders"
+               routerLinkActive="active">
+              <i class="bi bi-bag-fill me-1"></i>
+              Orders
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="inquiries" routerLinkActive="active">
-              <i class="bi bi-star-fill"></i> Inquiries
+          <li class="nav-item mb-2">
+            <a class="nav-link"
+               routerLink="inquiries"
+               routerLinkActive="active">
+              <i class="bi bi-question-circle me-1"></i>
+              Inquiries
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link bi bi-pencil-fill" routerLink="profile"> Profile</a>
+          <li class="nav-item mb-2">
+            <a class="nav-link"
+               routerLink="report"
+               routerLinkActive="active">
+              <i class="bi bi-graph-up me-1"></i>
+              Financial Report
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a class="nav-link"
+               routerLink="profile"
+               routerLinkActive="active">
+              <i class="bi bi-pencil-fill me-1"></i>
+              Profile
+            </a>
           </li>
         </ul>
       </div>
     </nav>
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+
+    <!-- MAIN CONTENT -->
+    <main class="col-12 col-md-10 px-4 py-3">
       <router-outlet></router-outlet>
     </main>
   </div>

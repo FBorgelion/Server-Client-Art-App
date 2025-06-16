@@ -5,6 +5,7 @@ using DAL.Repositories;
 using DAL.Repositories.Interfaces;
 using Domain;
 using Microsoft.IdentityModel.Tokens;
+using System.Globalization;
 
 namespace BL.Services
 {
@@ -150,7 +151,7 @@ namespace BL.Services
             {
                 var prod = await _productRepo.GetProduct(line.ProductId);
                 if (prod == null || prod.Stock < line.Quantity)
-                    return false; // stock manquant
+                    return false; 
                 prod.Stock -= line.Quantity;
                 await _productRepo.UpdateProduct(prod);
             }
@@ -160,6 +161,62 @@ namespace BL.Services
             await _cartRepo.Clear(customerId);
 
             return true;
+        }
+
+        public IEnumerable<RevenueDTO> GetRevenue(int artisanId, string period)
+        {
+            var orders = _orderRepo.GetOrdersForArtisan(artisanId);
+
+            DateTime cut;
+            switch (period.ToLower())
+            {
+                case "week":
+                    cut = DateTime.UtcNow.Date.AddDays(-7);
+                    break;
+                case "month":
+                    cut = DateTime.UtcNow.Date.AddMonths(-1);
+                    break;
+                case "year":
+                    cut = DateTime.UtcNow.Date.AddYears(-1);
+                    break;
+                default:
+                    throw new ArgumentException("Period must be week, month or year");
+            }
+
+            var filtered = orders
+                .Where(o => o.OrderDate >= cut)
+                .ToList();
+
+            var points = period.ToLower() switch
+            {
+                "week" => filtered
+                    .GroupBy(o => o.OrderDate.Date)
+                    .Select(g => new RevenueDTO
+                    {
+                        Period = g.Key.ToString("yyyy-MM-dd"),
+                        Amount = g.Sum(o => o.TotalAmount)
+                    }),
+
+                "month" => filtered
+                    .GroupBy(o => new { o.OrderDate.Year, o.OrderDate.Month })
+                    .Select(g => new RevenueDTO
+                    {
+                        Period = CultureInfo.CurrentCulture.DateTimeFormat
+                                   .GetMonthName(g.Key.Month) + $" {g.Key.Year}",
+                        Amount = g.Sum(o => o.TotalAmount)
+                    }),
+
+                "year" => filtered
+                    .GroupBy(o => o.OrderDate.Year)
+                    .Select(g => new RevenueDTO
+                    {
+                        Period = g.Key.ToString(),
+                        Amount = g.Sum(o => o.TotalAmount)
+                    }),
+                _ => Enumerable.Empty<RevenueDTO>()
+            };
+
+            return points.OrderBy(p => p.Period);
         }
 
     }

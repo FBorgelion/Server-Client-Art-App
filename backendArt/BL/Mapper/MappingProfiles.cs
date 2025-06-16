@@ -10,7 +10,13 @@ namespace BL.Mapper
         public MappingProfiles() 
         {
 
-            CreateMap<Product, ProductDTO>();
+            CreateMap<Product, ProductDTO>()
+                .ForMember(dto => dto.Images,
+               opt => opt.MapFrom(src =>
+                   string.IsNullOrEmpty(src.Images)
+                     ? "/images/default.png"   
+                     : src.Images /* déjà "/images/xxx.jpg" */
+               )); ;
             CreateMap<ProductDTO, Product>();
 
             CreateMap<Customer, CustomerDTO>()

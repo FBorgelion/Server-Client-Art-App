@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\collier.png",
+      "PackagePath": "staticwebassets\\images\\collier.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.backendArt.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.backendArt.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.backendArt.props",
+      "PackagePath": "build\\backendArt.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.backendArt.props",
+      "PackagePath": "buildMultiTargeting\\backendArt.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.backendArt.props",
+      "PackagePath": "buildTransitive\\backendArt.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

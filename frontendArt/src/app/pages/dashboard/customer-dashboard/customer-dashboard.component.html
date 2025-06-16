@@ -1,53 +1,96 @@
-
 <div class="container-fluid">
   <div class="row">
 
     <!-- SIDEBAR -->
-    <nav class="col-12 col-md-2 d-md-block bg-dark sidebar py-3" style="min-height: 100vh;">
+    <nav class="col-12 col-md-2 bg-dark sidebar py-3" style="min-height:100vh">
       <ul class="nav flex-column nav-pills">
         <li class="nav-item mb-2">
-          <a href="javascript:void(0)"
-             class="nav-link"
+          <a class="nav-link"
              [ngClass]="{ active: activeSection==='cart' }"
              (click)="select('cart')">
-            <i class="bi bi-cart-fill me-1"></i>
-            My cart
+            <i class="bi bi-cart-fill me-1"></i> My cart
           </a>
         </li>
         <li class="nav-item mb-2">
-          <a href="javascript:void(0)"
-             class="nav-link"
+          <a class="nav-link"
              [ngClass]="{ active: activeSection==='orders' }"
              (click)="select('orders')">
             <i class="bi bi-bag-check-fill me-1"></i> My orders
           </a>
         </li>
         <li class="nav-item mb-2">
-          <a href="javascript:void(0)"
-             class="nav-link"
+          <a class="nav-link"
+             [ngClass]="{ active: activeSection==='inquiries' }"
+             (click)="select('inquiries')">
+            <i class="bi bi-question-circle me-1"></i> My inquiries
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link"
              [ngClass]="{ active: activeSection==='profile' }"
              (click)="select('profile')">
-            <i class="bi bi-person-fill me-1"></i>
-            Edit profile
+            <i class="bi bi-person-fill me-1"></i> Edit profile
           </a>
         </li>
       </ul>
     </nav>
 
+    <!-- MAIN CONTENT -->
     <main class="col-12 col-md-10 px-4 py-3">
 
-      <!-- PANIER SECTION -->
+      <!-- CART -->
       <section *ngIf="activeSection==='cart'">
         <app-cart></app-cart>
       </section>
+
+      <!-- ORDERS -->
       <section *ngIf="activeSection==='orders'">
         <app-orders></app-orders>
       </section>
 
-      <!-- PROFILE EDIT SECTION -->
+      <!-- INQUIRIES -->
+      <section *ngIf="activeSection==='inquiries'">
+        <h4 class="mb-3">My inquiries</h4>
+
+        <div *ngIf="loadingInquiries" class="text-center p-3">
+          <div class="spinner-border"></div>
+        </div>
+        <div *ngIf="errorInquiries" class="alert alert-danger">
+          {{ errorInquiries }}
+        </div>
+
+        <div *ngIf="!loadingInquiries && !errorInquiries && inquiries.length; else noInq">
+          <div *ngFor="let iq of inquiries" class="card mb-3">
+            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+              <span>{{ iq.productTitle }}</span>
+              <button class="btn btn-sm btn-outline-light bg-danger"
+                      (click)="onDeleteInquiry(iq.inquiryId)">
+                <i class="bi bi-trash"></i>
+              </button>
+            </div>
+            <div class="card-body">
+              <p><strong>Message :</strong> {{ iq.message }}</p>
+              <p>
+                <strong>Answer :</strong>
+                <span *ngIf="iq.response; else waiting"> {{ iq.response }} </span>
+                <ng-template #waiting><em>Waiting...</em></ng-template>
+              </p>
+              <small class="text-muted">{{ iq.createdAt | date:'short' }}</small>
+            </div>
+          </div>
+        </div>
+
+        <ng-template #noInq>
+          <p class="text-muted">You have not submitted any requests.</p>
+        </ng-template>
+      </section>
+
+
+      <!-- PROFILE -->
       <section *ngIf="activeSection==='profile'">
         <h4 class="mb-4">Edit my profile</h4>
         <form (ngSubmit)="saveProfile()" #profileForm="ngForm" class="w-100 w-md-50">
+
           <!-- Shipping Address -->
           <div class="mb-3">
             <label for="shipping"
@@ -71,7 +114,7 @@
           <div class="mb-3">
             <label for="payment"
                    class="form-label bg-primary text-white px-2 py-1 rounded">
-              Payment information
+              Payment Information
             </label>
             <input id="payment"
                    name="paymentInfo"
@@ -82,19 +125,17 @@
                    #paymentInfo="ngModel" />
             <div class="text-danger small"
                  *ngIf="paymentInfo.invalid && paymentInfo.touched">
-              Payment Information are required.
+              Payment information is required.
             </div>
           </div>
 
           <!-- Buttons -->
           <div class="d-flex gap-2">
-            <button type="submit"
-                    class="btn btn-primary"
+            <button type="submit" class="btn btn-primary"
                     [disabled]="profileForm.invalid">
               Submit
             </button>
-            <button type="button"
-                    class="btn btn-secondary"
+            <button type="button" class="btn btn-secondary"
                     (click)="cancelEdit()">
               Cancel
             </button>
@@ -103,5 +144,6 @@
       </section>
 
     </main>
+
   </div>
 </div>

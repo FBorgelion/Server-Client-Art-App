@@ -48,7 +48,7 @@ export class AuthenticationComponent {
           } else if (role === 'Admin') {
             this.router.navigate(['/admin/users']);
           } else {
-            this.router.navigate(['/']);
+            this.router.navigate(['/dashboard']);
           }
         }
         error: () => alert('Connection failed.')

@@ -1,0 +1,50 @@
+
+<div class="container py-4">
+
+  <h3 class="mb-4">Financial Report</h3>
+
+  <div class="mb-4 d-flex align-items-center">
+    <label for="periodSelect" class="me-2 fw-semibold">Périod :</label>
+    <select id="periodSelect"
+            class="form-select w-auto"
+            [(ngModel)]="selectedPeriod"
+            (ngModelChange)="loadReport()">
+      <option *ngFor="let p of periods" [value]="p.value">
+        {{ p.label }}
+      </option>
+    </select>
+  </div>
+
+
+  <div *ngIf="loading" class="text-center py-5">
+    <div class="spinner-border"></div>
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger">
+    {{ error }}
+  </div>
+
+  <div *ngIf="!loading && !error">
+    <table class="table table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Date</th>
+          <th class="text-end">Revenu (€)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of report">
+          <td>{{ row.label }}</td>
+          <td class="text-end">{{ row.amount | number:'1.2-2' }}</td>
+        </tr>
+      </tbody>
+      <tfoot class="fw-semibold">
+        <tr>
+          <td>Total</td>
+          <td class="text-end">{{ total | number:'1.2-2' }}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+</div>

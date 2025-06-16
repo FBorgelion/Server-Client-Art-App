@@ -6,12 +6,10 @@
     "\\src\\app\\pages",
     "\\src\\app\\pages\\dashboard",
     "\\src\\app\\pages\\dashboard\\artisan-dashboard",
-    "\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-orders",
-    "\\src\\app\\pages\\dashboard\\delivery-partner-dashboard",
-    "\\src\\app\\pages\\dashboard\\delivery-partner-dashboard\\delivery-orders",
-    "\\src\\app\\service",
+    "\\src\\app\\pages\\dashboard\\artisan-dashboard\\financial-report",
+    "\\src\\app\\pages\\dashboard\\customer-dashboard\\orders",
     "\\src\\app\\service\\order"
   ],
-  "SelectedNode": "\\src\\app\\pages\\dashboard\\artisan-dashboard\\artisan-orders\\artisan-orders.component.html",
+  "SelectedNode": "\\src\\app\\pages\\dashboard\\artisan-dashboard\\financial-report\\financial-report.component.html",
   "PreviewInSolutionExplorer": false
 }

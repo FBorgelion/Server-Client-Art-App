@@ -24,5 +24,8 @@ namespace DAL.Repositories.Interfaces
 
         public bool RespondToInquiry(int inquiryId, string response);
 
+        public IEnumerable<Inquiry> GetInquiriesForCustomer(int custId);
+
+
     }
 }

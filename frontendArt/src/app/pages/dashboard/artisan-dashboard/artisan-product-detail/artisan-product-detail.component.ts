@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../../../service/product.service';
 import { ReviewsService } from '../../../../service/reviews/reviews.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 
 @Component({
   selector: 'app-artisan-product-detail',
@@ -20,7 +20,8 @@ export class ArtisanProductDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
-    private reviewService: ReviewsService
+    private reviewService: ReviewsService,
+    private location: Location 
   ) { }
 
   ngOnInit() {
@@ -33,6 +34,10 @@ export class ArtisanProductDetailComponent implements OnInit {
         this.reviews = r;
         this.loading = false;
       });
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

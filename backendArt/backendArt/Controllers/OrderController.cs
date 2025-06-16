@@ -262,7 +262,26 @@ namespace backendArt.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
+
+        [HttpGet("revenue")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public IActionResult GetRevenue([FromQuery] string period)
+        {
+            var artIdClaim = User.FindFirst("userId")?.Value;
+            if (!int.TryParse(artIdClaim, out var artId))
+                return Unauthorized();
+
+            var data = _orderService.GetRevenue(artId, period);
+            if (!data.Any())
+                return NoContent();
+
+            return Ok(data);
+        }
     }
+
+
 
 
 }

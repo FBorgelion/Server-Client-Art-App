@@ -9,7 +9,7 @@ namespace BL.Services.Interfaces
 
         public InquiryDTO Get(int id);
 
-        public void Add(InquiryDTO inquiry);
+        public void Add(int custId, int productId, string message);
 
         public bool Update(InquiryDTO inquiry);
 
@@ -18,6 +18,9 @@ namespace BL.Services.Interfaces
         public IEnumerable<InquiryDTO> GetInquiriesForArtisan(int artisanId);
 
         public bool RespondToInquiry(int inquiryId, string response);
+
+        public IEnumerable<InquiryDTO> GetInquiriesForCustomer(int custId);
+
 
     }
 
