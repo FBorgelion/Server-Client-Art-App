@@ -9,15 +9,15 @@ namespace BL.Services.Interfaces
 
         public IEnumerable<CustomerDTO> GetAll();
 
-        public CustomerDTO Get(int id);
+        public Task<CustomerDTO> Get(int id);
 
         public void Add(CustomerDTO customer);
 
-        public bool Update(CustomerDTO customer);
+        public Task<bool> Update(CustomerDTO customer);
 
         public bool Delete(int id);
 
-        public bool UpdateProfile(int customerId, CustomerUpdDTO dto);
+        public Task<bool> UpdateProfile(int customerId, CustomerUpdDTO dto);
 
     }
 

@@ -55,7 +55,7 @@ namespace DAL.Repositories
             productToUpd.Stock = product.Stock;
             productToUpd.Images = product.Images;
 
-            _dbContext.SaveChanges();
+            _dbContext.SaveChangesAsync();
             return true;
         }
 

@@ -47,9 +47,9 @@ namespace DAL.Repositories
             return true;
         }
 
-        public Customer Get(int id)
+        public async Task<Customer> Get(int id)
         {
-            var customer = _dbContext.Customers.FirstOrDefault(p => p.CustomerId == id);
+            var customer = await _dbContext.Customers.FirstOrDefaultAsync(p => p.CustomerId == id);
             return customer;
         }
 
@@ -60,9 +60,9 @@ namespace DAL.Repositories
                 .ToList();
         }
 
-        public bool Update(Customer customer)
+        public async Task<bool> Update(Customer customer)
         {
-            var customerToUpd = _dbContext.Customers.FirstOrDefault();
+            var customerToUpd = await _dbContext.Customers.FirstOrDefaultAsync();
             if (customerToUpd == null)
             {
                 return false;
@@ -70,7 +70,7 @@ namespace DAL.Repositories
             customerToUpd.ShippingAddress = customer.ShippingAddress;
             customerToUpd.PaymentInfo = customer.PaymentInfo;
 
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
             return true;
         }
     }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BJ1hv/H/pZFt7ePMog3dgZ9L6JxFLrp2HnIPHXe6Ffw=",
+  "Hash": "Zf/RMQd1zFqhcHYUd6F9aQqje0rl4myCm/AxJ+zG+xk=",
   "Source": "backendArt",
   "BasePath": "_content/backendArt",
   "Mode": "Default",
@@ -36,6 +36,111 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\collier.png"
+    },
+    {
+      "Identity": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\memoire.png",
+      "SourceId": "backendArt",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\",
+      "BasePath": "_content/backendArt",
+      "RelativePath": "images/memoire#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2lzatqybg3",
+      "Integrity": "ppe81lFdel5a6y4nMfop9UJhmyUcxc2bvmUIROgF4fc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\memoire.png"
+    },
+    {
+      "Identity": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\nuit.png",
+      "SourceId": "backendArt",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\",
+      "BasePath": "_content/backendArt",
+      "RelativePath": "images/nuit#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "io80v6bi4i",
+      "Integrity": "8rJcwDfVBOcO6Z3vSqn8BzWHv9hk3gFtG6g9S7EsTWQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\nuit.png"
+    },
+    {
+      "Identity": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\portrait.png",
+      "SourceId": "backendArt",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\",
+      "BasePath": "_content/backendArt",
+      "RelativePath": "images/portrait#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qkrz5vim37",
+      "Integrity": "puiErDIWTU3iibwBvgO7SQm/JhFIWFwTKqYgh1pBqhE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\portrait.png"
+    },
+    {
+      "Identity": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\radeau.png",
+      "SourceId": "backendArt",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\",
+      "BasePath": "_content/backendArt",
+      "RelativePath": "images/radeau#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "q3hio6a5xe",
+      "Integrity": "6gjFeXqrK+v1EqqtrqEhYqGz/FxSX37IneGKt1ZmjFU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\radeau.png"
+    },
+    {
+      "Identity": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\terrasse.png",
+      "SourceId": "backendArt",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\",
+      "BasePath": "_content/backendArt",
+      "RelativePath": "images/terrasse#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cyygijcbjh",
+      "Integrity": "9BKsM2TbOD1FKvELb88Eat+OJQ3DECs/iP+e+OOkoZM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\terrasse.png"
     }
   ],
   "Endpoints": [
@@ -118,6 +223,416 @@
         {
           "Name": "integrity",
           "Value": "sha256-e6kduzbn54xu7eUiAAc+P2iiSznWzwhZ3DwOogMwE58="
+        }
+      ]
+    },
+    {
+      "Route": "images/memoire.2lzatqybg3.png",
+      "AssetFile": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\memoire.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50920"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ppe81lFdel5a6y4nMfop9UJhmyUcxc2bvmUIROgF4fc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 12:26:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2lzatqybg3"
+        },
+        {
+          "Name": "label",
+          "Value": "images/memoire.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ppe81lFdel5a6y4nMfop9UJhmyUcxc2bvmUIROgF4fc="
+        }
+      ]
+    },
+    {
+      "Route": "images/memoire.png",
+      "AssetFile": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\memoire.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50920"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ppe81lFdel5a6y4nMfop9UJhmyUcxc2bvmUIROgF4fc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 12:26:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ppe81lFdel5a6y4nMfop9UJhmyUcxc2bvmUIROgF4fc="
+        }
+      ]
+    },
+    {
+      "Route": "images/nuit.io80v6bi4i.png",
+      "AssetFile": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\nuit.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12069"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8rJcwDfVBOcO6Z3vSqn8BzWHv9hk3gFtG6g9S7EsTWQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 12:27:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "io80v6bi4i"
+        },
+        {
+          "Name": "label",
+          "Value": "images/nuit.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8rJcwDfVBOcO6Z3vSqn8BzWHv9hk3gFtG6g9S7EsTWQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/nuit.png",
+      "AssetFile": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\nuit.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12069"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8rJcwDfVBOcO6Z3vSqn8BzWHv9hk3gFtG6g9S7EsTWQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 12:27:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8rJcwDfVBOcO6Z3vSqn8BzWHv9hk3gFtG6g9S7EsTWQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/portrait.png",
+      "AssetFile": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\portrait.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26377"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"puiErDIWTU3iibwBvgO7SQm/JhFIWFwTKqYgh1pBqhE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 12:27:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-puiErDIWTU3iibwBvgO7SQm/JhFIWFwTKqYgh1pBqhE="
+        }
+      ]
+    },
+    {
+      "Route": "images/portrait.qkrz5vim37.png",
+      "AssetFile": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\portrait.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26377"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"puiErDIWTU3iibwBvgO7SQm/JhFIWFwTKqYgh1pBqhE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 12:27:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qkrz5vim37"
+        },
+        {
+          "Name": "label",
+          "Value": "images/portrait.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-puiErDIWTU3iibwBvgO7SQm/JhFIWFwTKqYgh1pBqhE="
+        }
+      ]
+    },
+    {
+      "Route": "images/radeau.png",
+      "AssetFile": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\radeau.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "32822"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6gjFeXqrK+v1EqqtrqEhYqGz/FxSX37IneGKt1ZmjFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 12:26:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6gjFeXqrK+v1EqqtrqEhYqGz/FxSX37IneGKt1ZmjFU="
+        }
+      ]
+    },
+    {
+      "Route": "images/radeau.q3hio6a5xe.png",
+      "AssetFile": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\radeau.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "32822"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6gjFeXqrK+v1EqqtrqEhYqGz/FxSX37IneGKt1ZmjFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 12:26:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "q3hio6a5xe"
+        },
+        {
+          "Name": "label",
+          "Value": "images/radeau.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6gjFeXqrK+v1EqqtrqEhYqGz/FxSX37IneGKt1ZmjFU="
+        }
+      ]
+    },
+    {
+      "Route": "images/terrasse.cyygijcbjh.png",
+      "AssetFile": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\terrasse.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "57002"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9BKsM2TbOD1FKvELb88Eat+OJQ3DECs/iP+e+OOkoZM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 12:27:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cyygijcbjh"
+        },
+        {
+          "Name": "label",
+          "Value": "images/terrasse.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9BKsM2TbOD1FKvELb88Eat+OJQ3DECs/iP+e+OOkoZM="
+        }
+      ]
+    },
+    {
+      "Route": "images/terrasse.png",
+      "AssetFile": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\terrasse.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "57002"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9BKsM2TbOD1FKvELb88Eat+OJQ3DECs/iP+e+OOkoZM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Jun 2025 12:27:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9BKsM2TbOD1FKvELb88Eat+OJQ3DECs/iP+e+OOkoZM="
         }
       ]
     }

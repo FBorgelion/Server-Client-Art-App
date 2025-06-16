@@ -5,6 +5,26 @@
       "PackagePath": "staticwebassets\\images\\collier.png"
     },
     {
+      "Id": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\memoire.png",
+      "PackagePath": "staticwebassets\\images\\memoire.png"
+    },
+    {
+      "Id": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\nuit.png",
+      "PackagePath": "staticwebassets\\images\\nuit.png"
+    },
+    {
+      "Id": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\portrait.png",
+      "PackagePath": "staticwebassets\\images\\portrait.png"
+    },
+    {
+      "Id": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\radeau.png",
+      "PackagePath": "staticwebassets\\images\\radeau.png"
+    },
+    {
+      "Id": "C:\\Users\\Florent\\DevWeb\\ServerClientProjet\\backendArt\\backendArt\\wwwroot\\images\\terrasse.png",
+      "PackagePath": "staticwebassets\\images\\terrasse.png"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.backendArt.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

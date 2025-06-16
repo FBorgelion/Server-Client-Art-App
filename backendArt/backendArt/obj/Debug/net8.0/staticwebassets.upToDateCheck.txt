@@ -1,1 +1,6 @@
 wwwroot\images\collier.png
+wwwroot\images\memoire.png
+wwwroot\images\nuit.png
+wwwroot\images\portrait.png
+wwwroot\images\radeau.png
+wwwroot\images\terrasse.png

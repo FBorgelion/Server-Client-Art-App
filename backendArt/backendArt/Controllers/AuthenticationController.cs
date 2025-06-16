@@ -23,7 +23,7 @@ namespace backendArt.Controllers
         [ProducesResponseType(typeof(IEnumerable<UserDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         public IActionResult GetAll()
         {
             try

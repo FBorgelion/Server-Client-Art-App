@@ -1,5 +1,6 @@
 ﻿using BL.Models;
 using BL.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backendArt.Controllers
@@ -20,6 +21,7 @@ namespace backendArt.Controllers
         [ProducesResponseType(typeof(IEnumerable<CustomerDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [Authorize(Roles = "Admin")]
         public IActionResult GetAll()
         {
             try
@@ -41,14 +43,15 @@ namespace backendArt.Controllers
         [ProducesResponseType(typeof(IEnumerable<CustomerDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public IActionResult Get()
+        [Authorize(Roles = "Customer, Admin")]
+        public async Task<ActionResult> Get()
         {
             try
             {
                 var custIdClaim = User.FindFirst("userId")?.Value;
                 if (!int.TryParse(custIdClaim, out var custId))
                     return Unauthorized();
-                var customer = _customerService.Get(custId);
+                var customer = await _customerService.Get(custId);
                 if (customer == null)
                 {
                     return NoContent();
@@ -65,6 +68,7 @@ namespace backendArt.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [Produces("application/json")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Post([FromBody] CustomerDTO customer)
         {
             try
@@ -82,6 +86,7 @@ namespace backendArt.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [Authorize(Roles = "Customer,Admin")]
         public IActionResult Delete(int id)
         {
             try
@@ -103,11 +108,12 @@ namespace backendArt.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public ActionResult Update([FromBody] CustomerDTO customer)
+        [Authorize(Roles = "Customer,Admin")]
+        public async Task<ActionResult> Update([FromBody] CustomerDTO customer)
         {
             try
             {
-                bool updated = _customerService.Update(customer);
+                bool updated = await _customerService.Update(customer);
                 if (!updated)
                 {
                     return StatusCode(StatusCodes.Status404NotFound);
@@ -122,13 +128,14 @@ namespace backendArt.Controllers
 
         [HttpPut]
         [Route("profile")]
-        public IActionResult UpdateProfile([FromBody] CustomerUpdDTO dto)
+        [Authorize(Roles = "Customer,Admin")]
+        public async Task<IActionResult> UpdateProfile([FromBody] CustomerUpdDTO dto)
         {
             var claim = User.FindFirst("userId")?.Value;
             if (!int.TryParse(claim, out var customerId))
                 return Unauthorized();
 
-            var ok = _customerService.UpdateProfile(customerId, dto);
+            var ok = await _customerService.UpdateProfile(customerId, dto);
             if (!ok) return NotFound();
             return NoContent();
         }

@@ -149,11 +149,12 @@ namespace backendArt.Controllers
         }
 
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [Authorize(Roles = "Artisan,Admin")]
         public async Task<IActionResult> Update(int id, [FromBody] ProductUpdateDTO dto)
         {
             await _productService.UpdateAsync(id, dto);
-            return NoContent();
+            return Ok();
         }
 
     }

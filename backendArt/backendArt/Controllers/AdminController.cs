@@ -1,6 +1,7 @@
 ﻿using BL.Models;
 using BL.Services.Interfaces;
 using Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backendArt.Controllers
@@ -21,6 +22,7 @@ namespace backendArt.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [Produces("application/json")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Post([FromBody] AdminDTO admin)
         {
             try

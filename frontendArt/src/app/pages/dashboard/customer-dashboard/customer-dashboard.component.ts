@@ -70,6 +70,7 @@ export class CustomerDashboardComponent implements OnInit {
           this.backupProfile();
         },
       });
+    this.loadProfile(); 
   }
 
   cancelEdit() {

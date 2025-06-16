@@ -45,7 +45,7 @@ export class RegisterComponent {
         },
         error: err => {
           this.isLoading = false;
-          this.errorMessage = err?.error?.message || 'Registration failed';
+          this.errorMessage = err?.error?.message || 'Registration failed. Please fill both fields and ensure you password follow the right poilicy';
         }
       });
   }

@@ -10,7 +10,6 @@ namespace DAL.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            // 1) Insère les 4 users avec le hash PBKDF2(password="123", salt="Friday")
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "UserId", "Username","Email", "PasswordHash", "Role", "Salt" },
@@ -23,11 +22,6 @@ namespace DAL.Migrations
                 }
             );
 
-            // 2) Insère les profils associés
-            //   - Customer pour admin123 (UserId=1)
-            //   - Artisan  pour art123   (UserId=2)
-            //   - DeliveryPartner pour partner123 (UserId=3)
-            //   - Customer pour cust123 (UserId=4)
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "CustomerId", "ShippingAddress", "PaymentInfo" },
@@ -58,13 +52,11 @@ namespace DAL.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            // Supprime d'abord les profils enfants
             migrationBuilder.DeleteData("Customers", "CustomerId", 100);
             migrationBuilder.DeleteData("Customers", "CustomerId", 400);
             migrationBuilder.DeleteData("Artisans", "ArtisanId", 200);
             migrationBuilder.DeleteData("DeliveryPartners", "DeliveryPartnerId", 300);
 
-            // Puis supprime les users
             migrationBuilder.DeleteData("Users", "UserId", 100);
             migrationBuilder.DeleteData("Users", "UserId", 200);
             migrationBuilder.DeleteData("Users", "UserId", 300);

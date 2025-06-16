@@ -5,11 +5,11 @@
     "\\src\\app",
     "\\src\\app\\pages",
     "\\src\\app\\pages\\dashboard",
-    "\\src\\app\\pages\\dashboard\\artisan-dashboard",
-    "\\src\\app\\pages\\dashboard\\artisan-dashboard\\financial-report",
+    "\\src\\app\\pages\\dashboard\\customer-dashboard",
     "\\src\\app\\pages\\dashboard\\customer-dashboard\\orders",
+    "\\src\\app\\service\\authentication",
     "\\src\\app\\service\\order"
   ],
-  "SelectedNode": "\\src\\app\\pages\\dashboard\\artisan-dashboard\\financial-report\\financial-report.component.html",
+  "SelectedNode": "\\src\\app\\pages\\dashboard\\customer-dashboard\\customer-dashboard.component.ts",
   "PreviewInSolutionExplorer": false
 }

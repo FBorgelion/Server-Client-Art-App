@@ -35,9 +35,9 @@ namespace BL.Services
             return _mapper.Map<IEnumerable<CustomerDTO>>(customers);
         }
 
-        public CustomerDTO Get(int id)
+        public async Task<CustomerDTO> Get(int id)
         {
-            var customer = _customerRepo.Get(id);
+            var customer = await _customerRepo.Get(id);
             if (customer == null)
             {
                 return null;
@@ -45,20 +45,20 @@ namespace BL.Services
             return _mapper.Map<CustomerDTO>(customer);
         }
 
-        public bool Update(CustomerDTO customer)
+        public async Task<bool> Update(CustomerDTO customer)
         {
             var customerEntity = _mapper.Map<Customer>(customer);
-            return _customerRepo.Update(customerEntity);
+            return await _customerRepo.Update(customerEntity);
         }
 
-        public bool UpdateProfile(int customerId, CustomerUpdDTO dto)
+        public async Task<bool> UpdateProfile(int customerId, CustomerUpdDTO dto)
         {
-            var customer = _customerRepo.Get(customerId);
+            var customer = await _customerRepo.Get(customerId);
             if (customer == null) return false;
 
             customer.ShippingAddress = dto.ShippingAddress;
             customer.PaymentInfo = dto.PaymentInfo;
-            _customerRepo.Update(customer);
+            await _customerRepo.Update(customer);
             return true;
         }
 

@@ -1,6 +1,6 @@
 <ng-container *ngIf="!loading; else loadingTpl">
   <div *ngIf="product" class="card mb-4">
-    <img [src]="'https://localhost:7041' + product.images" class="card-img-top product-img" alt="{{ product.title }}">
+    <img [src]="'https://localhost:7041' + product.images" class="card-img-top product-img mx-auto" alt="{{ product.title }}">
     <div class="card-body">
       <h3 class="card-title">{{ product.title }}</h3>
       <p class="card-text">{{ product.description }}</p>

@@ -74,7 +74,6 @@ namespace BL.Services
 
         public async Task<ProductDTO> CreateAsync(ProductCreateDTO dto, int artisanId)
         {
-            // construit l'entité
             var product = new Product
             {
                 ArtisanId = artisanId,
@@ -86,7 +85,6 @@ namespace BL.Services
             };
 
             _productRepo.AddProduct(product);
-            // SaveChanges a déjà été appelé en interne
 
             return _mapper.Map<ProductDTO>(product);
         }
@@ -104,7 +102,7 @@ namespace BL.Services
             if (!string.IsNullOrWhiteSpace(dto.Images))
                 existing.Images = dto.Images;
 
-            _productRepo.UpdateProduct(existing);
+            await _productRepo.UpdateProduct(existing);
         }
 
     }

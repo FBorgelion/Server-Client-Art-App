@@ -10,11 +10,11 @@ namespace BL.Models
     {
 
         public int CustomerId { get; set; }
-        public string ShippingAddress { get; set; }
-        public string PaymentInfo { get; set; }
+        public string? ShippingAddress { get; set; }
+        public string? PaymentInfo { get; set; }
 
         public string Username { get; set; }
 
-        public string email {  get; set; }
+        public string ?email {  get; set; }
     }
 }

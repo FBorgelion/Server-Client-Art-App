@@ -42,11 +42,16 @@ namespace BL.Services
 
         public void Register(string password, string username, string email, string role)
         {
+            var normalizedUser = username.Trim().ToLowerInvariant();
+
             var user = _authRepo.GetByUsername(username);
+            if (_authRepo.GetByUsername(normalizedUser) != null)
+                throw new Exception($"Username « {username} » already exists.");
             if (user != null && (user.Username.ToLower() == username.ToLower()))
             {
                 throw new Exception("User already exist");
             }
+            ValidatePasswordStrength(password);
             var salt = DateTime.Now.ToString("dddd");
             var passwordHash = HashPassword(password, salt);
             UserDTO userDTO = new UserDTO();
@@ -115,7 +120,7 @@ namespace BL.Services
                 var token = GenerateToken(username);
                 return token;
             }
-            throw new Exception("Login failed. Invalid user or password.");
+            return("Login failed. Invalid user or password.");
         }
 
         public string GenerateToken(string username)
@@ -144,6 +149,24 @@ namespace BL.Services
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+        private void ValidatePasswordStrength(string password)
+        {
+            if (password.Length < 10)
+                throw new Exception("Password must contain at least 10 characters.");
+
+            if (!password.Any(char.IsUpper))
+                throw new Exception("Password must contain at least one uppercase character (A-Z).");
+
+            if (!password.Any(char.IsLower))
+                throw new Exception("Password must contain at least one lowercase character (a-z).");
+
+            if (!password.Any(char.IsDigit))
+                throw new Exception("Password must contain at least a number (0-9).");
+
+            if (!password.Any(ch => char.IsPunctuation(ch) || char.IsSymbol(ch)))
+                throw new Exception("Password must at least contain one special character.");
         }
 
     }

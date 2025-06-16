@@ -7,11 +7,11 @@ namespace DAL.Repositories.Interfaces
 
         public IEnumerable<Customer> GetAll();
 
-        public Customer Get(int id);
+        public Task<Customer> Get(int id);
 
         public void Add(Customer customer);
 
-        public bool Update(Customer customer);
+        public Task<bool> Update(Customer customer);
 
         public bool Delete(int id);
     }

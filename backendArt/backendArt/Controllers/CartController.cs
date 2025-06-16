@@ -28,6 +28,7 @@ namespace backendArt.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [Authorize(Roles = "Customer,Admin")]
         public async Task<ActionResult<IEnumerable<CartDTO>>> Get()
         {
             try
@@ -52,6 +53,7 @@ namespace backendArt.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [Authorize(Roles = "Customer,Admin")]
         public IActionResult Add([FromBody] AddCartDTO dto)
         {
             try
@@ -72,6 +74,7 @@ namespace backendArt.Controllers
         [HttpDelete("{cartId}")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [Authorize(Roles = "Customer,Admin")]
         public IActionResult Remove(int cartId)
         {
             if (!_cartService.RemoveItem(cartId))
@@ -83,6 +86,7 @@ namespace backendArt.Controllers
         [Route("clear")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [Authorize(Roles = "Customer,Admin")]
         public IActionResult Clear()
         {
             var custIdClaim = User.FindFirst("userId")?.Value;
@@ -93,6 +97,10 @@ namespace backendArt.Controllers
         }
 
         [HttpPost("checkout")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Authorize(Roles = "Customer,Admin")]
         public async Task<IActionResult> Checkout()
         {
             if (!int.TryParse(User.FindFirst("userId")?.Value, out var customerId))
@@ -102,7 +110,7 @@ namespace backendArt.Controllers
             if (!success)
                 return BadRequest("Cart empty or no stock");
 
-            return NoContent();
+            return Ok();
         }
 
     }
