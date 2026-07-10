@@ -122,6 +122,39 @@ AutoMapper
 JWT Bearer Authentication
 Swagger / OpenAPI  
 
+# 🖼️ Application views
+
+Below are some screenshots of the main interfaces of the application.
+
+## 🧑‍🎨 Artisan's Dashboard
+
+The artisan dashboard gives sellers a central overview of their activity.
+From this page, artisans can access their products, manage their orders and follow the evolution of their sales.
+
+<img src="./images/views/artisan-dashboard.png" width="800" alt="Artisan dashboard">
+
+## 📦 Artisan's Orders
+
+This view allows artisans to follow the orders related to their products.
+They can consult order details and update the order status depending on the progress of the sale.
+
+<img src="./images/views/artisan-orders.png" width="800" alt="Artisan orders">
+
+## 🛍️ Marketplace Dashboard
+
+The marketplace dashboard displays the products available in the application.
+Customers can browse the catalog, view product information and access the purchasing process.
+
+<img src="./images/views/marketplace-dashboard.png" width="800" alt="Marketplace dashboard">
+
+## 👤 Customer's Orders
+
+This view allows customers to follow their personal orders.
+They can check the status of their purchases and consult the details of previous or ongoing orders.
+
+<img src="./images/views/customer-orders.png" width="800" alt="Customer orders">
+
+
 
 
         
